@@ -12,6 +12,16 @@ qt_add_executable(grape
     main.cpp
     src/mainwindow/mainwindow.cpp
     src/mainwindow/mainwindow.h
+
+
+    # Файлы тестирования автоподгона объектов
+    # при изменении размеров окна
+    src/test/test.cpp
+    src/test/test.h
+)
+
+qt_add_ui(grape SOURCES
+    src/test/test.ui
 )
 
 target_link_libraries(grape
