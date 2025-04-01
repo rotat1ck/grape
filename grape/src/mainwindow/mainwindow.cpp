@@ -4,8 +4,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     centralWidget = new QWidget(this); // test
     setCentralWidget(centralWidget);
     layout = new QStackedLayout(centralWidget); // <- описание объекта в src/mainwindow/mainwindow.h
-    centralWidget->setLayout(layout);
-
     login = new Login(this);
 
     layout->addWidget(login); /* <- таким образом добавляется объект класса

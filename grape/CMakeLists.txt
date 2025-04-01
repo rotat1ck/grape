@@ -23,6 +23,7 @@ qt_add_executable(grape
     # при изменении размеров окна
     src/login/login.h
     src/login/login.cpp
+
 )
 
 qt_add_ui(grape SOURCES
