@@ -1,9 +1,9 @@
-from .config import db
+from .config import db # импортируем базу данных из config.py
 
-class User(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(80), unique=True, nullable=False)
-    hash = db.Column(db.String(120), nullable=False)
-    role = db.Column(db.Integer, nullable=False)
-    banned = db.Column(db.Boolean, nullable=False, default=False)
-    cooldown = db.Column(db.Integer, nullable=False, default=0)
+# этот класс нужен для создания таблицы в базе по его свойствам
+# т.е. такие же столбцы будут созданы в базе, на основе находящихся классов в этом файле
+class User(db.Model): 
+    id = db.Column(db.Integer, primary_key=True) # id пользователя
+    username = db.Column(db.String(80), unique=True, nullable=False) # имя пользователя
+    hash = db.Column(db.String(120), nullable=False) # захэшированный пароль
+    role = db.Column(db.String(120), nullable=False) # роль пользователя(права доступа)
