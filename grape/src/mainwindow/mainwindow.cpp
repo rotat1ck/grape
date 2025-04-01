@@ -1,10 +1,10 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
-    centralWidget = new QWidget(this); // test
+    centralWidget = new QWidget(this);
     setCentralWidget(centralWidget);
     layout = new QStackedLayout(centralWidget); // <- описание объекта в src/mainwindow/mainwindow.h
-    centralWidget->setLayout(layout);
+
 
     login = new Login(this);
 
@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
         мог отрисовать объект на экране */
 
     layout->setCurrentWidget(login); // <- показ виджета
+
+    setFixedSize(640, 720);
 }
 
 MainWindow::~MainWindow() {
