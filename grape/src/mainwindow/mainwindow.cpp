@@ -1,9 +1,10 @@
 #include "mainwindow.h"
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
-    centralWidget = new QWidget(this);
-    layout = new QStackedLayout;    // <- описание объекта в src/mainwindow/mainwindow.h
-    //centralWidget->setLayout(layout);
+    centralWidget = new QWidget(this); // test
+    setCentralWidget(centralWidget);
+    layout = new QStackedLayout(centralWidget); // <- описание объекта в src/mainwindow/mainwindow.h
+    centralWidget->setLayout(layout);
 
     login = new Login(this);
 
