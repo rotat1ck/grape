@@ -2,9 +2,10 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QWidget>
 #include <QStackedLayout>
 
-#include "../test/test.h"
+#include "../login/login.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -18,11 +19,12 @@ private:
 
     // Главный объект интерфейса, через него идет переключение форм дизайна,
     // т.е - этот объект определяет что будет находиться на экране
+    QWidget* centralWidget;
     QStackedLayout* layout;
 
     // Пример того как создаются объекты имееющие графический интерфейс
     // Создание указателя на объект требуется для последующей передачи в layout
-    Test* test; // <- описание объекта в src/test/test.h
+    Login* login; // <- описание объекта в src/login/login.h
 };
 
 #endif // MAINWINDOW_H

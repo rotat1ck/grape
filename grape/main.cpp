@@ -10,9 +10,10 @@ int main(int argc, char *argv[])
         При создании объекта вызовется коструктор MainWindow::MainWindow
         Он находится в src/mainwindow/mainwindow.cpp
     */
-    w.setFixedSize(400, 300); // <- установка глобального размера, для всех окон приложения
-    // её использование в нашем проекте нежелательно, нужен способ автоматического скейлинга
+    // w.setFixedSize(640, 720); // <- установка глобального размера, для всех окон приложения
 
+    w.setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+    w.setBaseSize(640, 720);
     w.show(); // <- отрисовка окна
     return a.exec();
 }

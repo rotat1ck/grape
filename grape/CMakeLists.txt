@@ -5,23 +5,28 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Core Widgets)
 
 qt_standard_project_setup()
 
+qt_add_resources(RESOURCE_FILES res.qrc)
+
 qt_add_executable(grape
     WIN32 MACOSX_BUNDLE
 
+    ${RESOURCE_FILES}
+
     # main.cpp and mainwindow
     main.cpp
+    res.qrc
     src/mainwindow/mainwindow.cpp
     src/mainwindow/mainwindow.h
 
 
     # Файлы тестирования автоподгона объектов
     # при изменении размеров окна
-    src/test/test.cpp
-    src/test/test.h
+    src/login/login.h
+    src/login/login.cpp
 )
 
 qt_add_ui(grape SOURCES
-    src/test/test.ui
+    src/login/login.ui
 )
 
 target_link_libraries(grape
