@@ -1,7 +1,7 @@
 <RCC>
     <qresource prefix="/">
-        <file>img/login-background</file>
         <file>fonts/JuliusSansOne-Regular.ttf</file>
         <file>img/password.svg</file>
+        <file>img/login-background.png</file>
     </qresource>
 </RCC>

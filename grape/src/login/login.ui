@@ -90,7 +90,7 @@ color: #000000;
      <cursorShape>ArrowCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">image: url(:/img/login-background);</string>
+     <string notr="true">image: url(:/img/login-background)</string>
     </property>
     <property name="text">
      <string/>
