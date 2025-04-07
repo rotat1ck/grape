@@ -18,15 +18,21 @@ qt_add_executable(grape
     src/mainwindow/mainwindow.cpp
     src/mainwindow/mainwindow.h
 
-
+    # Login page files
     src/login/login.h
     src/login/login.cpp
 
+    # Dashboard page files
     src/dashboard/dashboard.h
     src/dashboard/dashboard.cpp
 
+
     src/registration/registration.h
     src/registration/registration.cpp
+
+    # Misc files
+    misc/clickQLabel.cpp
+    misc/clickQLabel.h
 
 )
 
