@@ -19,14 +19,16 @@ qt_add_executable(grape
     src/mainwindow/mainwindow.h
 
 
-    # Файлы тестирования автоподгона объектов
-    # при изменении размеров окна
     src/login/login.h
     src/login/login.cpp
+
+    src/dashboard/dashboard.h
+    src/dashboard/dashboard.cpp
 )
 
 qt_add_ui(grape SOURCES
     src/login/login.ui
+    src/dashboard/dashboard.ui
 )
 
 target_link_libraries(grape
