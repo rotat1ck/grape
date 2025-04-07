@@ -16,6 +16,11 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="font">
+   <font>
+    <family>Juice ITC</family>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Login</string>
   </property>
@@ -47,8 +52,84 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">image: url(:/img/login-background);</string>
+      <string notr="true"/>
      </property>
+     <widget class="QLabel" name="Label">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>460</width>
+        <height>105</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Julius Sans One</family>
+        <pointsize>-1</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 105px;
+
+color: #000000;
+
+</string>
+      </property>
+      <property name="text">
+       <string>G R A P E</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="background">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>640</width>
+        <height>720</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">image: url(:/img/login-background);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>54</x>
+        <y>99</y>
+        <width>511</width>
+        <height>4</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* Line 2 */
+
+position: absolute;
+width: 511px;
+height: 0px;
+left: 54px;
+top: 103px;
+
+border: 4px solid #FFFFFF;
+</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <zorder>background</zorder>
+     <zorder>label</zorder>
+     <zorder>Label</zorder>
     </widget>
    </item>
   </layout>

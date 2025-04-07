@@ -1,10 +1,14 @@
 #include "src/mainwindow/mainwindow.h"
 
 #include <QApplication>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv); // <- создание приложения *вызовы методов api системы*
+    // Загружаем шрифт из ресурсов
+    QFontDatabase::addApplicationFont(":/fonts/JuliusSansOne-Regular.ttf");
+
     MainWindow w; // <- создание объекта класса mainwindow и вызов его конструктора
     /*
         При создании объекта вызовется коструктор MainWindow::MainWindow
