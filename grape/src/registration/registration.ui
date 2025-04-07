@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Registration</class>
+ <widget class="QWidget" name="Registration">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>464</width>
+    <height>418</height>
+   </rect>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>640</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* Register Form */
+
+position: relative;
+width: 640px;
+height: 720px;
+
+background: #FFFFFF;
+</string>
+  </property>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
