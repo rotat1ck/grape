@@ -26,14 +26,20 @@ qt_add_executable(grape
     src/dashboard/dashboard.h
     src/dashboard/dashboard.cpp
 
+
+    src/registration/registration.h
+    src/registration/registration.cpp
+
     # Misc files
     misc/clickQLabel.cpp
     misc/clickQLabel.h
+
 )
 
 qt_add_ui(grape SOURCES
     src/login/login.ui
     src/dashboard/dashboard.ui
+    src/registration/registration.ui
 )
 
 target_link_libraries(grape
