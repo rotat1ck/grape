@@ -18,12 +18,17 @@ qt_add_executable(grape
     src/mainwindow/mainwindow.cpp
     src/mainwindow/mainwindow.h
 
-
+    # Login page files
     src/login/login.h
     src/login/login.cpp
 
+    # Dashboard page files
     src/dashboard/dashboard.h
     src/dashboard/dashboard.cpp
+
+    # Misc files
+    misc/clickQLabel.cpp
+    misc/clickQLabel.h
 )
 
 qt_add_ui(grape SOURCES

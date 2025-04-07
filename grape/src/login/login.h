@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include "../../misc/clickQLabel.h"
+
 namespace Ui {
 class Login;
 }
@@ -15,8 +17,12 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
+private slots:
+    void on_PasswordStateButton_clicked();
+
 private:
     Ui::Login *ui;
+    bool isPasswordVisible = false;
 };
 
 #endif // LOGIN_H
