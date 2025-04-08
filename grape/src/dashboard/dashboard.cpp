@@ -8,8 +8,9 @@ Dashboard::Dashboard(QWidget *parent)
     ui->setupUi(this);
 
     QIcon icon;
-    icon.addFile(":/img/settings.svg",QSize(218, 218),QIcon::Normal,QIcon::On);
+    icon.addFile(":/img/settings.svg", QSize(218, 218), QIcon::Normal, QIcon::On);
     ui->menuSettings->setIcon(icon);
+    ui->menuSettings->setIconSize(QSize(56, 56));
 }
 
 Dashboard::~Dashboard() {

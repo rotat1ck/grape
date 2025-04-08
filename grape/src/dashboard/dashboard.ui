@@ -34,6 +34,12 @@
    </property>
    <item row="0" column="0">
     <widget class="QWidget" name="Centralwidget" native="true">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: #A89797;</string>
      </property>

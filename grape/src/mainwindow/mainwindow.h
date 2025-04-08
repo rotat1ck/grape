@@ -4,8 +4,7 @@
 #include <QMainWindow>
 #include <QWidget>
 #include <QStackedLayout>
-#include <QApplication>
-#include <QDesktopServices>
+#include <QMouseEvent>
 
 #include "../login/login.h"
 #include "../dashboard/dashboard.h"
@@ -33,6 +32,7 @@ private slots:
 
 private:
     // - - UI - -
+    QPoint dragStartPosition;
 
     // Главный объект интерфейса, через него идет переключение форм дизайна,
     // т.е - этот объект определяет что будет находиться на экране
@@ -44,6 +44,23 @@ private:
     Login* login; // <- описание объекта в src/login/login.h
     Registration* registration; // <- описание объекта в src/registration/registration.h
     Dashboard* dashboard; // <- описание объекта в src/dashboard/dashboard.h
+
+protected:
+    void mousePressEvent(QMouseEvent *event) override {
+        if (event->button() == Qt::LeftButton) {
+            dragStartPosition = event->pos();
+            qDebug() << event->pos();
+            event->accept();
+        }
+    }
+
+    void mouseMoveEvent(QMouseEvent *event) override {
+        if (event->buttons() & Qt::LeftButton) {
+            move(event->pos() - dragStartPosition);
+            qDebug() << event->pos();
+            event->accept();
+        }
+    }
 };
 
 #endif // MAINWINDOW_H
