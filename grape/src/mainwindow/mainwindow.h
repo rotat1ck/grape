@@ -33,6 +33,7 @@ private slots:
 private:
     // - - UI - -
     QPoint dragStartPosition;
+    bool dragging = false;
 
     // Главный объект интерфейса, через него идет переключение форм дизайна,
     // т.е - этот объект определяет что будет находиться на экране
@@ -48,16 +49,22 @@ private:
 protected:
     void mousePressEvent(QMouseEvent *event) override {
         if (event->button() == Qt::LeftButton) {
-            dragStartPosition = event->pos();
-            qDebug() << event->pos();
+            dragStartPosition = event->globalPosition().toPoint() - frameGeometry().topLeft();
+            dragging = true;
             event->accept();
         }
     }
 
     void mouseMoveEvent(QMouseEvent *event) override {
-        if (event->buttons() & Qt::LeftButton) {
-            move(event->pos() - dragStartPosition);
-            qDebug() << event->pos();
+        if (dragging && (event->buttons() & Qt::LeftButton)) {
+            move(event->globalPosition().toPoint() - dragStartPosition);
+            event->accept();
+        }
+    }
+
+    void mouseReleaseEvent(QMouseEvent *event) override {
+        if (event->button() == Qt::LeftButton) {
+            dragging = false;
             event->accept();
         }
     }
