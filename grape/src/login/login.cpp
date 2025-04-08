@@ -1,6 +1,8 @@
 #include "login.h"
 #include "ui_login.h"
 
+
+
 Login::Login(QWidget *parent) : QWidget(parent) , ui(new Ui::Login) {
     ui->setupUi(this);
 
@@ -11,10 +13,6 @@ Login::Login(QWidget *parent) : QWidget(parent) , ui(new Ui::Login) {
     ClickQLabel* registrationButton = new ClickQLabel(ui->centralwidget);
     registrationButton->setText("Register");
     registrationButton->setGeometry(390, 590, 80, 30);
-
-    connect(registrationButton, &ClickQLabel::clicked, this, [](){
-        qDebug() << "CLicked register button";
-    });
 }
 
 Login::~Login()
