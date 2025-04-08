@@ -216,7 +216,8 @@ color: #D4C7C7;</string>
      <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: rgba(0, 0, 0, 0.65);
+     <string notr="true">QPushButton { 
+background: rgba(0, 0, 0, 0.65);
 border-radius: 10px;
 border: 1px solid red;
 
@@ -225,7 +226,14 @@ font-style: normal;
 font-weight: 400;
 font-size: 32px;
 
-color: #D4C7C7;</string>
+color: #D4C7C7;
+}
+
+QPushButton:hover  {
+
+border: 10px solid red;
+
+}</string>
     </property>
     <property name="text">
      <string>Login</string>

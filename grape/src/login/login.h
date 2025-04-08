@@ -17,8 +17,13 @@ public:
     explicit Login(QWidget *parent = nullptr);
     ~Login();
 
+signals:
+    void S_ChangeForm(int formId);
+
 private slots:
     void on_PasswordStateButton_clicked();
+
+    void on_LoginButton_clicked();
 
 private:
     Ui::Login *ui;
