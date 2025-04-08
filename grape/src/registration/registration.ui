@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Login</class>
- <widget class="QWidget" name="Login">
+ <class>Registration</class>
+ <widget class="QWidget" name="Registration">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -22,7 +22,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Login</string>
+   <string>Registration</string>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -125,7 +125,7 @@ border: 4px solid #FFFFFF;
     <property name="geometry">
      <rect>
       <x>162</x>
-      <y>190</y>
+      <y>160</y>
       <width>330</width>
       <height>50</height>
      </rect>
@@ -142,7 +142,7 @@ color: #000000;
 </string>
     </property>
     <property name="text">
-     <string>Login</string>
+     <string>Registration</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -152,7 +152,7 @@ color: #000000;
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>330</y>
+      <y>260</y>
       <width>440</width>
       <height>50</height>
      </rect>
@@ -172,14 +172,14 @@ color: #D4C7C7;
 </string>
     </property>
     <property name="placeholderText">
-     <string>Username or Email</string>
+     <string>Username</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="PasswordInput">
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>435</y>
+      <y>420</y>
       <width>440</width>
       <height>50</height>
      </rect>
@@ -207,7 +207,7 @@ color: #D4C7C7;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>540</y>
+      <y>610</y>
       <width>300</width>
       <height>50</height>
      </rect>
@@ -228,7 +228,7 @@ font-size: 32px;
 color: #D4C7C7;</string>
     </property>
     <property name="text">
-     <string>Login</string>
+     <string>Registration</string>
     </property>
    </widget>
    <widget class="QPushButton" name="PasswordStateButton">
@@ -238,18 +238,10 @@ color: #D4C7C7;</string>
     <property name="geometry">
      <rect>
       <x>492</x>
-      <y>450</y>
+      <y>435</y>
       <width>34</width>
       <height>20</height>
      </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton {
-    background: transparent;
-}</string>
     </property>
     <property name="text">
      <string/>
@@ -268,7 +260,7 @@ color: #D4C7C7;</string>
     <property name="geometry">
      <rect>
       <x>175</x>
-      <y>590</y>
+      <y>660</y>
       <width>205</width>
       <height>30</height>
      </rect>
@@ -285,7 +277,81 @@ color: #FFFFFF;
 </string>
     </property>
     <property name="text">
-     <string>Don’t have an account?</string>
+     <string>Already have an account?</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="EmailInput">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>340</y>
+      <width>440</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(0, 0, 0, 0.65);
+border-radius: 10px;
+border: 1px solid red;
+
+font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+
+color: #D4C7C7;
+
+</string>
+    </property>
+    <property name="placeholderText">
+     <string>Email</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="RepeatPasswordInput">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>500</y>
+      <width>440</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(0, 0, 0, 0.65);
+border-radius: 10px;
+border: 1px solid red;
+
+font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+
+color: #D4C7C7;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Repeat Password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="RepeatPasswordStateButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>492</x>
+      <y>515</y>
+      <width>34</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
     </property>
    </widget>
    <zorder>Background</zorder>
@@ -297,6 +363,9 @@ color: #FFFFFF;
    <zorder>LoginButton</zorder>
    <zorder>PasswordStateButton</zorder>
    <zorder>CreateAccountLabel</zorder>
+   <zorder>EmailInput</zorder>
+   <zorder>RepeatPasswordInput</zorder>
+   <zorder>RepeatPasswordStateButton</zorder>
   </widget>
  </widget>
  <resources/>
