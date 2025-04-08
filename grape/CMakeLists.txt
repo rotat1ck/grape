@@ -34,6 +34,7 @@ qt_add_executable(grape
     # Misc files
     misc/clickQLabel.h
     misc/clickQLabel.cpp
+    src/mainwindow/resize-mainwindow.cpp
 )
 
 qt_add_ui(grape SOURCES
