@@ -243,6 +243,14 @@ color: #D4C7C7;</string>
       <height>20</height>
      </rect>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background: transparent;
+}</string>
+    </property>
     <property name="text">
      <string/>
     </property>
