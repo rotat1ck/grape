@@ -6,29 +6,367 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>464</width>
-    <height>418</height>
-   </rect>
-  </property>
-  <property name="baseSize">
-   <size>
     <width>640</width>
     <height>720</height>
-   </size>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>Juice ITC</family>
+   </font>
   </property>
   <property name="windowTitle">
-   <string>Form</string>
+   <string>Registration</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/* Register Form */
-
-position: relative;
-width: 640px;
-height: 720px;
-
-background: #FFFFFF;
-</string>
+   <string notr="true"/>
   </property>
+  <widget class="QWidget" name="centralwidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>640</width>
+     <height>720</height>
+    </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <widget class="QLabel" name="GrapeLabel">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>50</y>
+      <width>460</width>
+      <height>105</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Julius Sans One</family>
+      <pointsize>-1</pointsize>
+      <italic>false</italic>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 96px;
+line-height: 105px;
+
+color: #000000;
+
+</string>
+    </property>
+    <property name="text">
+     <string>G R A P E</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Background">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>640</width>
+      <height>720</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>ArrowCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">image: url(:/img/login-background)</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="GrapeStick">
+    <property name="geometry">
+     <rect>
+      <x>54</x>
+      <y>99</y>
+      <width>511</width>
+      <height>4</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* Line 2 */
+
+position: absolute;
+width: 511px;
+height: 0px;
+left: 54px;
+top: 103px;
+
+border: 4px solid #FFFFFF;
+</string>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LoginLabel">
+    <property name="geometry">
+     <rect>
+      <x>162</x>
+      <y>160</y>
+      <width>330</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 48px;
+line-height: 52px;
+
+color: #000000;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Registration</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="UsernameInput">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>260</y>
+      <width>440</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(0, 0, 0, 0.65);
+border-radius: 10px;
+border: 1px solid red;
+
+font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+
+color: #D4C7C7;
+
+</string>
+    </property>
+    <property name="placeholderText">
+     <string>Username</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="PasswordInput">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>420</y>
+      <width>440</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(0, 0, 0, 0.65);
+border-radius: 10px;
+border: 1px solid red;
+
+font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+
+color: #D4C7C7;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="LoginButton">
+    <property name="geometry">
+     <rect>
+      <x>170</x>
+      <y>610</y>
+      <width>300</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(0, 0, 0, 0.65);
+border-radius: 10px;
+border: 1px solid red;
+
+font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+
+color: #D4C7C7;</string>
+    </property>
+    <property name="text">
+     <string>Registration</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="PasswordStateButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>492</x>
+      <y>435</y>
+      <width>34</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="CreateAccountLabel">
+    <property name="geometry">
+     <rect>
+      <x>175</x>
+      <y>660</y>
+      <width>205</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 16px;
+
+color: #FFFFFF;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Already have an account?</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="EmailInput">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>340</y>
+      <width>440</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(0, 0, 0, 0.65);
+border-radius: 10px;
+border: 1px solid red;
+
+font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+
+color: #D4C7C7;
+
+</string>
+    </property>
+    <property name="placeholderText">
+     <string>Email</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="RepeatPasswordInput">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>500</y>
+      <width>440</width>
+      <height>50</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: rgba(0, 0, 0, 0.65);
+border-radius: 10px;
+border: 1px solid red;
+
+font-family: 'Julius Sans One';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+
+color: #D4C7C7;</string>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::EchoMode::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Repeat Password</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="RepeatPasswordStateButton">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>492</x>
+      <y>515</y>
+      <width>34</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <zorder>Background</zorder>
+   <zorder>GrapeStick</zorder>
+   <zorder>GrapeLabel</zorder>
+   <zorder>LoginLabel</zorder>
+   <zorder>UsernameInput</zorder>
+   <zorder>PasswordInput</zorder>
+   <zorder>LoginButton</zorder>
+   <zorder>PasswordStateButton</zorder>
+   <zorder>CreateAccountLabel</zorder>
+   <zorder>EmailInput</zorder>
+   <zorder>RepeatPasswordInput</zorder>
+   <zorder>RepeatPasswordStateButton</zorder>
+  </widget>
  </widget>
  <resources/>
  <connections/>
