@@ -1,6 +1,6 @@
 #include "registration.h"
 #include "ui_registration.h"
-#include "../login/login.h"
+
 #include "../../misc/clickQLabel.h"
 
 Registration::Registration(QWidget *parent)
@@ -17,15 +17,17 @@ Registration::Registration(QWidget *parent)
     ClickQLabel* loginButton = new ClickQLabel(ui->centralwidget);
     loginButton->setText("Login");
     loginButton->setGeometry(390, 660, 80, 30);
+
+    connect(loginButton, &ClickQLabel::clicked, this, [this](){
+        emit S_ChangeForm(0);
+    });
 }
 
-Registration::~Registration()
-{
+Registration::~Registration() {
     delete ui;
 }
 
-void Registration::on_PasswordStateButton_clicked()
-{
+void Registration::on_PasswordStateButton_clicked() {
     isPasswordVisible = !isPasswordVisible;
     if (isPasswordVisible) {
         ui->PasswordInput->setEchoMode(QLineEdit::Normal);
@@ -33,8 +35,7 @@ void Registration::on_PasswordStateButton_clicked()
         ui->PasswordInput->setEchoMode(QLineEdit::Password);
     }
 }
-void Registration::on_RepeatPasswordStateButton_clicked()
-{
+void Registration::on_RepeatPasswordStateButton_clicked() {
     isRepeatPasswordVisible = !isRepeatPasswordVisible;
     if (isRepeatPasswordVisible) {
         ui->RepeatPasswordInput->setEchoMode(QLineEdit::Normal);
