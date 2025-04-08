@@ -11,6 +11,10 @@ Login::Login(QWidget *parent) : QWidget(parent) , ui(new Ui::Login) {
     ClickQLabel* registrationButton = new ClickQLabel(ui->centralwidget);
     registrationButton->setText("Register");
     registrationButton->setGeometry(390, 590, 80, 30);
+
+    connect(registrationButton, &ClickQLabel::clicked, this, [this](){
+        emit S_ChangeForm(1);
+    });
 }
 
 Login::~Login()
@@ -29,6 +33,6 @@ void Login::on_PasswordStateButton_clicked() {
 
 
 void Login::on_LoginButton_clicked() {
-
+    emit S_ChangeForm(2);
 }
 

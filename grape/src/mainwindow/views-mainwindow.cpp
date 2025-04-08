@@ -6,16 +6,29 @@ void MainWindow::changeForm(int formId) {
         case 0: { // окно логина
             layout->setCurrentWidget(login);
             setFixedSize(640, 720);
+            setWindowFlags(Qt::Window);
+            close();
+            show();
             break;
         } case 1: { // окно регистрации
             layout->setCurrentWidget(registration);
+            setFixedSize(640, 720);
+            setWindowFlags(Qt::Window);
+            close();
+            show();
             break;
         } case 2: { // окно основной рабочей зоны
             layout->setCurrentWidget(dashboard);
+            setWindowFlags(Qt::FramelessWindowHint);
+            setMaximumSize(QWIDGETSIZE_MAX,QWIDGETSIZE_MAX);
+            setMinimumSize(0,0);
+            close();
+            show();
             break;
         }
     }
 }
+
 
 // функция настраивает основное окно и создает все окна интерфейса
 void MainWindow::setupViews() {
@@ -38,7 +51,11 @@ void MainWindow::setupViews() {
 // функция будет настраивать коннекты, для общения между разными частями программы
 // рекомендую заранее почитать про connect и disconnect
 void MainWindow::setupConnects() {
+    // - - LOGIN - -
+    connect(login, &Login::S_ChangeForm, this, &MainWindow::changeForm);
 
+    // - - Rehistration -  -
+    connect(registration, &Registration::S_ChangeForm, this, &MainWindow::changeForm);
 }
 
 // функция будет определять стартовое окно после запуска приложения
