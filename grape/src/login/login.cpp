@@ -1,8 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
 
-
-
 Login::Login(QWidget *parent) : QWidget(parent) , ui(new Ui::Login) {
     ui->setupUi(this);
 
@@ -27,5 +25,10 @@ void Login::on_PasswordStateButton_clicked() {
     } else {
         ui->PasswordInput->setEchoMode(QLineEdit::Password);
     }
+}
+
+
+void Login::on_LoginButton_clicked() {
+
 }
 
