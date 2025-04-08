@@ -15,6 +15,9 @@ public:
     explicit Registration(QWidget *parent = nullptr);
     ~Registration();
 
+signals:
+    void S_ChangeForm(int formId);
+
 private slots:
     void on_PasswordStateButton_clicked();
     void on_RepeatPasswordStateButton_clicked();

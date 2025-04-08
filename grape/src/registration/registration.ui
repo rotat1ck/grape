@@ -353,6 +353,9 @@ color: #D4C7C7;</string>
     <property name="autoDefault">
      <bool>false</bool>
     </property>
+    <property name="flat">
+     <bool>true</bool>
+    </property>
    </widget>
    <zorder>Background</zorder>
    <zorder>GrapeStick</zorder>

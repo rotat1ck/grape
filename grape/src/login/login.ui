@@ -230,9 +230,6 @@ color: #D4C7C7;
 }
 
 QPushButton:hover  {
-
-border: 10px solid red;
-
 }</string>
     </property>
     <property name="text">

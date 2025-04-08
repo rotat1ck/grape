@@ -16,212 +16,211 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
-  <widget class="QWidget" name="Centralwidget" native="true">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>640</width>
-     <height>720</height>
-    </rect>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
    </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: #A89797;</string>
+   <property name="topMargin">
+    <number>0</number>
    </property>
-   <widget class="QTextBrowser" name="AueWordsBox">
-    <property name="geometry">
-     <rect>
-      <x>153</x>
-      <y>25</y>
-      <width>450</width>
-      <height>74</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="Centralwidget" native="true">
+     <property name="styleSheet">
+      <string notr="true">background-color: #A89797;</string>
+     </property>
+     <widget class="QTextBrowser" name="AueWordsBox">
+      <property name="geometry">
+       <rect>
+        <x>153</x>
+        <y>25</y>
+        <width>450</width>
+        <height>74</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
 
 background: #D9D9D9;
 border-radius: 20px;
 </string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="menuSettings">
-    <property name="geometry">
-     <rect>
-      <x>39</x>
-      <y>25</y>
-      <width>74</width>
-      <height>74</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 37px;
+      </property>
+     </widget>
+     <widget class="QPushButton" name="menuSettings">
+      <property name="geometry">
+       <rect>
+        <x>39</x>
+        <y>25</y>
+        <width>74</width>
+        <height>74</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 37px;
 
 background: #D9D9D9;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 </string>
-    </property>
-    <property name="text">
-     <string>PushButton</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="txtDeadlines">
-    <property name="geometry">
-     <rect>
-      <x>41</x>
-      <y>117</y>
-      <width>208</width>
-      <height>44</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="txtDeadlines">
+      <property name="geometry">
+       <rect>
+        <x>41</x>
+        <y>117</y>
+        <width>208</width>
+        <height>44</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
 font-family: 'Julius Sans One';
 font-style: regular;
 font-weight: 400;
 font-size: 40px;
 line-height: 44px;
 
-display: flex;
-align-items: center;
-text-align: center;
-
 color: #FFFFFF;
 
 </string>
-    </property>
-    <property name="text">
-     <string>Deadlines</string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="DeadlinesBox">
-    <property name="geometry">
-     <rect>
-      <x>25</x>
-      <y>176</y>
-      <width>350</width>
-      <height>160</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
+      </property>
+      <property name="text">
+       <string>Deadlines</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="DeadlinesBox">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>176</y>
+        <width>350</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
 
 background: #D9D9D9;
 border-radius: 20px;
 </string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="NotesBox">
-    <property name="geometry">
-     <rect>
-      <x>25</x>
-      <y>376</y>
-      <width>196</width>
-      <height>312</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="NotesBox">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>376</y>
+        <width>196</width>
+        <height>312</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
 
 background: #D9D9D9;
 border-radius: 20px;
 </string>
-    </property>
-   </widget>
-   <widget class="QTextBrowser" name="NotesBox_2">
-    <property name="geometry">
-     <rect>
-      <x>262</x>
-      <y>460</y>
-      <width>360</width>
-      <height>228</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="NotesBox_2">
+      <property name="geometry">
+       <rect>
+        <x>262</x>
+        <y>460</y>
+        <width>360</width>
+        <height>228</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
 
 background: #D9D9D9;
 border-radius: 20px;
 </string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="txtTimer">
-    <property name="geometry">
-     <rect>
-      <x>453</x>
-      <y>117</y>
-      <width>112</width>
-      <height>44</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
+      </property>
+     </widget>
+     <widget class="QLabel" name="txtTimer">
+      <property name="geometry">
+       <rect>
+        <x>453</x>
+        <y>117</y>
+        <width>112</width>
+        <height>44</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
 font-family: 'Julius Sans One';
 font-style: regular;
 font-weight: 400;
 font-size: 40px;
 line-height: 44px;
 
-display: flex;
-align-items: center;
-text-align: center;
-
 color: #FFFFFF;
 
 </string>
-    </property>
-    <property name="text">
-     <string>Timer</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="txtTasks">
-    <property name="geometry">
-     <rect>
-      <x>277</x>
-      <y>398</y>
-      <width>108</width>
-      <height>44</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">
+      </property>
+      <property name="text">
+       <string>Timer</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="txtTasks">
+      <property name="geometry">
+       <rect>
+        <x>277</x>
+        <y>398</y>
+        <width>108</width>
+        <height>44</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
 font-family: 'Julius Sans One';
 font-style: regular;
 font-weight: 400;
 font-size: 40px;
 line-height: 44px;
 
-display: flex;
-align-items: center;
-text-align: center;
-
 color: #FFFFFF;
 
 </string>
-    </property>
-    <property name="text">
-     <string>Tasks</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>410</x>
-      <y>180</y>
-      <width>201</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>30</pointsize>
-     </font>
-    </property>
-    <property name="text">
-     <string>00:00:00</string>
-    </property>
-   </widget>
-  </widget>
+      </property>
+      <property name="text">
+       <string>Tasks</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>180</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>00:00:00</string>
+      </property>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
