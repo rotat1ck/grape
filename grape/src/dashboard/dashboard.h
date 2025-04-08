@@ -2,6 +2,8 @@
 #define DASHBOARD_H
 
 #include <QWidget>
+#include <QTextBrowser>
+#include <QTimer>
 
 namespace Ui {
 class Dashboard;
@@ -17,9 +19,15 @@ public:
 
 private slots:
     void on_menuSettings_clicked();
+    void updateTextPosition(); // для обновления позиции текста
 
 private:
     Ui::Dashboard *ui;
+    QTextBrowser *movingTextBrowser;
+    QTimer *timer;
+    int position;
+    int widthWindow;
+    int step;
 };
 
-#endif // DASHBOARD_H
+#endif
