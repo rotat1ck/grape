@@ -5,6 +5,7 @@ from .routes.users import users_bp # <= подключение путей, пе�
 # какой будет префикс для конечной точки, пример: grape.rotatick.ru/api/users/login, где /api/users префикс 
 # для конечной точки login
 from .routes.notes import notes_bp
+from .routes.aue import aue_bp
 
 
 def startApp():
@@ -13,5 +14,6 @@ def startApp():
 
     app.register_blueprint(users_bp, url_prefix='/api/users') # <= обозначение префикса /api/users
     app.register_blueprint(notes_bp, url_prifix='/api/notes') # <= обозначение префикса /api/notes
+    app.register_blueprint(aue_bp, url_prefix='/api/aue')
 
     return app # возвращаем объект приложения в main.py для запуска
