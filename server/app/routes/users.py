@@ -21,8 +21,8 @@ users_bp = Blueprint("/api/users", __name__) # <= префикс для коне
 
 @users_bp.route("/login", methods=["GET"])
 def usersLogin():
-    username = request.form.get('username')
-    password = request.form.get('password')
+    username = request.args.get('username')
+    password = request.args.get('password')
     if not username: # проверка наличия имени пользователя в запросе
         return jsonify({"error": "Email or username is required"}), 400
     
@@ -43,9 +43,9 @@ def usersLogin():
 
 @users_bp.route('/register', methods=['POST'])
 def usersRegister():
-    email = request.form.get('email')
-    username = request.form.get('username')
-    password = request.form.get('password')
+    email = request.args.get('email')
+    username = request.args.get('username')
+    password = request.args.get('password')
 
     if not email: # проверка наличия email в запросе
         return jsonify({"error": "Email is required"}), 400

@@ -451,6 +451,26 @@ color: #FFFFFF;
      <zorder>NotesBox_2</zorder>
      <zorder>txtTimer</zorder>
      <zorder>txtTasks</zorder>
+
+<!--      <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>170</y>
+        <width>201</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>00:00:00</string>
+      </property>
+     </widget> -->
+
     </widget>
    </item>
   </layout>

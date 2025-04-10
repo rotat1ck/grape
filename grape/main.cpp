@@ -8,6 +8,7 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv); // <- создание приложения *вызовы методов api системы*
     // Загружаем шрифт из ресурсов
     QFontDatabase::addApplicationFont(":/fonts/JuliusSansOne-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/fonts/Comfortaa-VariableFont_wght.ttf");
 
     MainWindow w; // <- создание объекта класса mainwindow и вызов его конструктора
     /*

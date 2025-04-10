@@ -4,7 +4,9 @@
 #include <QWidget>
 #include <QTextBrowser>
 #include <QTimer>
+#include <QTime>
 #include <QDate>
+
 #include "../settingsmenu/settingsmenu.h"
 #include "../adddeadlinedialog/adddeadlinedialog.h"
 
@@ -36,6 +38,11 @@ private slots:
     void on_timerPlusButton_clicked();
     void on_timerMinusButton_clicked();
     void on_addDeadlineButton_clicked();
+
+    // void on_menuSettings_clicked(); // кнопка с цитатами
+    void auewordsInit();
+    void updateTextPosition(); // для обновления позиции текста
+
 
 private:
     Ui::Dashboard *ui;
