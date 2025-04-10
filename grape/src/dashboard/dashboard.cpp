@@ -4,12 +4,15 @@
 #include <QVBoxLayout>
 #include <algorithm>
 
+#include "../adddeadlinedialog/adddeadlinedialog.h"
+
 Dashboard::Dashboard(QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Dashboard)
 {
     ui->setupUi(this);
     // Создаем меню настроек
+    deadlineLayout = new QVBoxLayout(ui->DeadlinesBoxContents);
     settingsMenu = new SettingsMenu(this);
 
     // Настройка таймера обратного отсчета
@@ -148,72 +151,75 @@ void Dashboard::on_addDeadlineButton_clicked()
     dialog->show();
 }
 
-void Dashboard::updateDeadlinesList()
-{
-    QString content = "<div style='font-family: \"Julius Sans One\"; padding: 10px;'>";
-    
-    if (deadlines.isEmpty()) {
-        content += "<div style='text-align: center; color: #FFFFFF; font-size: 16px; margin-top: 20px;'>"
-                  "Нет активных дедлайнов</div>";
-    } else {
-        for (const Deadline& deadline : deadlines) {
-            QDate today = QDate::currentDate();
-            int daysLeft = today.daysTo(deadline.date);
-            
-            QString backgroundColor = "#E8D5D5";  // Базовый цвет (более 3 дней)
-            QString textColor = "#6D5959";        // Тёмно-серый для текста
-            QString borderColor = "#D4C1C1";      // Светло-розовый для рамки
-            QString accentColor = "#8B7E7E";      // Акцентный цвет для даты
-            
-            if (daysLeft < 0) {
-                backgroundColor = "#FFE6E6";  // Просрочено
-                borderColor = "#FFCCCC";
-                accentColor = "#CC7777";
-            } else if (daysLeft == 1) {
-                backgroundColor = "#FFE6E6";  // 1 день
-                borderColor = "#FFD6D6";
-                accentColor = "#CC8888";
-            } else if (daysLeft == 2) {
-                backgroundColor = "#FFECD9";  // 2 дня
-                borderColor = "#FFE0C2";
-                accentColor = "#CCA088";
-            } else if (daysLeft == 3) {
-                backgroundColor = "#FFF2E6";  // 3 дня
-                borderColor = "#FFE6D1";
-                accentColor = "#CCB088";
-            }
-            
-            QString daysLeftText = daysLeft < 0 ? 
-                                 "Просрочено" : 
-                                 (daysLeft == 0 ? "Сегодня" : 
-                                  QString("%1 %2").arg(daysLeft)
-                                                .arg(daysLeft == 1 ? "день" :
-                                                     (daysLeft < 5 ? "дня" : "дней")));
-            
-            content += QString(
-                "<div style='margin-bottom: 15px; padding: 15px; "
-                "background-color: %1; color: %2; border: 2px solid %3; "
-                "border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);'>"
-                "<div style='display: flex; justify-content: space-between; align-items: center;'>"
-                "<div style='flex-grow: 1;'>"
-                "<div style='font-size: 16px; color: %5;'>%4 - %6</div>"
-                "</div>"
-                "<div style='text-align: right; padding-left: 15px;'>"
-                "<div style='font-size: 16px; font-weight: bold;'>%7</div>"
-                "</div>"
-                "</div>"
-                "</div>"
-            )
-            .arg(backgroundColor)
-            .arg(textColor)
-            .arg(borderColor)
-            .arg(deadline.name)
-            .arg(accentColor)
-            .arg(deadline.date.toString("dd.MM.yyyy"))
-            .arg(daysLeftText);
+void Dashboard::updateDeadlinesList() {
+    qDebug() << "entered";
+    if (deadlineLayout) {
+        QLayoutItem* item;
+        while ((item = deadlineLayout->takeAt(0))) {
+            delete item->widget();
+            delete item;
         }
     }
-    
-    content += "</div>";
-    ui->DeadlinesBox->setHtml(content);
+    qDebug() << "deleted";
+
+    for (const Deadline& deadline : deadlines) {
+        QDate today = QDate::currentDate();
+        int daysLeft = today.daysTo(deadline.date);
+
+        QString backgroundColor = "#D9D9D9";  // Базовый цвет (более 3 дней)
+        QString textColor = "#6D5959";        // Тёмно-серый для текста
+        QString borderColor = "#D4C1C1";      // Светло-розовый для рамки
+        QString accentColor = "#8B7E7E";      // Акцентный цвет для даты
+
+        if (daysLeft < 0) {
+            backgroundColor = "#FFE6E6";  // Просрочено
+            borderColor = "#FFCCCC";
+            accentColor = "#CC7777";
+        } else if (daysLeft == 1) {
+            backgroundColor = "#FFE6E6";  // 1 день
+            borderColor = "#FFD6D6";
+            accentColor = "#CC8888";
+        } else if (daysLeft == 2) {
+            backgroundColor = "#FFECD9";  // 2 дня
+            borderColor = "#FFE0C2";
+            accentColor = "#CCA088";
+        } else if (daysLeft == 3) {
+            backgroundColor = "#FFF2E6";  // 3 дня
+            borderColor = "#FFE6D1";
+            accentColor = "#CCB088";
+        }
+
+        QString daysLeftText = daysLeft < 0 ?
+                             "Просрочено" :
+                             (daysLeft == 0 ? "Сегодня" :
+                              QString("%1 %2").arg(daysLeft)
+                                            .arg(daysLeft == 1 ? "день" :
+                                                 (daysLeft < 5 ? "дня" : "дней")));
+
+        qDebug() << "calcalated";
+        QString deadlineItemStyleSheet =
+            "font-size: 20px;"
+            "background-color: " + backgroundColor + ";"
+            "font-family: Comfortaa;"
+        ;
+
+        QWidget* deadlineItem = new QWidget(this);
+        QHBoxLayout* layout = new QHBoxLayout(deadlineItem); // Create a layout for the deadlineItem
+        deadlineItem->setStyleSheet(deadlineItemStyleSheet);
+
+        QLabel* deadlineItemText = new QLabel(deadline.name, deadlineItem);
+        deadlineItemText->setAlignment(Qt::AlignLeft);
+
+
+        QLabel* deadlineItemDate = new QLabel(deadline.date.toString(), deadlineItem);
+        deadlineItemDate->setAlignment(Qt::AlignRight);
+
+        layout->addWidget(deadlineItemText); // Add the name label to the layout
+        layout->addWidget(deadlineItemDate);  // Add the date label to the layout
+
+        deadlineItem->setLayout(layout); // Set the layout to the deadlineItem
+
+        deadlineLayout->addWidget(deadlineItem);
+        qDebug() << "added";
+    }
 }

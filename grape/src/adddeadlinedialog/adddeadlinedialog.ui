@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>365</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,6 @@
    <string notr="true">QDialog {
     background-color: #B4A7A7;
     border: 2px solid #8B7E7E;
-    border-radius: 10px;
 }
 
 QCalendarWidget QWidget {
@@ -91,7 +90,7 @@ margin-bottom: 20px;</string>
       <string>Новый дедлайн</string>
      </property>
      <property name="alignment">
-      <set>Qt::AlignCenter</set>
+      <set>Qt::AlignmentFlag::AlignCenter</set>
      </property>
     </widget>
    </item>
@@ -227,7 +226,7 @@ QPushButton {
    <item>
     <spacer name="verticalSpacer">
      <property name="orientation">
-      <enum>Qt::Vertical</enum>
+      <enum>Qt::Orientation::Vertical</enum>
      </property>
      <property name="sizeHint" stdset="0">
       <size>

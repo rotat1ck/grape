@@ -3,12 +3,14 @@
 
 #include <QWidget>
 #include <QTextBrowser>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
 #include <QTimer>
 #include <QTime>
 #include <QDate>
 
 #include "../settingsmenu/settingsmenu.h"
-#include "../adddeadlinedialog/adddeadlinedialog.h"
+
 
 namespace Ui {
 class Dashboard;
@@ -41,7 +43,6 @@ private slots:
 
     // void on_menuSettings_clicked(); // кнопка с цитатами
     void auewordsInit();
-    void updateTextPosition(); // для обновления позиции текста
 
 
 private:
@@ -50,11 +51,15 @@ private:
     QTimer *timer;
     int position;
     int step;
+
     SettingsMenu *settingsMenu;
+
     QTimer *countdownTimer;
     int remainingSeconds;
     bool isTimerRunning;
+
     QList<Deadline> deadlines;
+    QVBoxLayout* deadlineLayout;
     bool isDialogOpen;
 
     void setupCountdownTimer();
