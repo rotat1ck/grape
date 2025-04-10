@@ -31,3 +31,4 @@ Dashboard::~Dashboard()
     delete settingsMenu;
     delete countdownTimer;
 }
+
