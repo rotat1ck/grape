@@ -16,3 +16,8 @@ class Note(db.Model):
     note = db.Column(db.String(1024), nullable=False) # id пользователя
     startstamp = db.Column(db.DateTime, nullable=False) # время создания заметки
     endstamp = db.Column(db.DateTime, nullable=True) # время окончания заметки
+    
+class Auephase(db.Model):
+    __tablename__ = 'auephases' # название табилцы
+    id = db.Column(db.Integer, primary_key=True) # id фразы
+    phase = db.Column(db.String(1024), nullable=False) # название фразы

@@ -31,10 +31,12 @@ private slots:
     void defineStartWindow();
 
 private:
-    // - - UI - -
-    QPoint dragStartPosition;
-    bool dragging = false;
+    // - - POSITION - -
+    QPoint dragStartPosition; // позиция курсора при переносе окна
+    bool dragging = false; // статус переноса окна
+    bool resizing = false; // статус расширения окна
 
+    // - - UI - -
     // Главный объект интерфейса, через него идет переключение форм дизайна,
     // т.е - этот объект определяет что будет находиться на экране
     QWidget* centralWidget;
@@ -47,27 +49,9 @@ private:
     Dashboard* dashboard; // <- описание объекта в src/dashboard/dashboard.h
 
 protected:
-    void mousePressEvent(QMouseEvent *event) override {
-        if (event->button() == Qt::LeftButton) {
-            dragStartPosition = event->globalPosition().toPoint() - frameGeometry().topLeft();
-            dragging = true;
-            event->accept();
-        }
-    }
-
-    void mouseMoveEvent(QMouseEvent *event) override {
-        if (dragging && (event->buttons() & Qt::LeftButton)) {
-            move(event->globalPosition().toPoint() - dragStartPosition);
-            event->accept();
-        }
-    }
-
-    void mouseReleaseEvent(QMouseEvent *event) override {
-        if (event->button() == Qt::LeftButton) {
-            dragging = false;
-            event->accept();
-        }
-    }
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseReleaseEvent(QMouseEvent *event) override;
 };
 
 #endif // MAINWINDOW_H

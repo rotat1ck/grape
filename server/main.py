@@ -7,4 +7,4 @@ with app.app_context():
     db.create_all() # <= создание таблиц в базе данных
 
 if __name__ == '__main__':
-    app.run() # <= запуск сервера :)
+    app.run(host='0.0.0.0', port=5004) # <= запуск сервера :)
