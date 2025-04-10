@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QTextBrowser>
 #include <QTimer>
+#include <QTime>
+
 
 namespace Ui {
 class Dashboard;
@@ -18,7 +20,8 @@ public:
     ~Dashboard();
 
 private slots:
-    void on_menuSettings_clicked();
+    // void on_menuSettings_clicked(); // кнопка с цитатами
+    void auewordsInit();
     void updateTextPosition(); // для обновления позиции текста
 
 private:

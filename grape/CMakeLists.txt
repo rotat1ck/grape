@@ -26,8 +26,12 @@ qt_add_executable(grape
     # Dashboard page files
     src/dashboard/dashboard.h
     src/dashboard/dashboard.cpp
-
-
+    src/dashboard/timer-dashboard.cpp
+    src/dashboard/ayewords-dashboard.cpp
+    src/dashboard/deadlines-dashboard.cpp
+    src/dashboard/tasks-dashboard.cpp
+    src/dashboard/notes-dashboard.cpp
+    src/dashboard/settings-dashboard.cpp
     src/registration/registration.h
     src/registration/registration.cpp
 
@@ -35,6 +39,8 @@ qt_add_executable(grape
     misc/clickQLabel.h
     misc/clickQLabel.cpp
     src/mainwindow/resize-mainwindow.cpp
+
+
 )
 
 qt_add_ui(grape SOURCES
