@@ -108,20 +108,27 @@ color: #FFFFFF;
      <widget class="QPushButton" name="addDeadlineButton">
       <property name="geometry">
        <rect>
-        <x>25</x>
-        <y>333</y>
-        <width>350</width>
-        <height>40</height>
+        <x>320</x>
+        <y>120</y>
+        <width>50</width>
+        <height>50</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comfortaa</family>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
     background-color: #D9D9D9;
     border: 2px solid #8B7E7E;
-    border-radius: 20px;
-    font-family: 'Julius Sans One';
-    font-size: 16px;
-    color: #000000;
+    border-radius: 25px;
+    font-family: 'Comfortaa';
+    font-size: 25px;
+    color: #8B2222;
 }
 QPushButton:hover {
     background-color: #E5E5E5;
@@ -129,10 +136,14 @@ QPushButton:hover {
 }
 QPushButton:pressed {
     background-color: #C0C0C0;
-}</string>
+}
+QPushButton {
+    image: url(:/img/plus.svg);
+}
+</string>
       </property>
       <property name="text">
-       <string>+ Add Deadline</string>
+       <string/>
       </property>
      </widget>
      <widget class="QTextBrowser" name="NotesBox">

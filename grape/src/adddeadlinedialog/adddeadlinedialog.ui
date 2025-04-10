@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>365</height>
+    <height>366</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -213,7 +213,7 @@ QPushButton:pressed {
     background-color: #C0C0C0;
 }
 QPushButton {
-    image: url(:/img/calendar.svg);
+    image: url(:/img/plus.svg);
 }</string>
        </property>
        <property name="flat">
