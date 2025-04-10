@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>200</width>
-    <height>150</height>
+    <height>180</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,13 +16,17 @@
   <property name="styleSheet">
    <string notr="true">QDialog {
     background-color: #D9D9D9;
-	border: 1px solid #A0A0A0;
-	border-radius: 12px;
+    border: 1px solid #A0A0A0;
+    border-radius: 35px;
+}
+/* Чтобы кнопки не вылезали за скругленные углы */
+QDialog &gt; QWidget {
+    border-radius: 35px;
 }
 QPushButton {
     background-color: #F2F2F2;
-    border-radius: 10px;
-    font-family: 'Julius Sans One';
+    border-radius: 15px;
+    font-family: 'Comfortaa';
     font-size: 16px;
     color: #000000;
     padding: 5px;

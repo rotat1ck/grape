@@ -41,7 +41,6 @@ private slots:
     void on_timerMinusButton_clicked();
     void on_addDeadlineButton_clicked();
 
-    // void on_menuSettings_clicked(); // кнопка с цитатами
     void auewordsInit();
 
 
