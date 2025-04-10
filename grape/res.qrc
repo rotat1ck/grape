@@ -4,5 +4,6 @@
         <file>img/password.svg</file>
         <file>img/login-background.png</file>
         <file>img/settings.svg</file>
+        <file>img/calendar.svg</file>
     </qresource>
 </RCC>
