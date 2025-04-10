@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddDeadlineDialog</class>
+ <widget class="QDialog" name="AddDeadlineDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Добавить дедлайн</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog {
+    background-color: #B4A7A7;
+    border: 2px solid #8B7E7E;
+    border-radius: 10px;
+}
+
+QCalendarWidget QWidget {
+    alternate-background-color: #D9D9D9;
+}
+
+QCalendarWidget QAbstractItemView:enabled {
+    font-size: 14px;
+    color: #000000;
+    background-color: #D9D9D9;
+    selection-background-color: #8B7E7E;
+    selection-color: #FFFFFF;
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #8B7E7E;
+}
+
+QCalendarWidget QToolButton {
+    color: #FFFFFF;
+    font-family: 'Julius Sans One';
+    font-size: 16px;
+    background-color: transparent;
+    padding: 5px;
+}
+
+QCalendarWidget QSpinBox {
+    font-family: 'Julius Sans One';
+    font-size: 14px;
+    background-color: #D9D9D9;
+    selection-background-color: #8B7E7E;
+    selection-color: #FFFFFF;
+}
+
+QCalendarWidget QMenu {
+    background-color: #D9D9D9;
+    color: #000000;
+}
+
+QCalendarWidget QMenu::item:selected {
+    background-color: #8B7E7E;
+    color: #FFFFFF;
+}
+</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <property name="spacing">
+    <number>15</number>
+   </property>
+   <property name="leftMargin">
+    <number>20</number>
+   </property>
+   <property name="topMargin">
+    <number>20</number>
+   </property>
+   <property name="rightMargin">
+    <number>20</number>
+   </property>
+   <property name="bottomMargin">
+    <number>20</number>
+   </property>
+   <item>
+    <widget class="QLabel" name="titleLabel">
+     <property name="styleSheet">
+      <string notr="true">font-family: 'Julius Sans One';
+font-size: 24px;
+color: #FFFFFF;
+margin-bottom: 20px;</string>
+     </property>
+     <property name="text">
+      <string>Новый дедлайн</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="nameLabel">
+     <property name="styleSheet">
+      <string notr="true">font-family: 'Julius Sans One';
+font-size: 16px;
+color: #FFFFFF;
+margin-top: 10px;</string>
+     </property>
+     <property name="text">
+      <string>Название:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="nameEdit">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>40</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLineEdit {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: 'Julius Sans One';
+    font-size: 16px;
+    color: #000000;
+}
+QLineEdit:focus {
+    border: 2px solid #FFFFFF;
+    background-color: #E5E5E5;
+}</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="dateLabel">
+     <property name="styleSheet">
+      <string notr="true">font-family: 'Julius Sans One';
+font-size: 16px;
+color: #FFFFFF;
+margin-top: 10px;</string>
+     </property>
+     <property name="text">
+      <string>Дата:</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="dateLayout">
+     <item>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDateEdit {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-family: 'Julius Sans One';
+    font-size: 16px;
+    color: #000000;
+}
+QDateEdit:focus {
+    border: 2px solid #FFFFFF;
+    background-color: #E5E5E5;
+}
+QDateEdit::drop-down {
+    border: none;
+    width: 30px;
+}
+QDateEdit::down-arrow {
+    image: url(:/img/calendar.svg);
+    width: 16px;
+    height: 16px;
+}</string>
+       </property>
+       <property name="calendarPopup">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="calendarButton">
+       <property name="minimumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>40</width>
+         <height>40</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 8px;
+    padding: 5px;
+}
+QPushButton:hover {
+    background-color: #E5E5E5;
+    border-color: #FFFFFF;
+}
+QPushButton:pressed {
+    background-color: #C0C0C0;
+}
+QPushButton {
+    image: url(:/img/calendar.svg);
+}</string>
+       </property>
+       <property name="flat">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>20</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <property name="spacing">
+      <number>15</number>
+     </property>
+     <item>
+      <widget class="QPushButton" name="okButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: 'Julius Sans One';
+    font-size: 16px;
+    color: #000000;
+}
+QPushButton:hover {
+    background-color: #E5E5E5;
+    border-color: #FFFFFF;
+}
+QPushButton:pressed {
+    background-color: #C0C0C0;
+}</string>
+       </property>
+       <property name="text">
+        <string>Добавить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: 'Julius Sans One';
+    font-size: 16px;
+    color: #000000;
+}
+QPushButton:hover {
+    background-color: #E5E5E5;
+    border-color: #FFFFFF;
+}
+QPushButton:pressed {
+    background-color: #C0C0C0;
+}</string>
+       </property>
+       <property name="text">
+        <string>Отмена</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>okButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AddDeadlineDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>86</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>cancelButton</sender>
+   <signal>clicked()</signal>
+   <receiver>AddDeadlineDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>313</x>
+     <y>266</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

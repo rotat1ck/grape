@@ -32,8 +32,17 @@ qt_add_executable(grape
     src/dashboard/tasks-dashboard.cpp
     src/dashboard/notes-dashboard.cpp
     src/dashboard/settings-dashboard.cpp
+
     src/registration/registration.h
     src/registration/registration.cpp
+
+    # Settings menu files
+    src/settingsmenu/settingsmenu.h
+    src/settingsmenu/settingsmenu.cpp
+
+    # AddDeadlineDialog menu files
+    src/adddeadlinedialog/adddeadlinedialog.h
+    src/adddeadlinedialog/adddeadlinedialog.cpp
 
     # Misc files
     misc/clickQLabel.h
@@ -47,6 +56,8 @@ qt_add_ui(grape SOURCES
     src/login/login.ui
     src/dashboard/dashboard.ui
     src/registration/registration.ui
+    src/settingsmenu/settingsmenu.ui
+    src/adddeadlinedialog/adddeadlinedialog.ui
 )
 
 target_link_libraries(grape
