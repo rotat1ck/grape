@@ -6,5 +6,6 @@
         <file>img/settings.svg</file>
         <file>img/calendar.svg</file>
         <file>fonts/Comfortaa-VariableFont_wght.ttf</file>
+        <file>img/plus.svg</file>
     </qresource>
 </RCC>

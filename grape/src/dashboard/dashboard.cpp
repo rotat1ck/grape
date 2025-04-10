@@ -211,7 +211,7 @@ void Dashboard::updateDeadlinesList() {
         deadlineItemText->setAlignment(Qt::AlignLeft);
 
 
-        QLabel* deadlineItemDate = new QLabel(deadline.date.toString(), deadlineItem);
+        QLabel* deadlineItemDate = new QLabel(daysLeftText, deadlineItem);
         deadlineItemDate->setAlignment(Qt::AlignRight);
 
         layout->addWidget(deadlineItemText); // Add the name label to the layout
