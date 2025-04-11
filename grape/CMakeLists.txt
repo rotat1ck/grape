@@ -93,6 +93,8 @@ if(WIN32)
         ${LIBRARY_PATH}/libbcrypt.a
         ${LIBRARY_PATH}/libws2_32.a
     )
+    set(INCLUDE_PATH "${CMAKE_SOURCE_DIR}/net/include")
+    include_directories(${INCLUDE_PATH})
 elseif(UNIX)
     find_package(OpenSSL REQUIRED)
     target_link_libraries(grape PRIVATE
