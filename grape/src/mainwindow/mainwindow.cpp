@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
 MainWindow::~MainWindow() {
     // удаление объектов которые мы создали
     // создание с помощью new требует ручной очистки памяти
+    delete netHandler;
     delete layout;
     delete login;
     delete registration;

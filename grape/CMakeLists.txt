@@ -18,6 +18,7 @@ qt_add_executable(grape
     src/mainwindow/mainwindow.cpp
     src/mainwindow/views-mainwindow.cpp
     src/mainwindow/net-mainwindow.cpp
+    src/mainwindow/resize-mainwindow.cpp
 
     # Login page files
     src/login/login.h
@@ -47,9 +48,26 @@ qt_add_executable(grape
     # Misc files
     misc/clickQLabel.h
     misc/clickQLabel.cpp
-    src/mainwindow/resize-mainwindow.cpp
 
 
+
+    # =======
+    # Снизу находятся файлы для работы с сетью
+    # =======
+
+    # Base NET Files <- интерфейс для взаимодействия со всеми нет хендлерами
+    net/base-net/net.h
+    net/base-net/net.cpp
+
+    # User NET Files <- файлы класса для работы с пользователем(логин, регистрация, сохранение данных и т.д.)
+    net/user-net/user-net.h
+    net/user-net/user-net.cpp
+
+    # Includes <- все зависимости
+    net/include/httplib/httplib.h # <- библиотека запросов
+    net/include/json/json.hpp # <- библиотека для парса json объектов
+    net/include/hasher/hasher.h # <- мои старейшие файлы, хэширование пароля
+    net/include/hasher/hasher.cpp # <- мои старейшие файлы, хэширование пароля
 )
 
 qt_add_ui(grape SOURCES
@@ -65,6 +83,23 @@ target_link_libraries(grape
         Qt::Core
         Qt::Widgets
 )
+
+if(WIN32)
+    set(LIBRARY_PATH "${CMAKE_SOURCE_DIR}/net/lib")
+    target_link_libraries(grape PRIVATE
+        ${LIBRARY_PATH}/libssl.a
+        ${LIBRARY_PATH}/libcrypto.a
+        ${LIBRARY_PATH}/libcrypt32.a
+        ${LIBRARY_PATH}/libbcrypt.a
+        ${LIBRARY_PATH}/libws2_32.a
+    )
+elseif(UNIX)
+    find_package(OpenSSL REQUIRED)
+    target_link_libraries(grape PRIVATE
+        OpenSSL::SSL
+        OpenSSL::Crypto
+    )
+endif()
 
 include(GNUInstallDirs)
 

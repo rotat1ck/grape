@@ -6,6 +6,8 @@
 #include <QStackedLayout>
 #include <QMouseEvent>
 
+#include "../../net/base-net/net.h"
+
 #include "../login/login.h"
 #include "../dashboard/dashboard.h"
 #include "../registration/registration.h"
@@ -35,6 +37,9 @@ private:
     QPoint dragStartPosition; // позиция курсора при переносе окна
     bool dragging = false; // статус переноса окна
     bool resizing = false; // статус расширения окна
+
+    // - - NET - -
+    Net* netHandler;
 
     // - - UI - -
     // Главный объект интерфейса, через него идет переключение форм дизайна,
