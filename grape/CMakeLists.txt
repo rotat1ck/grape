@@ -60,7 +60,6 @@ qt_add_executable(grape
     net/base-net/net.cpp
 
     # User NET Files <- файлы класса для работы с пользователем(логин, регистрация, сохранение данных и т.д.)
-    net/user-net/user-net.h
     net/user-net/user-net.cpp
 
     # Includes <- все зависимости

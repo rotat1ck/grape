@@ -1,24 +1,38 @@
-#ifndef USER-NET_H
-#define USER-NET_H
+// #ifndef USER-NET_H
+// #define USER-NET_H
 
-#define CPPHTTPLIB_OPENSSL_SUPPORT
-#include "../include/httplib/httplib.h"
-#include "../include/hasher/hasher.h"
-#include <QString>
-#include <QObject>
+// #define CPPHTTPLIB_OPENSSL_SUPPORT
+// #include "../include/httplib/httplib.h"
+// #include "../include/hasher/hasher.h"
+// #include <QString>
+// #include <QObject>
+// #include <vector>
 
-class User : public QObject {
-    Q_OBJECT
+// class Net;
 
-private:
-    QObject* netHandler;
-signals:
-    void S_CacheToken(std::string token);
+// class User : public QObject {
+//     Q_OBJECT
 
-public:
-    User(QObject* parent = nullptr) : netHandler(parent) { }
+// private:
+//     Net* netHandler;
+// signals:
+//     void S_CacheToken(std::string token);
 
-    void sendLoginRequest(QString username, QString password);
-};
+// public:
+//     User(Net* parent = nullptr) : netHandler(parent) { }
 
-#endif // USER-NET_H
+//     void sendLoginRequest(QString usernameEntry, QString passwordEntry);
+
+//     void getUserData();
+
+//     // Сделать структуру в src/types/structs.h
+//     //std::vector<std::string> getUserDeadlines();
+
+//     // Сделать структуру в src/types/structs.h
+//     //std::vector<std::string> getUserTasks();
+
+//     // Сделать структуру в src/types/structs.h
+//     //std::vector<std::string> getUserSettings();
+// };
+
+// #endif // USER-NET_H
