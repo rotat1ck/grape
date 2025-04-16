@@ -1,4 +1,4 @@
-#include "..\settingsmenu\settingsmenu.h"
+#include "../settingsmenu/settingsmenu.h"
 #include "dashboard.h"
 #include "ui_dashboard.h"
 #include <QScrollBar>

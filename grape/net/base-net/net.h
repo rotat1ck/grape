@@ -45,6 +45,7 @@ public:
     User(Net* netHandler) : netHandler(netHandler) { }
 
     bool sendLoginRequest(QString usernameEntry, QString passwordEntry);
+    bool sendRegisterRequest(QString emailEntry, QString usernameEntry, QString passwordEntry);
 
     bool getUserData();
 
