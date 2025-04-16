@@ -62,6 +62,10 @@ qt_add_executable(grape
     # User NET Files <- файлы класса для работы с пользователем(логин, регистрация, сохранение данных и т.д.)
     net/user-net/user-net.cpp
 
+    # Dashboard NET Files <- файлы классов используемые на основной странице
+    net/dashboard-net/deadline-net.cpp
+    net/dashboard-net/task-net.cpp
+
     # Includes <- все зависимости
     net/include/httplib/httplib.h # <- библиотека запросов
     net/include/json/json.hpp # <- библиотека для парса json объектов

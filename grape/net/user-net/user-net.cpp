@@ -1,5 +1,4 @@
 #include "../base-net/net.h"
-#include <iostream>
 
 bool User::sendLoginRequest(QString usernameEntry, QString passwordEntry) {
     std::string username = usernameEntry.toUtf8().toStdString();
@@ -35,7 +34,6 @@ bool User::sendRegisterRequest(QString emailEntry, QString usernameEntry, QStrin
 
     if (auto res = netHandler->cl->Post(endpoint)) {
         if (res->status != 200) {
-            std::cout << res->body << std::endl;
             return false;
         } else {
             json response = json::parse(res->body);
