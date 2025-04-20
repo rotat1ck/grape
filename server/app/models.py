@@ -9,13 +9,18 @@ class User(db.Model):
     email = db.Column(db.String(120), unique=True, nullable=False) # email пользователя
     hash = db.Column(db.String(120), nullable=False) # захэшированный пароль
 
-class Note(db.Model):
-    __tablename__ = 'notes' # название табилцы
+class Task(db.Model):
+    __tablename__ = 'tasks' # название табилцы
     id = db.Column(db.Integer, primary_key=True) # id заметки
     user_id = db.Column(db.Integer, db.ForeignKey('users.id')) # id пользователя
-    note = db.Column(db.String(1024), nullable=False) # id пользователя
-    startstamp = db.Column(db.DateTime, nullable=False) # время создания заметки
-    endstamp = db.Column(db.DateTime, nullable=True) # время окончания заметки
+    content = db.Column(db.String(1024), nullable=False) # запись
+    
+class Deadline(db.Model):
+    __tablename__ = 'deadlines' # название таблицы
+    id = db.Column(db.Integer, primary_key=True) # id дедлайна
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id')) # id пользователя
+    content = db.Column(db.String(1024), nullable=False) # запись
+    endstamp = db.Column(db.Integer, nullable=True) # время окончания дедлайна
     
 class Auephase(db.Model):
     __tablename__ = 'auephases' # название табилцы

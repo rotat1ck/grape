@@ -22,5 +22,31 @@ void Net::cacheToken(std::string token) {
 }
 
 bool Net::checkServerStatus() {
+    std::string endpoint = "/api/health";
 
+    if (auto res = cl->Get(endpoint)) {
+        if (res->status != 200) {
+            return false;
+        } else {
+            return true;
+        }
+    } else {
+        return false;
+    }
+}
+
+Net::Result Net::retryRequest(int retryCount, std::function<Net::Result()> func) {
+    int currentTry = 1;
+    while (currentTry <= retryCount) {
+        Result returned = func();
+        if (!returned.isFailure) {
+            return {returned.status, returned.message, returned.isFailure};
+        } else if (returned.status == 401) {
+            return {returned.status, "Incorrect username/email or password", true};
+        } else if (returned.status == 403) {
+            user->updateToken();
+        }
+        currentTry++;
+    }
+    return {0, "Connection failed", true};
 }

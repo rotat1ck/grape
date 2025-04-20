@@ -3,9 +3,10 @@
 void MainWindow::setupNetHandlers() {
     netHandler = new Net();
 
-    if (netHandler->user->sendLoginRequest("test", "test")) {
+    Net::Result res = netHandler->user->sendLoginRequest("zov@gmail.com", "testtest");
+    if (!res.isFailure) {
         qDebug() << netHandler->token;
     } else {
-        qDebug() << "Server said fuck you";
+        qDebug() << res.message;
     }
 }
