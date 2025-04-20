@@ -41,7 +41,6 @@ void Dashboard::on_addDeadlineButton_clicked()
 }
 
 void Dashboard::updateDeadlinesList() {
-    qDebug() << "entered";
     if (deadlineLayout) {
         QLayoutItem* item;
         while ((item = deadlineLayout->takeAt(0))) {
@@ -49,7 +48,6 @@ void Dashboard::updateDeadlinesList() {
             delete item;
         }
     }
-    qDebug() << "deleted";
 
     for (const Deadline& deadline : deadlines) {
         QDate today = QDate::currentDate();
@@ -101,7 +99,6 @@ void Dashboard::updateDeadlinesList() {
         }
 
 
-        qDebug() << "calcalated";
         QString deadlineItemStyleSheet =
             "font-size: 20px;"
             "background-color: " + backgroundColor + ";"

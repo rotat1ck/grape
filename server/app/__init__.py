@@ -4,8 +4,9 @@ from .config import initConfig # <= файл конфигурации, созд�
 from .routes.users import users_bp # <= подключение путей, переменные заканчивающиеся на _bp определяют 
 # какой будет префикс для конечной точки, пример: grape.rotatick.ru/api/users/login, где /api/users префикс 
 # для конечной точки login
-from .routes.notes import notes_bp
 from .routes.aue import aue_bp
+from .routes.tasks import tasks_bp
+from .routes.deadlines import deadlines_bp
 
 
 def startApp():
@@ -13,7 +14,8 @@ def startApp():
     initConfig(app) # запуск файла конфигурации config.py
 
     app.register_blueprint(users_bp, url_prefix='/api/users') # <= обозначение префикса /api/users
-    app.register_blueprint(notes_bp, url_prifix='/api/notes') # <= обозначение префикса /api/notes
     app.register_blueprint(aue_bp, url_prefix='/api/aue')
+    app.register_blueprint(tasks_bp, url_prefix='/api/tasks')
+    app.register_blueprint(deadlines_bp, url_prefix='/api/deadlines')
 
     return app # возвращаем объект приложения в main.py для запуска

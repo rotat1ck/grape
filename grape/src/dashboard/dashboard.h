@@ -10,19 +10,11 @@
 #include <QDate>
 
 #include "../settingsmenu/settingsmenu.h"
-
+#include "../types/structs.h"
 
 namespace Ui {
 class Dashboard;
 }
-
-struct Deadline {
-    QString name;
-    QDate date;
-    bool operator<(const Deadline& other) const {
-        return date < other.date;
-    }
-};
 
 class Dashboard : public QWidget
 {
@@ -42,6 +34,9 @@ private slots:
     void on_addDeadlineButton_clicked();
 
     void auewordsInit();
+    //tasks
+    void on_addTaskButton_clicked();
+
 
 
 private:
@@ -66,6 +61,16 @@ private:
     void updateCountdownTimer();
     void setupDeadlinesBox();
     void updateDeadlinesList();
+
+    //tasks
+    void setupTasksUI();
+    void onAddTaskClicked();
+    void addNewTask(const QString &taskName);
+
+    void addTaskToUI(const QString& taskName);  // Добавление задачи в интерфейс
+
+    QVBoxLayout* tasksLayout;  // Layout для списка задач
+    QList<QWidget*> taskWidgets;  // Список виджетов задач
 };
 
 #endif
