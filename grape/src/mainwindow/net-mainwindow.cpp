@@ -3,14 +3,10 @@
 void MainWindow::setupNetHandlers() {
     netHandler = new Net();
 
-    if (netHandler->checkServerStatus()) {
-        qDebug() << "Server is healthy";
-        if (netHandler->user->sendLoginRequest("zov@gmail.com", "testtest")) {
-            qDebug() << netHandler->token;
-        } else {
-            qDebug() << "Server said fuck you";
-        }
+    Net::Result res = netHandler->user->sendLoginRequest("zov@gmail.com", "testtest");
+    if (!res.isFailure) {
+        qDebug() << netHandler->token;
     } else {
-        qDebug() << "Server health check failed";
+        qDebug() << res.message;
     }
 }

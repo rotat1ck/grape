@@ -39,7 +39,7 @@ def addDeadline(user):
 def deleteDeadline(user, deadlineId):
     deadline = Deadline.query.get(deadlineId)
     if deadline is None:
-        return jsonify({"message": "Task not found"}), 404
+        return jsonify({"error": "Task not found"}), 404
     
     db.session.delete(deadline)
     db.session.commit()

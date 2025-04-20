@@ -35,7 +35,7 @@ def addTask(user):
 def deleteTask(user, taskId):
     task = Task.query.get(taskId)
     if task is None:
-        return jsonify({"message": "Task not found"}), 404
+        return jsonify({"error": "Task not found"}), 404
     
     db.session.delete(task)
     db.session.commit()

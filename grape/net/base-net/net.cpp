@@ -35,6 +35,18 @@ bool Net::checkServerStatus() {
     }
 }
 
-Net::Result Net::retryRequest(int retryCount, Net::Result func()) {
-    return {0, "", false};
+Net::Result Net::retryRequest(int retryCount, std::function<Net::Result()> func) {
+    int currentTry = 1;
+    while (currentTry <= retryCount) {
+        Result returned = func();
+        if (!returned.isFailure) {
+            return {returned.status, returned.message, returned.isFailure};
+        } else if (returned.status == 401) {
+            return {returned.status, "Incorrect username/email or password", true};
+        } else if (returned.status == 403) {
+            user->updateToken();
+        }
+        currentTry++;
+    }
+    return {0, "Connection failed", true};
 }
