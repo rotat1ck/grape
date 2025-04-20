@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>addtask</class>
+ <widget class="QWidget" name="addtask">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #B4A7A7;
+    border: 2px solid #8B7E7E;
+}
+QPushButton{
+	border-radius: 25px;
+}
+QLineEdit {
+    background-color: #DFDDDD;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 20px;
+    min-height: 30px;
+	size: 50px;
+	color: black;
+}
+</string>
+  </property>
+  <widget class="QLabel" name="NewTaskLabel">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>361</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Comfortaa</family>
+     <pointsize>-1</pointsize>
+    </font>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: 'Comfortaa';
+font-size: 24px;
+color: #FFFFFF;
+margin-bottom: 20px;
+border: 0px;</string>
+   </property>
+   <property name="text">
+    <string>Новая задача</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignmentFlag::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="NameTaskLine">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>381</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QLineEdit {
+    background-color: #DFDDDD;
+    border: 1px solid #C0C0C0;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 16px;
+    min-height: 30px;
+}</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="CancelButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>200</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #DFDDDD; 
+    color: black;
+    border: 1px solid gray; 
+    border-radius: 5px; 
+    padding: 5px; 
+	font-size: 20px;
+	font-family: 'Comfortaa';
+}
+
+QPushButton:hover {
+    background-color: #D0D0D0; /* при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #C0C0C0; /*  при нажатии */
+}</string>
+   </property>
+   <property name="text">
+    <string>Отмена</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="AddButton">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>200</y>
+     <width>171</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #DFDDDD; 
+    color: black;
+    border: 1px solid gray; 
+    border-radius: 5px; 
+    padding: 5px; 
+	font-size: 20px;
+	font-family: 'Comfortaa';
+}
+
+QPushButton:hover {
+    background-color: #D0D0D0; /* при наведении */
+}
+
+QPushButton:pressed {
+    background-color: #C0C0C0; /*  при нажатии */
+}</string>
+   </property>
+   <property name="text">
+    <string>Добавить</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="NameLabel">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>80</y>
+     <width>101</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-family: 'Comfortaa';
+font-size: 18px;
+color: #FFFFFF;
+margin-top: 5px;
+border: 0px;</string>
+   </property>
+   <property name="text">
+    <string>Название</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

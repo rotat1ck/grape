@@ -37,14 +37,14 @@ QCalendarWidget QWidget#qt_calendar_navigationbar {
 
 QCalendarWidget QToolButton {
     color: #FFFFFF;
-    font-family: 'Julius Sans One';
+    font-family: 'Comfortaa';
     font-size: 16px;
     background-color: transparent;
     padding: 5px;
 }
 
 QCalendarWidget QSpinBox {
-    font-family: 'Julius Sans One';
+    font-family: 'Comfortaa';
     font-size: 14px;
     background-color: #D9D9D9;
     selection-background-color: #8B7E7E;
@@ -81,7 +81,7 @@ QCalendarWidget QMenu::item:selected {
    <item>
     <widget class="QLabel" name="titleLabel">
      <property name="styleSheet">
-      <string notr="true">font-family: 'Julius Sans One';
+      <string notr="true">font-family: 'Comfortaa';
 font-size: 24px;
 color: #FFFFFF;
 margin-bottom: 20px;</string>
@@ -97,7 +97,7 @@ margin-bottom: 20px;</string>
    <item>
     <widget class="QLabel" name="nameLabel">
      <property name="styleSheet">
-      <string notr="true">font-family: 'Julius Sans One';
+      <string notr="true">font-family: 'Comfortaa';
 font-size: 16px;
 color: #FFFFFF;
 margin-top: 10px;</string>
@@ -135,7 +135,7 @@ QLineEdit:focus {
    <item>
     <widget class="QLabel" name="dateLabel">
      <property name="styleSheet">
-      <string notr="true">font-family: 'Julius Sans One';
+      <string notr="true">font-family: 'Comfortaa';
 font-size: 16px;
 color: #FFFFFF;
 margin-top: 10px;</string>
@@ -242,37 +242,6 @@ QPushButton {
       <number>15</number>
      </property>
      <item>
-      <widget class="QPushButton" name="okButton">
-       <property name="minimumSize">
-        <size>
-         <width>0</width>
-         <height>45</height>
-        </size>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">QPushButton {
-    background-color: #D9D9D9;
-    border: 2px solid #8B7E7E;
-    border-radius: 8px;
-    padding: 8px 20px;
-    font-family: 'Julius Sans One';
-    font-size: 16px;
-    color: #000000;
-}
-QPushButton:hover {
-    background-color: #E5E5E5;
-    border-color: #FFFFFF;
-}
-QPushButton:pressed {
-    background-color: #C0C0C0;
-}</string>
-       </property>
-       <property name="text">
-        <string>Добавить</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QPushButton" name="cancelButton">
        <property name="minimumSize">
         <size>
@@ -286,7 +255,7 @@ QPushButton:pressed {
     border: 2px solid #8B7E7E;
     border-radius: 8px;
     padding: 8px 20px;
-    font-family: 'Julius Sans One';
+    font-family: 'Comfortaa';
     font-size: 16px;
     color: #000000;
 }
@@ -300,6 +269,37 @@ QPushButton:pressed {
        </property>
        <property name="text">
         <string>Отмена</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="okButton">
+       <property name="minimumSize">
+        <size>
+         <width>0</width>
+         <height>45</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 8px;
+    padding: 8px 20px;
+    font-family: 'Comfortaa';
+    font-size: 16px;
+    color: #000000;
+}
+QPushButton:hover {
+    background-color: #E5E5E5;
+    border-color: #FFFFFF;
+}
+QPushButton:pressed {
+    background-color: #C0C0C0;
+}</string>
+       </property>
+       <property name="text">
+        <string>Добавить</string>
        </property>
       </widget>
      </item>

@@ -17,9 +17,9 @@ users_bp = Blueprint("/api/users", __name__) # <= префикс для коне
 # он примает параметр конечной точки, в данном случае /login
 # и http метод(ы) какие можно использовать совершая запрос
 # в сумме получиться что функция usersLogin будет вызываться при запросе на
-# grape.rotatick.ru/api/users/login с http методом GET
+# grape.rotatick.ru/api/users/login с http методом POST
 
-@users_bp.route("/login", methods=["GET"])
+@users_bp.route("/login", methods=["POST"])
 def usersLogin():
     username = request.args.get('username')
     password = request.args.get('password')
