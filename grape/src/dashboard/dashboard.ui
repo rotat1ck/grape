@@ -163,23 +163,6 @@ border-radius: 20px;
 </string>
       </property>
      </widget>
-     <widget class="QTextBrowser" name="NotesBox_2">
-      <property name="geometry">
-       <rect>
-        <x>262</x>
-        <y>460</y>
-        <width>360</width>
-        <height>228</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">
-
-background: #D9D9D9;
-border-radius: 20px;
-</string>
-      </property>
-     </widget>
      <widget class="QLabel" name="txtTimer">
       <property name="geometry">
        <rect>
@@ -472,16 +455,128 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
        </property>
       </widget>
      </widget>
+     <widget class="QPushButton" name="addTaskButton">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>400</y>
+        <width>50</width>
+        <height>50</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Comfortaa</family>
+        <pointsize>-1</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 25px;
+    font-family: 'Comfortaa';
+    font-size: 25px;
+    color: #8B2222;
+}
+QPushButton:hover {
+    background-color: #E5E5E5;
+    border-color: #FFFFFF;
+}
+QPushButton:pressed {
+    background-color: #C0C0C0;
+}
+QPushButton {
+    image: url(:/img/plus.svg);
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="TaskBox">
+      <property name="geometry">
+       <rect>
+        <x>262</x>
+        <y>460</y>
+        <width>360</width>
+        <height>228</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QScrollArea {
+    border: none;
+    background: #D9D9D9;
+}
+
+QScrollArea &gt; QWidget &gt; QWidget {
+    background: #D9D9D9;
+}
+
+QScrollBar:vertical {
+    border: none;
+    background: #D9D9D9;
+    width: 8px;
+    margin: 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #A0A0A0;  /* Цвет ползунка */
+    border-radius: 16px;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, 
+QScrollBar::sub-line:vertical {
+    height: 0px;
+    background: none;
+}</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="TaskBoxContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>360</width>
+         <height>228</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QScrollArea { border: none; }
+
+QScrollBar:vertical {
+    border: none;
+    background: #D9D9D9;
+    width: 8px;
+    margin: 0px;
+}
+QScrollBar::handle:vertical {
+    background: #8B7E7E;
+    border-radius: 4px;
+    min-height: 20px;
+}
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    height: 0px;
+}</string>
+       </property>
+      </widget>
+     </widget>
      <zorder>addDeadlineButton</zorder>
      <zorder>DeadlinesTimerBox</zorder>
      <zorder>AueWordsBox</zorder>
      <zorder>menuSettings</zorder>
      <zorder>txtDeadlines</zorder>
      <zorder>NotesBox</zorder>
-     <zorder>NotesBox_2</zorder>
      <zorder>txtTimer</zorder>
      <zorder>txtTasks</zorder>
      <zorder>DeadlinesBox</zorder>
+     <zorder>addTaskButton</zorder>
+     <zorder>TaskBox</zorder>
     </widget>
    </item>
   </layout>

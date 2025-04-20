@@ -5,6 +5,7 @@
 #include <algorithm>
 
 #include "../adddeadlinedialog/adddeadlinedialog.h"
+#include "../addtasks/addtask.h"
 
 Dashboard::Dashboard(QWidget *parent)
     : QWidget(parent)
@@ -23,6 +24,9 @@ Dashboard::Dashboard(QWidget *parent)
     
     // Ауе цитаты
     auewordsInit();
+
+    // Таски
+    setupTasksUI();
 }
 
 Dashboard::~Dashboard()
