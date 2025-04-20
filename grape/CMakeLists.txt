@@ -49,7 +49,8 @@ qt_add_executable(grape
     misc/clickQLabel.h
     misc/clickQLabel.cpp
 
-
+    # Types files <- файлы с типами для простой передачи данных от модуля net к любой точке кода
+    src/types/structs.h
 
     # =======
     # Снизу находятся файлы для работы с сетью

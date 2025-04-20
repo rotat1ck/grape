@@ -15,6 +15,10 @@ class User;
 // Base class
 class Net : public QObject {
     Q_OBJECT
+
+signals:
+    void S_CacheToken(std::string token);
+
 protected:
     toHash hasher;
 
@@ -23,8 +27,10 @@ protected:
         std::string message;
         bool isFailure;
     };
-signals:
-    void S_CacheToken(std::string token);
+
+private:
+    void cacheToken(std::string token);
+    Result retryRequest(int retryCount, Result func());
 
 public:
     httplib::Client* cl = new httplib::Client("https://grape.rotatick.ru");
@@ -37,17 +43,19 @@ public:
 
     std::string getHashed(std::string msg);
     bool checkServerStatus();
-    void cacheToken(std::string token);
 };
 
 class User {
+private:
+    std::string username;
+    std::string password;
+
+    bool updateToken();
 public:
     User(Net* netHandler) : netHandler(netHandler) { }
 
     bool sendLoginRequest(QString usernameEntry, QString passwordEntry);
     bool sendRegisterRequest(QString emailEntry, QString usernameEntry, QString passwordEntry);
-
-    bool getUserData();
 
     // Сделать структуру в src/types/structs.h
     //std::vector<std::string> getUserDeadlines();

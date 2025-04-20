@@ -10,19 +10,11 @@
 #include <QDate>
 
 #include "../settingsmenu/settingsmenu.h"
-
+#include "../types/structs.h"
 
 namespace Ui {
 class Dashboard;
 }
-
-struct Deadline {
-    QString name;
-    QDate date;
-    bool operator<(const Deadline& other) const {
-        return date < other.date;
-    }
-};
 
 class Dashboard : public QWidget
 {
