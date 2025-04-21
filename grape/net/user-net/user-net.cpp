@@ -1,30 +1,10 @@
 #include "../base-net/net.h"
 
-// - - UPDATE TOKEN FUNC - -
-
-bool User::updateToken() {
-    std::string tempUsername = "username=" + username;
-    std::string tempPassword = "password=" + netHandler->getHashed(password);
-
-    std::string endpoint = "/api/users/login?" + tempUsername + "&" + tempPassword;
-    if (auto res = netHandler->cl->Post(endpoint)) {
-        if (res->status != 200) {
-            return false;
-        } else {
-            json response = json::parse(res->body);
-            emit netHandler->S_CacheToken(response["token"]);
-            return true;
-        }
-    } else {
-        return false;
-    }
-}
-
 // - - LOGIN FUNCS - -
 
 Net::Result User::sendLoginRequestImp() {
-    std::string tempUsername = "username=" + username;
-    std::string tempPassword = "password=" + netHandler->getHashed(password);
+    std::string tempUsername = "username=" + netHandler->username;
+    std::string tempPassword = "password=" + netHandler->getHashed(netHandler->password);
 
     std::string endpoint = "/api/users/login?" + tempUsername + "&" + tempPassword;
     if (auto res = netHandler->cl->Post(endpoint)) {
@@ -46,8 +26,8 @@ Net::Result User::sendLoginRequestImp() {
 }
 
 Net::Result User::sendLoginRequest(QString usernameEntry, QString passwordEntry) {
-    username = usernameEntry.toUtf8().toStdString();
-    password = passwordEntry.toUtf8().toStdString();
+    netHandler->username = usernameEntry.toUtf8().toStdString();
+    netHandler->password = passwordEntry.toUtf8().toStdString();
 
     return netHandler->retryRequest(3, [this]() {
         return sendLoginRequestImp();
@@ -57,9 +37,9 @@ Net::Result User::sendLoginRequest(QString usernameEntry, QString passwordEntry)
 // - - REGISTER FUNCS - -
 
 Net::Result User::sendRegisterRequestImp() {
-    std::string tempEmail = "email=" + email;
-    std::string tempUsername = "username=" + username;
-    std::string tempPassword = "password=" + netHandler->getHashed(password);
+    std::string tempEmail = "email=" + netHandler->email;
+    std::string tempUsername = "username=" + netHandler->username;
+    std::string tempPassword = "password=" + netHandler->getHashed(netHandler->password);
 
     std::string endpoint = "/api/users/register?" + tempEmail + "&" + tempUsername + "&" + tempPassword;
     if (auto res = netHandler->cl->Post(endpoint)) {
@@ -81,9 +61,9 @@ Net::Result User::sendRegisterRequestImp() {
 }
 
 Net::Result User::sendRegisterRequest(QString emailEntry, QString usernameEntry, QString passwordEntry) {
-    email = emailEntry.toUtf8().toStdString();
-    username = usernameEntry.toUtf8().toStdString();
-    password = passwordEntry.toUtf8().toStdString();
+    netHandler->email = emailEntry.toUtf8().toStdString();
+    netHandler->username = usernameEntry.toUtf8().toStdString();
+    netHandler->password = passwordEntry.toUtf8().toStdString();
 
     return netHandler->retryRequest(3, [this]() {
         return sendRegisterRequestImp();

@@ -13,7 +13,8 @@ struct Deadline {
 };
 
 struct Task {
-
+    int id;
+    QString name;
 };
 
 struct Settings {
