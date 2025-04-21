@@ -2,6 +2,7 @@
 
 Net::Net() {
     user = new User(this);
+    tasks = new Tasks(this);
     cl->set_connection_timeout(0, 500000);
     cl->set_default_headers({{"Host", "grape.rotatick.ru"}});
 
@@ -11,6 +12,7 @@ Net::Net() {
 Net::~Net() {
     delete cl;
     delete user;
+    delete tasks;
 }
 
 std::string Net::getHashed(std::string msg) {
@@ -42,9 +44,9 @@ Net::Result Net::retryRequest(int retryCount, std::function<Net::Result()> func)
         if (!returned.isFailure) {
             return {returned.status, returned.message, returned.isFailure};
         } else if (returned.status == 401) {
-            return {returned.status, "Incorrect username/email or password", true};
-        } else if (returned.status == 403) {
             updateToken();
+        } else if (returned.status == 400) {
+            return {returned.status, returned.message, true};
         }
         currentTry++;
     }

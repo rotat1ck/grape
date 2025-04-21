@@ -9,4 +9,9 @@ void MainWindow::setupNetHandlers() {
     } else {
         qDebug() << res.message;
     }
+
+    std::vector<Task> tasks = netHandler->tasks->getUserTasks();
+    for (int i = 0; i < tasks.size(); ++i) {
+        qDebug() << i << ". " + tasks[i].name;
+    }
 }
