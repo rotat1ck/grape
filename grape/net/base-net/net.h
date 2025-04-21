@@ -2,18 +2,30 @@
 #define NET_H
 
 #define CPPHTTPLIB_OPENSSL_SUPPORT
+// Внешние зависимости
 #include "../include/httplib/httplib.h"
 #include "../include/json/json.hpp"
 #include "../include/hasher/hasher.h"
+
+// Используемые типы
 #include <QString>
 #include <QObject>
 #include <functional>
+#include <vector>
+
+// Структуры
+#include "../../src/types/structs.h"
 
 using json = nlohmann::json;
 
 class User;
+class Tasks;
 
+
+// =======
 // Base class
+// =======
+
 class Net : public QObject {
     Q_OBJECT
 
@@ -23,6 +35,11 @@ signals:
 public:
     // Клиент
     httplib::Client* cl = new httplib::Client("https://grape.rotatick.ru");
+
+    // Пользователькие данные
+    std::string email;
+    std::string username;
+    std::string password;
 
     /*
         Структура возвращаемого ответа
@@ -39,6 +56,7 @@ public:
     // Токен и доп. объекты расширения сетевого обработчика(Net класса)
     std::string token;
     User* user;
+    Tasks* tasks;
 
     Net();
     ~Net();
@@ -47,18 +65,21 @@ public:
     std::string getHashed(std::string msg);
     bool checkServerStatus();
     Result retryRequest(int retryCount, std::function<Net::Result()> func);
+    bool updateToken();
 
 private:
     toHash hasher;
     void cacheToken(std::string token);
 };
 
+
+// =======
+// User class
+// =======
+
 class User {
 private:
-    // Пользователькие данные
-    std::string email;
-    std::string username;
-    std::string password;
+    Net* netHandler;
 
     /*
         Внутренние функции, используются из-под публичных
@@ -95,12 +116,23 @@ public:
     //std::vector<std::string> getUserDeadlines();
 
     // Сделать структуру в src/types/structs.h
-    //std::vector<std::string> getUserTasks();
-
-    // Сделать структуру в src/types/structs.h
     //std::vector<std::string> getUserSettings();
+};
+
+
+// =======
+// Tasks class
+// =======
+
+class Tasks {
 private:
     Net* netHandler;
+
+    Net::Result getUserTasksImp();
+public:
+    Tasks(Net* netHandler) : netHandler(netHandler) { }
+
+    std::vector<Task> getUserTasks();
 };
 
 #endif // NET_H
