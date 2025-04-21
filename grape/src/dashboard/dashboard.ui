@@ -506,14 +506,7 @@ QPushButton {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QScrollArea {
-    border: none;
-    background: #D9D9D9;
-}
-
-QScrollArea &gt; QWidget &gt; QWidget {
-    background: #D9D9D9;
-}
+       <string notr="true">QScrollArea { border: none; }
 
 QScrollBar:vertical {
     border: none;
@@ -521,17 +514,13 @@ QScrollBar:vertical {
     width: 8px;
     margin: 0px;
 }
-
 QScrollBar::handle:vertical {
-    background: #A0A0A0;  /* Цвет ползунка */
-    border-radius: 16px;
+    background: #8B7E7E;
+    border-radius: 4px;
     min-height: 20px;
 }
-
-QScrollBar::add-line:vertical, 
-QScrollBar::sub-line:vertical {
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
     height: 0px;
-    background: none;
 }</string>
       </property>
       <property name="widgetResizable">
@@ -547,21 +536,11 @@ QScrollBar::sub-line:vertical {
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QScrollArea { border: none; }
-
-QScrollBar:vertical {
-    border: none;
+        <string notr="true">QWidget {
     background: #D9D9D9;
-    width: 8px;
-    margin: 0px;
-}
-QScrollBar::handle:vertical {
-    background: #8B7E7E;
-    border-radius: 4px;
-    min-height: 20px;
-}
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
-    height: 0px;
+    border-radius: 20px;
+    padding: 15px;
+    font-family: 'Julius Sans One';
 }</string>
        </property>
       </widget>
