@@ -129,12 +129,14 @@ private:
     Net* netHandler;
 
     Net::Result getUserTasksImp();
+
     Net::Result addUserTaskImp(QString content);
     Net::Result deleteUserTaskImp(int id);
 public:
     Tasks(Net* netHandler) : netHandler(netHandler) { }
 
     std::vector<Task> getUserTasks();
+
     Net::Result addUserTask(QString content);
     Net::Result deleteUserTask(int id);
 };
