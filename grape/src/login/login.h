@@ -4,6 +4,7 @@
 #include <QWidget>
 
 #include "../../misc/clickQLabel.h"
+#include "../../net/base-net/net.h"
 
 namespace Ui {
 class Login;
@@ -14,7 +15,7 @@ class Login : public QWidget
     Q_OBJECT
 
 public:
-    explicit Login(QWidget *parent = nullptr);
+    explicit Login(QWidget *parent = nullptr, Net* netHandler = nullptr);
     ~Login();
 
 signals:
@@ -27,6 +28,7 @@ private slots:
 
 private:
     Ui::Login *ui;
+    Net* netHandler;
     bool isPasswordVisible = false;
 };
 

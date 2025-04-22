@@ -7,8 +7,8 @@
 #include "../adddeadlinedialog/adddeadlinedialog.h"
 #include "../addtasks/addtask.h"
 
-Dashboard::Dashboard(QWidget *parent)
-    : QWidget(parent)
+Dashboard::Dashboard(QWidget *parent, Net* netHandler)
+    : QWidget(parent), netHandler(netHandler)
     , ui(new Ui::Dashboard)
 {
     ui->setupUi(this);
@@ -27,6 +27,24 @@ Dashboard::Dashboard(QWidget *parent)
 
     // Таски
     setupTasksUI();
+
+    // =======
+    // ТЕСТОВЫЙ КОД, УДАЛИТЬ
+    // =======
+
+    netHandler->tasks->addUserTask("GOIDA");
+
+    std::vector<Task> tasks = netHandler->tasks->getUserTasks();
+    for (int i = 0; i < tasks.size(); ++i) {
+        qDebug() << i << ". " + tasks[i].name;
+    }
+
+    netHandler->tasks->deleteUserTask(tasks[tasks.size() - 1].id);
+
+    tasks = netHandler->tasks->getUserTasks();
+    for (int i = 0; i < tasks.size(); ++i) {
+        qDebug() << i << ". " + tasks[i].name;
+    }
 }
 
 Dashboard::~Dashboard()

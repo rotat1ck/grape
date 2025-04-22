@@ -3,6 +3,10 @@
 void MainWindow::setupNetHandlers() {
     netHandler = new Net();
 
+    // =======
+    // ТЕСТОВЫЙ КОД, УДАЛИТЬ
+    // =======
+
     Net::Result res = netHandler->user->sendLoginRequest("zov@gmail.com", "testtest");
 
     if (!res.isFailure) {
@@ -10,20 +14,4 @@ void MainWindow::setupNetHandlers() {
     } else {
         qDebug() << res.message;
     }
-
-    // netHandler->tasks->addUserTask("GOIDA");
-
-    std::vector<Task> tasks = netHandler->tasks->getUserTasks();
-    for (int i = 0; i < tasks.size(); ++i) {
-        qDebug() << i << ". " + tasks[i].name;
-    }
-
-    Net::Result a = netHandler->tasks->deleteUserTask(0);
-    qDebug() << a.status;
-    qDebug() << a.message;
-
-    // tasks = netHandler->tasks->getUserTasks();
-    // for (int i = 0; i < tasks.size(); ++i) {
-    //     qDebug() << i << ". " + tasks[i].name;
-    // }
 }

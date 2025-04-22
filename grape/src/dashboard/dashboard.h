@@ -10,6 +10,7 @@
 #include <QDate>
 #include <vector>
 
+#include "../../net/base-net/net.h"
 #include "../settingsmenu/settingsmenu.h"
 #include "../types/structs.h"
 
@@ -22,7 +23,7 @@ class Dashboard : public QWidget
     Q_OBJECT
 
 public:
-    explicit Dashboard(QWidget *parent = nullptr);
+    explicit Dashboard(QWidget *parent = nullptr, Net* netHandler = nullptr);
     ~Dashboard();
 
 private slots:
@@ -41,7 +42,9 @@ private slots:
 
 
 private:
+    // Base
     Ui::Dashboard *ui;
+    Net* netHandler;
 
     // AUE
     QTextBrowser *movingTextBrowser;

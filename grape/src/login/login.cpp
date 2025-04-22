@@ -1,7 +1,10 @@
 #include "login.h"
 #include "ui_login.h"
 
-Login::Login(QWidget *parent) : QWidget(parent) , ui(new Ui::Login) {
+Login::Login(QWidget *parent, Net* netHandler)
+    : QWidget(parent), netHandler(netHandler),
+    ui(new Ui::Login)
+{
     ui->setupUi(this);
 
     QIcon icon;

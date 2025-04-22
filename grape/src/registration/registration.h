@@ -3,6 +3,8 @@
 
 #include <QWidget>
 
+#include "../../net/base-net/net.h"
+
 namespace Ui {
 class Registration;
 }
@@ -12,7 +14,7 @@ class Registration : public QWidget
     Q_OBJECT
 
 public:
-    explicit Registration(QWidget *parent = nullptr);
+    explicit Registration(QWidget *parent = nullptr, Net* netHandler = nullptr);
     ~Registration();
 
 signals:
@@ -24,6 +26,7 @@ private slots:
 
 private:
     Ui::Registration *ui;
+    Net* netHandler;
     bool isPasswordVisible = false;
     bool isRepeatPasswordVisible = false;
 };
