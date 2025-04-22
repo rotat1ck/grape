@@ -10,6 +10,7 @@
 // Используемые типы
 #include <QString>
 #include <QObject>
+#include <QDate>
 #include <functional>
 #include <vector>
 
@@ -20,6 +21,7 @@ using json = nlohmann::json;
 
 class User;
 class Tasks;
+class Deadlines;
 
 
 // =======
@@ -57,6 +59,7 @@ public:
     std::string token;
     User* user;
     Tasks* tasks;
+    Deadlines* deadlines;
 
     Net();
     ~Net();
@@ -131,6 +134,7 @@ private:
     Net::Result getUserTasksImp();
 
     Net::Result addUserTaskImp(QString content);
+
     Net::Result deleteUserTaskImp(int id);
 public:
     Tasks(Net* netHandler) : netHandler(netHandler) { }
@@ -138,7 +142,31 @@ public:
     std::vector<Task> getUserTasks();
 
     Net::Result addUserTask(QString content);
+
     Net::Result deleteUserTask(int id);
+};
+
+// =======
+// Deadlines class
+// =======
+
+class Deadlines {
+private:
+    Net* netHandler;
+
+    Net::Result getUserDeadlinesImp();
+
+    Net::Result addUserDeadlineImp(QString content, QDate endstamp);
+
+    Net::Result deleteUserDeadlineImp(int id);
+public:
+    Deadlines(Net* netHandler) : netHandler(netHandler) { }
+
+    std::vector<Deadline> getUserDeadlines();
+
+    Net::Result addUserDeadline(QString content, QDate endstamp);
+
+    Net::Result deleteUserDeadline(int id);
 };
 
 #endif // NET_H

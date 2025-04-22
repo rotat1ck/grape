@@ -8,6 +8,7 @@
 #include <QTimer>
 #include <QTime>
 #include <QDate>
+#include <vector>
 
 #include "../settingsmenu/settingsmenu.h"
 #include "../types/structs.h"
@@ -41,36 +42,39 @@ private slots:
 
 private:
     Ui::Dashboard *ui;
+
+    // AUE
     QTextBrowser *movingTextBrowser;
     QTimer *timer;
     int position;
     int step;
 
+    // Settings
     SettingsMenu *settingsMenu;
 
+    // Timer
     QTimer *countdownTimer;
     int remainingSeconds;
     bool isTimerRunning;
-
-    QList<Deadline> deadlines;
-    QVBoxLayout* deadlineLayout;
-    bool isDialogOpen;
-
     void setupCountdownTimer();
     void updateTimerDisplay();
     void updateCountdownTimer();
-    void setupDeadlinesBox();
+
+    // Deadlines
+    std::vector<Deadline> deadlines;
+    QVBoxLayout* deadlineLayout;
+    bool isDialogOpen;
     void updateDeadlinesList();
+    void setupDeadlinesBox();
 
     //tasks
     void setupTasksUI();
     void onAddTaskClicked();
     void addNewTask(const QString &taskName);
-
     void addTaskToUI(const QString& taskName);  // Добавление задачи в интерфейс
-
     QVBoxLayout* tasksLayout;  // Layout для списка задач
     QList<QWidget*> taskWidgets;  // Список виджетов задач
+
 };
 
 #endif

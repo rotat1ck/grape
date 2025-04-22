@@ -27,10 +27,11 @@ void Dashboard::on_addDeadlineButton_clicked()
     connect(dialog, &QDialog::finished, this, [this, dialog](int result) {
         if (result == QDialog::Accepted) {
             Deadline newDeadline;
+
             newDeadline.name = dialog->getDeadlineName();
             newDeadline.date = dialog->getDeadlineDate();
 
-            deadlines.append(newDeadline);
+            deadlines.push_back(newDeadline);
             std::sort(deadlines.begin(), deadlines.end());
             updateDeadlinesList();
         }

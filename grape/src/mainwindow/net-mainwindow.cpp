@@ -11,17 +11,19 @@ void MainWindow::setupNetHandlers() {
         qDebug() << res.message;
     }
 
-    netHandler->tasks->addUserTask("GOIDA");
+    // netHandler->tasks->addUserTask("GOIDA");
 
     std::vector<Task> tasks = netHandler->tasks->getUserTasks();
     for (int i = 0; i < tasks.size(); ++i) {
         qDebug() << i << ". " + tasks[i].name;
     }
 
-    netHandler->tasks->deleteUserTask(tasks[tasks.size() - 1].id);
+    Net::Result a = netHandler->tasks->deleteUserTask(0);
+    qDebug() << a.status;
+    qDebug() << a.message;
 
-    tasks = netHandler->tasks->getUserTasks();
-    for (int i = 0; i < tasks.size(); ++i) {
-        qDebug() << i << ". " + tasks[i].name;
-    }
+    // tasks = netHandler->tasks->getUserTasks();
+    // for (int i = 0; i < tasks.size(); ++i) {
+    //     qDebug() << i << ". " + tasks[i].name;
+    // }
 }
