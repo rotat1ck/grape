@@ -27,24 +27,6 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
 
     // Таски
     setupTasksUI();
-
-    // =======
-    // ТЕСТОВЫЙ КОД, УДАЛИТЬ
-    // =======
-
-    netHandler->tasks->addUserTask("GOIDA");
-
-    std::vector<Task> tasks = netHandler->tasks->getUserTasks();
-    for (int i = 0; i < tasks.size(); ++i) {
-        qDebug() << i << ". " + tasks[i].name;
-    }
-
-    netHandler->tasks->deleteUserTask(tasks[tasks.size() - 1].id);
-
-    tasks = netHandler->tasks->getUserTasks();
-    for (int i = 0; i < tasks.size(); ++i) {
-        qDebug() << i << ". " + tasks[i].name;
-    }
 }
 
 Dashboard::~Dashboard()

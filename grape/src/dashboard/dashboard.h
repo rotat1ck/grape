@@ -73,10 +73,10 @@ private:
     //tasks
     void setupTasksUI();
     void onAddTaskClicked();
-    void addNewTask(const QString &taskName);
-    void addTaskToUI(const QString& taskName);  // Добавление задачи в интерфейс
+    void addNewTask(Task& task);
+    void updateTasksBox();  // Добавление задачи в интерфейс
     QVBoxLayout* tasksLayout;  // Layout для списка задач
-    QList<QWidget*> taskWidgets;  // Список виджетов задач
+    std::vector<Task> tasksList;
 
 };
 
