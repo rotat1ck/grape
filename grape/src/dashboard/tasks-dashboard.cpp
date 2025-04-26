@@ -16,8 +16,7 @@ void Dashboard::setupTasksUI()
 
     // Кнопка добавления
     ui->addTaskButton->setCursor(Qt::PointingHandCursor);
-    connect(ui->addTaskButton, &QPushButton::clicked,
-            this, &Dashboard::on_addTaskButton_clicked);
+
 }
 
 // Обработчик клика на добавление
