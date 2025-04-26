@@ -134,7 +134,6 @@ private:
     Net::Result getUserTasksImp();
 
     Net::Result addUserTaskImp(QString content);
-
     Net::Result deleteUserTaskImp(int id);
 public:
     Tasks(Net* netHandler) : netHandler(netHandler) { }
@@ -167,6 +166,7 @@ public:
     Net::Result addUserDeadline(QString content, QDate endstamp);
 
     Net::Result deleteUserDeadline(int id);
+    Net::Result deleteUserTask(int id);
 };
 
 #endif // NET_H

@@ -77,6 +77,10 @@ private:
     void updateTasksBox();  // Добавление задачи в интерфейс
     QVBoxLayout* tasksLayout;  // Layout для списка задач
     std::vector<Task> tasksList;
+    QList<QWidget*> taskWidgets;  // Список виджетов задач
+
+    //notes
+    void notesUI();
 
 };
 
