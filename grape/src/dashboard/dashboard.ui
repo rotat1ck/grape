@@ -70,10 +70,27 @@ border-radius: 20px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 37px;
-
-background: #D9D9D9;
-
+       <string notr="true">QPushButton {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 30px;
+    font-family: 'Comfortaa';
+    font-size: 5px;
+    color: #8B2222;
+	icon-size: 16px;  
+    padding: 5px; 
+}
+QPushButton:hover {
+    background-color: #E5E5E5;
+    border-color: #FFFFFF;
+}
+QPushButton:pressed {
+    background-color: #C0C0C0;
+}
+QPushButton {
+    image: url(:/img/settings.svg);
+	
+}
 </string>
       </property>
       <property name="text">
@@ -545,6 +562,25 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
        </property>
       </widget>
      </widget>
+     <widget class="QLineEdit" name="NotesLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>25</x>
+        <y>376</y>
+        <width>196</width>
+        <height>312</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background: #D9D9D9;
+border-radius: 20px;
+color: #786060;
+font-size: 20px;
+font-family: Comfortaa;
+padding: 5px;   
+overflow: hidden; </string>
+      </property>
+     </widget>
      <zorder>addDeadlineButton</zorder>
      <zorder>DeadlinesTimerBox</zorder>
      <zorder>AueWordsBox</zorder>
@@ -556,6 +592,7 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
      <zorder>DeadlinesBox</zorder>
      <zorder>addTaskButton</zorder>
      <zorder>TaskBox</zorder>
+     <zorder>NotesLineEdit</zorder>
     </widget>
    </item>
   </layout>

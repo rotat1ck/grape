@@ -41,7 +41,7 @@ void Dashboard::on_addTaskButton_clicked()
         }
     });
 
-    dialog->show();  // Используйте show() вместо exec() для немодального окна
+    dialog->show();
 }
 
 // Добавление новой задачи в список
