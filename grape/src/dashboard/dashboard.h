@@ -71,6 +71,9 @@ private:
 
     QVBoxLayout* tasksLayout;  // Layout для списка задач
     QList<QWidget*> taskWidgets;  // Список виджетов задач
+
+    //notes
+    void notesUI();
 };
 
 #endif

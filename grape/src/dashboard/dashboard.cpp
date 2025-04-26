@@ -27,6 +27,9 @@ Dashboard::Dashboard(QWidget *parent)
 
     // Таски
     setupTasksUI();
+
+    // Заметки
+    notesUI();
 }
 
 Dashboard::~Dashboard()
