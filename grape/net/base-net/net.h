@@ -168,7 +168,6 @@ public:
     Net::Result addUserDeadline(QString content, QDate endstampEntry);
 
     Net::Result deleteUserDeadline(int id);
-    Net::Result deleteUserTask(int id);
 };
 
 #endif // NET_H
