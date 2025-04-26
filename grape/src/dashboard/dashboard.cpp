@@ -13,7 +13,6 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
 {
     ui->setupUi(this);
     // Создаем меню настроек
-    deadlineLayout = new QVBoxLayout(ui->DeadlinesBoxContents);
     settingsMenu = new SettingsMenu(this);
 
     // Настройка таймера обратного отсчета

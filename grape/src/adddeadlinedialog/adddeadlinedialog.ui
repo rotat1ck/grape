@@ -121,9 +121,9 @@ margin-top: 10px;</string>
     border: 2px solid #8B7E7E;
     border-radius: 8px;
     padding: 5px 10px;
-    font-family: 'Julius Sans One';
-    font-size: 16px;
     color: #000000;
+	font-size: 20px;
+	font-family: 'Comfortaa';
 }
 QLineEdit:focus {
     border: 2px solid #FFFFFF;

@@ -69,10 +69,10 @@ private:
     bool isDialogOpen;
     void updateDeadlinesList();
     void setupDeadlinesBox();
+    void addNewDeadline(Deadline& deadline);
 
     //tasks
     void setupTasksUI();
-    void onAddTaskClicked();
     void addNewTask(Task& task);
     void updateTasksBox();  // Добавление задачи в интерфейс
     QVBoxLayout* tasksLayout;  // Layout для списка задач

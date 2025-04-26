@@ -28,7 +28,6 @@ QLineEdit {
     padding: 8px;
     font-size: 20px;
     min-height: 30px;
-	size: 50px;
 	color: black;
 }
 </string>
@@ -79,6 +78,8 @@ border: 0px;</string>
     padding: 8px;
     font-size: 16px;
     min-height: 30px;
+    font-size: 20px;
+	font-family: 'Comfortaa';
 }</string>
    </property>
   </widget>

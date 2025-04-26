@@ -8,7 +8,6 @@ addtask::addtask(QWidget *parent)
     , ui(new Ui::addtask)
 {
     ui->setupUi(this);
-    ui->NameTaskLine->setStyleSheet("font-size: 20px; font-family: 'Comfortaa';");
     setWindowFlags(Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint);
     resetDialog();
     connect(ui->AddButton, &QPushButton::clicked, this, &addtask::accept);

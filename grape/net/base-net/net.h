@@ -10,7 +10,9 @@
 // Используемые типы
 #include <QString>
 #include <QObject>
+#include <QTime>
 #include <QDate>
+#include <QDateTime>
 #include <functional>
 #include <vector>
 
@@ -155,7 +157,7 @@ private:
 
     Net::Result getUserDeadlinesImp();
 
-    Net::Result addUserDeadlineImp(QString content, QDate endstamp);
+    Net::Result addUserDeadlineImp(QString content, QDate endstampEntry);
 
     Net::Result deleteUserDeadlineImp(int id);
 public:
@@ -163,7 +165,7 @@ public:
 
     std::vector<Deadline> getUserDeadlines();
 
-    Net::Result addUserDeadline(QString content, QDate endstamp);
+    Net::Result addUserDeadline(QString content, QDate endstampEntry);
 
     Net::Result deleteUserDeadline(int id);
     Net::Result deleteUserTask(int id);

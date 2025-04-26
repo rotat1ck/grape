@@ -44,6 +44,15 @@ void AddDeadlineDialog::resetDialog()
 
 void AddDeadlineDialog::accept()
 {
+    QString name = getDeadlineName().trimmed();
+    if (name.isEmpty()) {
+        QMessageBox::warning(this, "Ошибка", "Поле не может быть пустым.");
+        return;
+    }
+    if (name.length() > 30) {
+        QMessageBox::warning(this, "Ошибка", "Название дедлайна слишком длинное.");
+        return;
+    }
     QDialog::accept();
 }
 
