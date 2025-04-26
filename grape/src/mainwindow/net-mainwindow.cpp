@@ -3,7 +3,12 @@
 void MainWindow::setupNetHandlers() {
     netHandler = new Net();
 
+    // =======
+    // ТЕСТОВЫЙ КОД, УДАЛИТЬ
+    // =======
+
     Net::Result res = netHandler->user->sendLoginRequest("zov@gmail.com", "testtest");
+
     if (!res.isFailure) {
         qDebug() << netHandler->token;
     } else {

@@ -3,9 +3,9 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     // исполнение кода программы переходит из main() сюда
     // подготовка основного окна
+    setupNetHandlers();
     setupViews();
     setupConnects();
-    setupNetHandlers();
     defineStartWindow();
 }
 

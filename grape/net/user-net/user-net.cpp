@@ -53,7 +53,7 @@ Net::Result User::sendRegisterRequestImp() {
         } else {
             json response = json::parse(res->body);
             emit netHandler->S_CacheToken(response["token"]);
-            return {200, "Successful login", false};
+            return {200, "Successful registrated", false};
         }
     } else {
         return {-1, "Connection failed", true};

@@ -7,8 +7,8 @@
 #include "../adddeadlinedialog/adddeadlinedialog.h"
 #include "../addtasks/addtask.h"
 
-Dashboard::Dashboard(QWidget *parent)
-    : QWidget(parent)
+Dashboard::Dashboard(QWidget *parent, Net* netHandler)
+    : QWidget(parent), netHandler(netHandler)
     , ui(new Ui::Dashboard)
 {
     ui->setupUi(this);

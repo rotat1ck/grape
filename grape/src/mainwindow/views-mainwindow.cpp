@@ -37,9 +37,9 @@ void MainWindow::setupViews() {
     layout = new QStackedLayout(centralWidget); // <- описание объекта в src/mainwindow/mainwindow.h
 
 
-    login = new Login(this);
-    registration = new Registration(this);
-    dashboard = new Dashboard(this);
+    login = new Login(this, netHandler);
+    registration = new Registration(this, netHandler);
+    dashboard = new Dashboard(this, netHandler);
 
     layout->addWidget(login); /* <- таким образом добавляется объект класса с интерфейсом
         в layout, это необходимо для того чтобы layout при вызове метода setCurrentWidget
