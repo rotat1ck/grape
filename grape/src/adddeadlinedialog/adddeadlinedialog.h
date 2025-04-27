@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QDate>
+#include <QMessageBox>
 
 namespace Ui {
 class AddDeadlineDialog;

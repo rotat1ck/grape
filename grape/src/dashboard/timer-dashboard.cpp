@@ -5,6 +5,8 @@ void Dashboard::setupCountdownTimer()
 {
     countdownTimer = new QTimer(this);
     connect(countdownTimer, &QTimer::timeout, this, &Dashboard::updateCountdownTimer);
+    remainingSeconds = 0;
+    isTimerRunning = false;
     updateTimerDisplay();
 }
 
@@ -36,13 +38,14 @@ void Dashboard::on_timerPlayButton_clicked()
     if (isTimerRunning) {
         countdownTimer->stop();
         ui->timerPlayButton->setText("▶");
+        isTimerRunning = !isTimerRunning;
     } else {
         if (remainingSeconds > 0) {
             countdownTimer->start(1000);
             ui->timerPlayButton->setText("||");
+            isTimerRunning = !isTimerRunning;
         }
     }
-    isTimerRunning = !isTimerRunning;
 }
 
 void Dashboard::on_timerResetButton_clicked()
