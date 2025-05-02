@@ -7,13 +7,16 @@ void Dashboard::auewordsInit(){
 
     // Настройка бегущего текста
     movingTextBrowser = new QTextBrowser(ui->AueWordsBox);
-    movingTextBrowser->setHtml("<p style='font-family: \"Comfortaa\"; font-size: 24px; color: #000; white-space: nowrap; margin: 0;'>Если Вам холодно - встаньте в угол. Там 90°C</p>");
     movingTextBrowser->setFrameStyle(QFrame::NoFrame);
     movingTextBrowser->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     movingTextBrowser->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 
+    // установка текста
+    QString auetext = netHandler->user->getAUEPhase();
+    movingTextBrowser->setHtml(QString("<p style='font-family: \"Comfortaa\"; font-size: 24px; color: #000; white-space: nowrap; margin: 0;'>%1</p>").arg(auetext));
+
     // размеры
-    movingTextBrowser->document()->setTextWidth(2000); //  ширина для текста в одну строку
+    movingTextBrowser->document()->setTextWidth(1000000); //  ширина для текста в одну строку
     int textWidth = movingTextBrowser->document()->idealWidth();
     movingTextBrowser->setFixedSize(textWidth, 27);
     movingTextBrowser->move(0, 25);
@@ -22,6 +25,11 @@ void Dashboard::auewordsInit(){
     timer = new QTimer(this);
     connect(timer, &QTimer::timeout, this, &Dashboard::updateTextPosition);
     timer->start(30); // обновление каждые 30мс
+
+    QTimer::singleShot(30000, [&]() {
+        auetext = netHandler->user->getAUEPhase();
+        movingTextBrowser->setHtml(QString("<p style='font-family: \"Comfortaa\"; font-size: 24px; color: #000; white-space: nowrap; margin: 0;'>%1</p>").arg(auetext));
+    });
 }
 
 void Dashboard::updateTextPosition()
