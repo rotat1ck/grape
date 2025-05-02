@@ -100,13 +100,13 @@ private:
         Приписка Imp(Implementation) в конце означает что функция является обрабатывающей для своей обертки
     */
     Net::Result sendLoginRequestImp();
+
     Net::Result sendRegisterRequestImp();
+
+    Net::Result getAUEPhaseImp();
 
 public:
     User(Net* netHandler) : netHandler(netHandler) { }
-
-    // Функция которая обновляет параметр token основного класса Net
-    bool updateToken();
 
     /*
         Функции обертки для функций обработчиков
@@ -115,13 +115,10 @@ public:
         с указанным кол-вом попыток получения ответа от сервера
     */
     Net::Result sendLoginRequest(QString usernameEntry, QString passwordEntry);
+
     Net::Result sendRegisterRequest(QString emailEntry, QString usernameEntry, QString passwordEntry);
 
-    // Сделать структуру в src/types/structs.h
-    //std::vector<std::string> getUserDeadlines();
-
-    // Сделать структуру в src/types/structs.h
-    //std::vector<std::string> getUserSettings();
+    QString getAUEPhase();
 };
 
 
@@ -136,6 +133,7 @@ private:
     Net::Result getUserTasksImp();
 
     Net::Result addUserTaskImp(QString content);
+
     Net::Result deleteUserTaskImp(int id);
 public:
     Tasks(Net* netHandler) : netHandler(netHandler) { }
