@@ -46,6 +46,21 @@ void Dashboard::on_addTaskButton_clicked()
     });
 
     dialog->show();
+}
+
+void Dashboard::updateTasksBox() {
+    if (tasksLayout) {
+        QLayoutItem* item;
+        while ((item = tasksLayout->takeAt(0))) {
+            delete item->widget();
+            delete item;
+        }
+    }
+
+    for (Task task : tasksList) {
+        addNewTask(task);
+    }
+}
 
 // Добавление новой задачи в список
 void Dashboard::addNewTask(Task& task) {

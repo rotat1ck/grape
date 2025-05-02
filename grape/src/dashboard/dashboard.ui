@@ -576,7 +576,8 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
 border-radius: 20px;
 color: #786060;
 font-size: 20px;
-
+font-family: 'Comfortaa';
+padding: 5px;   </string>
       </property>
      </widget>
      <zorder>addDeadlineButton</zorder>
