@@ -3,8 +3,8 @@
 
 #include "../../misc/clickQLabel.h"
 
-Registration::Registration(QWidget *parent)
-    : QWidget(parent)
+Registration::Registration(QWidget *parent, Net* netHandler)
+    : QWidget(parent), netHandler(netHandler)
     , ui(new Ui::Registration)
 {
     ui->setupUi(this);

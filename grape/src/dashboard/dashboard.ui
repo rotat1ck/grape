@@ -227,7 +227,7 @@ border-radius: 20px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">
-font-family: 'Julius Sans One';
+font-family: 'Comfortaa';
 font-size: 42px;
 color: #000000;
 background: transparent;
@@ -451,7 +451,7 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
        <bool>true</bool>
       </property>
       <property name="alignment">
-       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignTop</set>
+       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
       </property>
       <widget class="QWidget" name="DeadlinesBoxContents">
        <property name="geometry">
@@ -467,7 +467,7 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
     background: #D9D9D9;
     border-radius: 20px;
     padding: 15px;
-    font-family: 'Julius Sans One';
+    font-family: 'Comfortaa';
 }</string>
        </property>
       </widget>
@@ -557,7 +557,7 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
     background: #D9D9D9;
     border-radius: 20px;
     padding: 15px;
-    font-family: 'Julius Sans One';
+    font-family: 'Comfortaa';
 }</string>
        </property>
       </widget>
@@ -576,9 +576,7 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
 border-radius: 20px;
 color: #786060;
 font-size: 20px;
-font-family: Comfortaa;
-padding: 5px;   
-overflow: hidden; </string>
+
       </property>
      </widget>
      <zorder>addDeadlineButton</zorder>

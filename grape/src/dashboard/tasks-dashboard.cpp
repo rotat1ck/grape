@@ -17,6 +17,8 @@ void Dashboard::setupTasksUI()
     // Кнопка добавления
     ui->addTaskButton->setCursor(Qt::PointingHandCursor);
 
+    tasksList = netHandler->tasks->getUserTasks();
+    updateTasksBox();
 }
 
 // Обработчик клика на добавление
@@ -36,17 +38,17 @@ void Dashboard::on_addTaskButton_clicked()
         if (result == QDialog::Accepted) {
             QString taskName = dialog->taskName().trimmed();
             if (!taskName.isEmpty()) {
-                addTaskToUI(taskName);
+                netHandler->tasks->addUserTask(taskName);
+                tasksList = netHandler->tasks->getUserTasks();
+                updateTasksBox();
             }
         }
     });
 
     dialog->show();
-}
 
 // Добавление новой задачи в список
-void Dashboard::addTaskToUI(const QString& taskName)
-{
+void Dashboard::addNewTask(Task& task) {
     QWidget* taskItem = new QWidget();
     QHBoxLayout* layout = new QHBoxLayout(taskItem);
 
@@ -58,7 +60,7 @@ void Dashboard::addTaskToUI(const QString& taskName)
     )");
 
     // Текст задачи
-    QLabel* label = new QLabel(taskName);
+    QLabel* label = new QLabel(task.name);
     label->setStyleSheet(R"(
         font-family: 'Comfortaa';
         font-size: 20px;
@@ -77,8 +79,14 @@ void Dashboard::addTaskToUI(const QString& taskName)
     deleteBtn->setCursor(Qt::PointingHandCursor);
 
     connect(deleteBtn, &QPushButton::clicked, [=]() {
+        auto it = std::find_if(tasksList.begin(), tasksList.end(), [&task](const Task& t) {
+            return &t == &task; // Compare addresses
+        });
+        if (it != tasksList.end()) {
+            tasksList.erase(it);
+        }
         tasksLayout->removeWidget(taskItem);
-        taskWidgets.removeOne(taskItem);
+        netHandler->tasks->deleteUserTask(task.id);
         delete taskItem;
     });
 
@@ -88,5 +96,4 @@ void Dashboard::addTaskToUI(const QString& taskName)
 
     // Вставляем перед кнопкой добавления
     tasksLayout->insertWidget(tasksLayout->count() - 1, taskItem);
-    taskWidgets.append(taskItem);
 }

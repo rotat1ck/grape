@@ -53,7 +53,7 @@ Net::Result User::sendRegisterRequestImp() {
         } else {
             json response = json::parse(res->body);
             emit netHandler->S_CacheToken(response["token"]);
-            return {200, "Successful login", false};
+            return {200, "Successful registrated", false};
         }
     } else {
         return {-1, "Connection failed", true};
@@ -68,4 +68,33 @@ Net::Result User::sendRegisterRequest(QString emailEntry, QString usernameEntry,
     return netHandler->retryRequest(3, [this]() {
         return sendRegisterRequestImp();
     });
+}
+
+// - - AUE - -
+
+Net::Result User::getAUEPhaseImp() {
+    std::string endpoint = "/api/aue/getphase";
+    if (auto res = netHandler->cl->Get(endpoint)) {
+        if (res->status != 200) {
+            if (res->status != 502) {
+                json response = json::parse(res->body);
+                return {res->status, response["error"], true};
+            } else {
+                return {502, "Bad gateway", true};
+            }
+        } else {
+            json response = json::parse(res->body);
+            return {200, response["phase"], false};
+        }
+    } else {
+        return {-1, "Connection failed", true};
+    }
+}
+
+QString User::getAUEPhase() {
+    Net::Result res = netHandler->retryRequest(3, [this]() {
+        return getAUEPhaseImp();
+    });
+
+    return QString::fromStdString(res.message);
 }

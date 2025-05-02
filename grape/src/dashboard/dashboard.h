@@ -8,7 +8,9 @@
 #include <QTimer>
 #include <QTime>
 #include <QDate>
+#include <vector>
 
+#include "../../net/base-net/net.h"
 #include "../settingsmenu/settingsmenu.h"
 #include "../types/structs.h"
 
@@ -21,7 +23,7 @@ class Dashboard : public QWidget
     Q_OBJECT
 
 public:
-    explicit Dashboard(QWidget *parent = nullptr);
+    explicit Dashboard(QWidget *parent = nullptr, Net* netHandler = nullptr);
     ~Dashboard();
 
 private slots:
@@ -40,40 +42,46 @@ private slots:
 
 
 private:
+    // Base
     Ui::Dashboard *ui;
+    Net* netHandler;
+
+    // AUE
     QTextBrowser *movingTextBrowser;
     QTimer *timer;
     int position;
     int step;
 
+    // Settings
     SettingsMenu *settingsMenu;
 
+    // Timer
     QTimer *countdownTimer;
     int remainingSeconds;
     bool isTimerRunning;
-
-    QList<Deadline> deadlines;
-    QVBoxLayout* deadlineLayout;
-    bool isDialogOpen;
-
     void setupCountdownTimer();
     void updateTimerDisplay();
     void updateCountdownTimer();
-    void setupDeadlinesBox();
+
+    // Deadlines
+    std::vector<Deadline> deadlines;
+    QVBoxLayout* deadlineLayout;
+    bool isDialogOpen;
     void updateDeadlinesList();
+    void setupDeadlinesBox();
+    void addNewDeadline(Deadline& deadline);
 
     //tasks
     void setupTasksUI();
-    void onAddTaskClicked();
-    void addNewTask(const QString &taskName);
-
-    void addTaskToUI(const QString& taskName);  // Добавление задачи в интерфейс
-
+    void addNewTask(Task& task);
+    void updateTasksBox();  // Добавление задачи в интерфейс
     QVBoxLayout* tasksLayout;  // Layout для списка задач
+    std::vector<Task> tasksList;
     QList<QWidget*> taskWidgets;  // Список виджетов задач
 
     //notes
     void notesUI();
+
 };
 
 #endif

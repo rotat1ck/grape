@@ -3,6 +3,7 @@
 Net::Net() {
     user = new User(this);
     tasks = new Tasks(this);
+    deadlines = new Deadlines(this);
     cl->set_connection_timeout(0, 500000);
     cl->set_default_headers({{"Host", "grape.rotatick.ru"}});
 
@@ -13,6 +14,7 @@ Net::~Net() {
     delete cl;
     delete user;
     delete tasks;
+    delete deadlines;
 }
 
 std::string Net::getHashed(std::string msg) {
@@ -39,8 +41,9 @@ bool Net::checkServerStatus() {
 
 Net::Result Net::retryRequest(int retryCount, std::function<Net::Result()> func) {
     int currentTry = 1;
+    Result returned;
     while (currentTry <= retryCount) {
-        Result returned = func();
+        returned = func();
         if (!returned.isFailure) {
             return {returned.status, returned.message, returned.isFailure};
         } else if (returned.status == 401) {
@@ -50,7 +53,7 @@ Net::Result Net::retryRequest(int retryCount, std::function<Net::Result()> func)
         }
         currentTry++;
     }
-    return {0, "Connection failed", true};
+    return {returned.status, returned.message, true};
 }
 
 bool Net::updateToken() {

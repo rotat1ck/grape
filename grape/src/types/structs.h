@@ -5,6 +5,7 @@
 #include <QDate>
 
 struct Deadline {
+    int id;
     QString name;
     QDate date;
     bool operator<(const Deadline& other) {

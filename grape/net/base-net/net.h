@@ -10,6 +10,9 @@
 // Используемые типы
 #include <QString>
 #include <QObject>
+#include <QTime>
+#include <QDate>
+#include <QDateTime>
 #include <functional>
 #include <vector>
 
@@ -20,6 +23,7 @@ using json = nlohmann::json;
 
 class User;
 class Tasks;
+class Deadlines;
 
 
 // =======
@@ -57,6 +61,7 @@ public:
     std::string token;
     User* user;
     Tasks* tasks;
+    Deadlines* deadlines;
 
     Net();
     ~Net();
@@ -95,13 +100,13 @@ private:
         Приписка Imp(Implementation) в конце означает что функция является обрабатывающей для своей обертки
     */
     Net::Result sendLoginRequestImp();
+
     Net::Result sendRegisterRequestImp();
+
+    Net::Result getAUEPhaseImp();
 
 public:
     User(Net* netHandler) : netHandler(netHandler) { }
-
-    // Функция которая обновляет параметр token основного класса Net
-    bool updateToken();
 
     /*
         Функции обертки для функций обработчиков
@@ -110,13 +115,10 @@ public:
         с указанным кол-вом попыток получения ответа от сервера
     */
     Net::Result sendLoginRequest(QString usernameEntry, QString passwordEntry);
+
     Net::Result sendRegisterRequest(QString emailEntry, QString usernameEntry, QString passwordEntry);
 
-    // Сделать структуру в src/types/structs.h
-    //std::vector<std::string> getUserDeadlines();
-
-    // Сделать структуру в src/types/structs.h
-    //std::vector<std::string> getUserSettings();
+    QString getAUEPhase();
 };
 
 
@@ -131,6 +133,7 @@ private:
     Net::Result getUserTasksImp();
 
     Net::Result addUserTaskImp(QString content);
+
     Net::Result deleteUserTaskImp(int id);
 public:
     Tasks(Net* netHandler) : netHandler(netHandler) { }
@@ -138,7 +141,31 @@ public:
     std::vector<Task> getUserTasks();
 
     Net::Result addUserTask(QString content);
+
     Net::Result deleteUserTask(int id);
+};
+
+// =======
+// Deadlines class
+// =======
+
+class Deadlines {
+private:
+    Net* netHandler;
+
+    Net::Result getUserDeadlinesImp();
+
+    Net::Result addUserDeadlineImp(QString content, QDate endstampEntry);
+
+    Net::Result deleteUserDeadlineImp(int id);
+public:
+    Deadlines(Net* netHandler) : netHandler(netHandler) { }
+
+    std::vector<Deadline> getUserDeadlines();
+
+    Net::Result addUserDeadline(QString content, QDate endstampEntry);
+
+    Net::Result deleteUserDeadline(int id);
 };
 
 #endif // NET_H
