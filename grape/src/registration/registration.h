@@ -23,6 +23,7 @@ signals:
 private slots:
     void on_PasswordStateButton_clicked();
     void on_RepeatPasswordStateButton_clicked();
+    void on_RegisterButton_clicked();
 
 private:
     Ui::Registration *ui;
