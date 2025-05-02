@@ -14,4 +14,7 @@ void MainWindow::setupNetHandlers() {
     } else {
         qDebug() << res.message;
     }
+
+    //QString aue = netHandler->user->getAUEPhase();
+    //qDebug() << aue;
 }
