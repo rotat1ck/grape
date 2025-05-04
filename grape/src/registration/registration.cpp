@@ -2,6 +2,9 @@
 #include "ui_registration.h"
 
 #include "../../misc/clickQLabel.h"
+#include <QMessageBox>
+#include <QRegularExpression>
+#include <QTimer>
 
 Registration::Registration(QWidget *parent, Net* netHandler)
     : QWidget(parent), netHandler(netHandler)
