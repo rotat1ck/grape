@@ -79,7 +79,11 @@ qt_add_executable(grape
     net/include/hasher/hasher.cpp
     src/addtasks/addtask.ui
     src/addtasks/addtask.h
-    src/addtasks/addtask.cpp # <- мои старейшие файлы, хэширование пароля
+    src/addtasks/addtask.cpp
+    src/profile.ui
+    src/profile/profile.ui
+    src/profile/profile.ui
+    src/profile/profile.ui # <- мои старейшие файлы, хэширование пароля
 )
 
 qt_add_ui(grape SOURCES

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>640</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #A89797;</string>
+  </property>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>153</x>
+     <y>25</y>
+     <width>450</width>
+     <height>74</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="LeftSwipeButton">
+   <property name="geometry">
+    <rect>
+     <x>39</x>
+     <y>25</y>
+     <width>74</width>
+     <height>74</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 30px;
+    color: #8B2222;
+	icon-size: 16px;  
+    padding: 5px; 
+}
+
+QPushButton {
+    image: url(:/img/left_swipe.svg);
+	
+}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="CurrentDLTable">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>237</y>
+     <width>577</width>
+     <height>160</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="CompletedDLTable">
+   <property name="geometry">
+    <rect>
+     <x>26</x>
+     <y>507</y>
+     <width>577</width>
+     <height>160</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>450</y>
+     <width>431</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>
+completed Deadlines</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
