@@ -135,7 +135,13 @@ void Dashboard::addNewDeadline(Deadline& deadline) {
         color: #333;
         margin-left: 5px;
     )");
+
+    deadlineItemText->setWordWrap(true); // перенос слов
     deadlineItemDate->setAlignment(Qt::AlignRight);
+    //deadlineItemText->setAlignment(Qt::AlignLeft | Qt::AlignTop);
+    deadlineItemText->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+
+
 
     QPushButton* deleteBtn = new QPushButton("×");
     deleteBtn->setStyleSheet(R"(

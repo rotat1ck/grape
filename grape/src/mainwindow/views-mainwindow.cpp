@@ -19,6 +19,7 @@ void MainWindow::changeForm(int formId) {
             break;
         } case 2: { // окно основной рабочей зоны
             layout->setCurrentWidget(dashboard);
+            dashboard->initDashboard(); // ИНИИИТ БРООО ОНА ТУТ
             setWindowFlags(Qt::FramelessWindowHint);
             setMaximumSize(QWIDGETSIZE_MAX,QWIDGETSIZE_MAX);
             setMinimumSize(0,0);

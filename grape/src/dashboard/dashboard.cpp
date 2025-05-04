@@ -12,6 +12,13 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
     , ui(new Ui::Dashboard)
 {
     ui->setupUi(this);
+}
+// функция для инициализации
+void Dashboard::initDashboard() {
+    if (isInitialized) {
+        return; // инициализировано - выходим
+    }
+
     // Создаем меню настроек
     settingsMenu = new SettingsMenu(this);
 
@@ -20,7 +27,7 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
 
     // Настройка дедлайнов
     setupDeadlinesBox();
-    
+
     // Ауе цитаты
     auewordsInit();
 
@@ -29,6 +36,8 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
 
     // Заметки
     notesUI();
+
+    isInitialized = true; // все оке оке заебись
 }
 
 Dashboard::~Dashboard()
