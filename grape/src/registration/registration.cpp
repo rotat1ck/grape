@@ -24,7 +24,6 @@ Registration::Registration(QWidget *parent, Net* netHandler)
     connect(loginButton, &ClickQLabel::clicked, this, [this](){
         emit S_ChangeForm(0);
     });
-    connect(ui->LoginButton, &QPushButton::clicked, this, &Registration::on_RegisterButton_clicked);
 }
 
 Registration::~Registration() {
@@ -48,8 +47,7 @@ void Registration::on_RepeatPasswordStateButton_clicked() {
     }
 }
 
-void Registration::on_RegisterButton_clicked()
-{
+void Registration::on_RegisterButton_clicked() {
     QString username = ui->UsernameInput->text();
     QString email = ui->EmailInput->text();
     QString password = ui->PasswordInput->text();
@@ -89,11 +87,15 @@ void Registration::on_RegisterButton_clicked()
         ui->PasswordInput->clear();
         ui->RepeatPasswordInput->clear();
 
-        // задержка 1 сек перед переходом
-        QTimer::singleShot(1000, this, [this]() {
-            emit S_ChangeForm(0);
-        });
-    }
 
+        Net::Result loginReq = netHandler->user->sendLoginRequest(username, password);
+        if (loginReq.isFailure) {
+            QMessageBox::critical(this, "Login error",
+                            QString("Error code: %1\n%2").arg(result.status).arg(QString::fromStdString(result.message)));
+            emit S_ChangeForm(0);
+        } else {
+            emit S_ChangeForm(2);
+        }
+    }
 }
 
