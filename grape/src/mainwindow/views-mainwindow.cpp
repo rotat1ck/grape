@@ -55,8 +55,11 @@ void MainWindow::setupConnects() {
     // - - LOGIN - -
     connect(login, &Login::S_ChangeForm, this, &MainWindow::changeForm);
 
-    // - - Rehistration -  -
+    // - - Registration - -
     connect(registration, &Registration::S_ChangeForm, this, &MainWindow::changeForm);
+
+    // - - Dashboard - -
+    connect(dashboard, &Dashboard::S_ChangeForm, this, &MainWindow::changeForm);
 }
 
 // функция будет определять стартовое окно после запуска приложения

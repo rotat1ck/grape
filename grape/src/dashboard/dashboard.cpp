@@ -12,6 +12,12 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
     , ui(new Ui::Dashboard)
 {
     ui->setupUi(this);
+
+    // Ауе цитаты
+    auewordsInit();
+
+    // Заметки
+    notesUI();
 }
 // функция для инициализации
 void Dashboard::initDashboard() {
@@ -21,6 +27,9 @@ void Dashboard::initDashboard() {
 
     // Создаем меню настроек
     settingsMenu = new SettingsMenu(this);
+    connect(settingsMenu, &SettingsMenu::S_ChangeForm, this, [&](int formId){
+        emit S_ChangeForm(formId);
+    });
 
     // Настройка таймера обратного отсчета
     setupCountdownTimer();
@@ -28,14 +37,8 @@ void Dashboard::initDashboard() {
     // Настройка дедлайнов
     setupDeadlinesBox();
 
-    // Ауе цитаты
-    auewordsInit();
-
     // Таски
     setupTasksUI();
-
-    // Заметки
-    notesUI();
 
     isInitialized = true; // все оке оке заебись
 }
