@@ -2,6 +2,7 @@
 #define LOGIN_H
 
 #include <QWidget>
+#include <QMessageBox>
 
 #include "../../misc/clickQLabel.h"
 #include "../../net/base-net/net.h"

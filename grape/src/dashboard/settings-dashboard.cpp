@@ -98,5 +98,6 @@ void SettingsMenu::on_profileButton_clicked()
 
 void SettingsMenu::on_exitButton_clicked()
 {
+    emit S_ChangeForm(0);
     close();
 }

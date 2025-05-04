@@ -19,6 +19,9 @@ public:
     explicit SettingsMenu(QWidget *parent = nullptr);
     ~SettingsMenu();
 
+signals:
+    void S_ChangeForm(int formId);
+
 protected:
     void paintEvent(QPaintEvent *event) override;  // Добавлено
 //     void showEvent(QShowEvent *event) override;    // Добавлено

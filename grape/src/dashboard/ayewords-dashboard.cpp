@@ -29,6 +29,10 @@ void Dashboard::auewordsInit(){
     QTimer::singleShot(3000, [&]() {
         auetext = netHandler->user->getAUEPhase();
         movingTextBrowser->setHtml(QString("<p style='font-family: \"Comfortaa\"; font-size: 24px; color: #000; white-space: nowrap; margin: 0;'>%1</p>").arg(auetext));
+        movingTextBrowser->document()->setTextWidth(1000000); //  ширина для текста в одну строку
+        textWidth = movingTextBrowser->document()->idealWidth();
+        movingTextBrowser->setFixedSize(textWidth, 27);
+        movingTextBrowser->move(0, 25);
     });
 }
 

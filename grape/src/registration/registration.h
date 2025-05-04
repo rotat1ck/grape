@@ -2,6 +2,9 @@
 #define REGISTRATION_H
 
 #include <QWidget>
+#include <QMessageBox>
+#include <QRegularExpression>
+#include <QTimer>
 
 #include "../../net/base-net/net.h"
 

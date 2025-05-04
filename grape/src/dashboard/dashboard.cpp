@@ -27,6 +27,9 @@ void Dashboard::initDashboard() {
 
     // Создаем меню настроек
     settingsMenu = new SettingsMenu(this);
+    connect(settingsMenu, &SettingsMenu::S_ChangeForm, this, [&](int formId){
+        emit S_ChangeForm(formId);
+    });
 
     // Настройка таймера обратного отсчета
     setupCountdownTimer();
