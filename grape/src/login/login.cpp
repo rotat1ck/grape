@@ -36,6 +36,6 @@ void Login::on_PasswordStateButton_clicked() {
 
 
 void Login::on_LoginButton_clicked() {
-    emit S_ChangeForm(2);
+
 }
 

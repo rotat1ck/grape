@@ -26,7 +26,7 @@ void Dashboard::auewordsInit(){
     connect(timer, &QTimer::timeout, this, &Dashboard::updateTextPosition);
     timer->start(30); // обновление каждые 30мс
 
-    QTimer::singleShot(30000, [&]() {
+    QTimer::singleShot(3000, [&]() {
         auetext = netHandler->user->getAUEPhase();
         movingTextBrowser->setHtml(QString("<p style='font-family: \"Comfortaa\"; font-size: 24px; color: #000; white-space: nowrap; margin: 0;'>%1</p>").arg(auetext));
     });
