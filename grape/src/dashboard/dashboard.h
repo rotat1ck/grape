@@ -26,6 +26,8 @@ public:
     explicit Dashboard(QWidget *parent = nullptr, Net* netHandler = nullptr);
     ~Dashboard();
 
+    void initDashboard(); // функция инит ибо все ломается нахуй
+
 private slots:
     void updateTextPosition();
     void on_menuSettings_clicked();
@@ -45,6 +47,8 @@ private:
     // Base
     Ui::Dashboard *ui;
     Net* netHandler;
+
+    bool isInitialized = false; // флаг для инита, чтобы проверять ошбку на повторку инита
 
     // AUE
     QTextBrowser *movingTextBrowser;
