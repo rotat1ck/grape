@@ -36,6 +36,25 @@ void Login::on_PasswordStateButton_clicked() {
 
 
 void Login::on_LoginButton_clicked() {
-    emit S_ChangeForm(2);
+    QString username = ui->UsernameInput->text();
+    QString password = ui->PasswordInput->text();
+
+    Net::Result result = netHandler->user->sendLoginRequest(username, password);
+
+    if(result.isFailure) {
+        QMessageBox::critical(this, "Login error",
+                              QString("Error code: %1\n%2").arg(result.status).arg(QString::fromStdString(result.message)));
+    } else {
+        // очистка полей после логина
+        ui->UsernameInput->clear();
+        ui->PasswordInput->clear();
+
+        // = = = = = = =
+        // СЮДА НАДО ЛОГИКУ ЗАПОМИНАНИЯ ДАННЫХ,
+        // ЧТОБ ПРИ СЛЕДУЮЩЕМ ЗАПУСКЕ ЛОГИНИЛОСЬ САМО
+        // = = = = = = =
+
+        emit S_ChangeForm(2);
+    }
 }
 

@@ -28,6 +28,9 @@ public:
 
     void initDashboard(); // функция инит ибо все ломается нахуй
 
+signals:
+    void S_ChangeForm(int formId);
+
 private slots:
     void updateTextPosition();
     void on_menuSettings_clicked();
