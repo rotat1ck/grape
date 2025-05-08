@@ -76,10 +76,6 @@ SettingsMenu::~SettingsMenu()
 
 void Dashboard::on_menuSettings_clicked()
 {
-    if (!settingsMenu) {
-        settingsMenu = new SettingsMenu(this);
-    }
-
     // Получаем позицию кнопки относительно окна Dashboard
     QPoint buttonPos = ui->menuSettings->mapToGlobal(QPoint(-74, 84));
     settingsMenu->move(buttonPos.x() + ui->menuSettings->width() + 5, buttonPos.y());
