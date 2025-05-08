@@ -46,8 +46,31 @@ void Dashboard::initDashboard() {
 
 Dashboard::~Dashboard()
 {
+    // Base
     delete ui;
+
+    // AUE
+    delete timer;
+    delete movingTextBrowser;
+
+    // Settings
     delete settingsMenu;
+
+    // Timer
     delete countdownTimer;
+
+    // Deadlines
+    while (QLayoutItem* item = deadlineLayout->takeAt(0)) {
+        delete item->widget();
+        delete item;
+    }
+    delete deadlineLayout;
+
+    // Tasks
+    while (QLayoutItem* item = tasksLayout->takeAt(0)) {
+        delete item->widget();
+        delete item;
+    }
+    delete tasksLayout;
 }
 
