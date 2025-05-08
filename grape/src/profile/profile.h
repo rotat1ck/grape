@@ -33,7 +33,7 @@ private slots:
     void updateDeadlinesDisplay();
 private:
     // Base
-    Profile *ui;
+    Ui::Profile *ui;
     Net* netHandler;
 
     std::vector<Deadline> currentDeadlines;
