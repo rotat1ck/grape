@@ -67,50 +67,6 @@ QPushButton {
     <string/>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="CurrentDLTable">
-   <property name="geometry">
-    <rect>
-     <x>27</x>
-     <y>237</y>
-     <width>577</width>
-     <height>160</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QTextBrowser {
-    background-color: #D9D9D9;
-    border: 2px solid #8B7E7E;
-    border-radius: 15px;
-    padding: 5px; 
-
-	font-size: 20px;
-	font-family: 'Comfortaa';
-}
-</string>
-   </property>
-  </widget>
-  <widget class="QTextBrowser" name="CompletedDLTable">
-   <property name="geometry">
-    <rect>
-     <x>26</x>
-     <y>507</y>
-     <width>577</width>
-     <height>160</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QTextBrowser {
-    background-color: #D9D9D9;
-    border: 2px solid #8B7E7E;
-    border-radius: 15px;
-    padding: 5px; 
-
-	font-size: 20px;
-	font-family: 'Comfortaa';
-}
-</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="CurrDL_text">
    <property name="geometry">
     <rect>
@@ -186,6 +142,78 @@ QLabel {
    <property name="text">
     <string/>
    </property>
+  </widget>
+  <widget class="QScrollArea" name="currentDeadlinesScrollArea">
+   <property name="geometry">
+    <rect>
+     <x>27</x>
+     <y>237</y>
+     <width>576</width>
+     <height>160</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QScrollArea
+ {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 15px;
+    padding: 5px; 
+
+	font-size: 20px;
+	font-family: 'Comfortaa';
+}
+</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>562</width>
+      <height>146</height>
+     </rect>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QScrollArea" name="completedDeadlinesScrollArea">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>520</y>
+     <width>576</width>
+     <height>160</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QScrollArea
+ {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 15px;
+    padding: 5px; 
+
+	font-size: 20px;
+	font-family: 'Comfortaa';
+}
+</string>
+   </property>
+   <property name="widgetResizable">
+    <bool>true</bool>
+   </property>
+   <widget class="QWidget" name="scrollAreaWidgetContents_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>562</width>
+      <height>146</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
