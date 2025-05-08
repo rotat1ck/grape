@@ -26,6 +26,13 @@ void MainWindow::changeForm(int formId) {
             close();
             show();
             break;
+        } case 3:{ // окно профиля
+            layout->setCurrentWidget(profile);
+            setFixedSize(640, 720);
+            setWindowFlags(Qt::Window);
+            close();
+            show();
+            break;
         }
     }
 }

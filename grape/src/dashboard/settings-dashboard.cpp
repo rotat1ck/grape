@@ -93,6 +93,7 @@ void SettingsMenu::on_designButton_clicked()
 
 void SettingsMenu::on_profileButton_clicked()
 {
+    emit S_ChangeForm(3);
     close();
 }
 
