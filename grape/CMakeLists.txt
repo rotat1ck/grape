@@ -80,6 +80,7 @@ qt_add_executable(grape
     src/addtasks/addtask.h
     src/addtasks/addtask.cpp
     src/profile/profile.h
+    src/profile/profile.cpp
 )
 
 qt_add_ui(grape SOURCES

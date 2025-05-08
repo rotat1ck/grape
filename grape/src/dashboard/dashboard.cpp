@@ -6,6 +6,7 @@
 
 #include "../adddeadlinedialog/adddeadlinedialog.h"
 #include "../addtasks/addtask.h"
+#include "../profile/profile.h"
 
 Dashboard::Dashboard(QWidget *parent, Net* netHandler)
     : QWidget(parent), netHandler(netHandler)
@@ -19,7 +20,7 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
     // Заметки
     notesUI();
 }
-// функция для инициализации
+
 void Dashboard::initDashboard() {
     if (isInitialized) {
         return; // инициализировано - выходим
