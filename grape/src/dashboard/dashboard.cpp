@@ -45,8 +45,23 @@ void Dashboard::initDashboard() {
 
 Dashboard::~Dashboard()
 {
+    // Base
     delete ui;
+
+    // AUE
+    delete timer;
+    delete movingTextBrowser;
+
+    // Settings
     delete settingsMenu;
+
+    // Timer
     delete countdownTimer;
+
+    // Deadlines
+    delete deadlineLayout;
+
+    // Tasks
+    delete tasksLayout;
 }
 
