@@ -35,13 +35,12 @@ private:
     Ui::Profile *ui;
     Net* netHandler;
 
+    std::vector<Deadline> allDeadlines;
     std::vector<Deadline> currentDeadlines;
     std::vector<Deadline> completedDeadlines;
 
-    QWidget *currentDeadlinesContainer;
-    QWidget *completedDeadlinesContainer;
-    QVBoxLayout *currentLayout;
-    QVBoxLayout *completedLayout;
+    QVBoxLayout* currentLayout;
+    QVBoxLayout* completedLayout;
 
     void setupUI();
     void loadUserData();
