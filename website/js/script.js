@@ -37,3 +37,10 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+{/* <content-section id="about"></content-section>
+document.getElementById('AboutScroll').addEventListener('click', scrollToElement);
+function scrollToElement(e) {
+element = document.getElementById("about")
+element.scrollIntoView(true);
+} */}

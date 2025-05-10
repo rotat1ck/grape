@@ -119,3 +119,9 @@ nav a:active{
     max-width: 1200px;
     margin: 0 auto;
 }
+
+.about-content{
+    font-family: 'Comfortaa';
+    font-size: 19px;
+    color: aliceblue;
+}
