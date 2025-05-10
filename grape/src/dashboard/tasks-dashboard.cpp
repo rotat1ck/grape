@@ -110,5 +110,5 @@ void Dashboard::addNewTask(Task& task) {
     taskItem->setLayout(layout);
 
     // Вставляем перед кнопкой добавления
-    tasksLayout->insertWidget(tasksLayout->count() - 1, taskItem);
+    tasksLayout->addWidget(taskItem);
 }
