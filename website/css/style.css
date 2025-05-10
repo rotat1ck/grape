@@ -1,9 +1,60 @@
+@font-face {
+    font-family: 'Comfortaa';
+    src: url('../fonts/Comfortaa-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'July';
+    src: url('../fonts/JuliusSansOne-Regular.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
 body {
     margin: 0;
     padding: 0;
     font-family: 'Comfortaa', sans-serif;
-    color:antiquewhite;
-    background-color: #382E2E;
+    color:rgb(255, 255, 255);
+    background-color: #1d1a1a;
+}
+header {
+    background-color: transparent;
+    padding: 10px 0;
+    font-family: 'July';
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 10;
+    overflow: hidden;
+    display: flex;
+    background-color: transparent;
+}
+
+nav li {
+    float: left;
+    background-color: transparent;
+}
+
+nav a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 15px 36px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #111;
+    transition: 0.8s;
+}
+
+nav a:active{
+    background-color: antiquewhite;
+    color:#060606;
 }
 
 .hero-section {
@@ -25,40 +76,41 @@ body {
     will-change: opacity, transform;
 }
 
-.hero-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 30%;
-    background: linear-gradient(
-        to bottom, 
-        transparent 0%, 
-        #060606 100%, 
-        #382E2E 100%
-    );
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
 
 .hero-content {
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     z-index: 2;
     transition: transform 0.5s ease;
 }
 
 .strikethrough {
-    text-decoration: line-through;
+    margin-top: -5%;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    color: black;
+    font-family: 'July';
+    font-size: 170px;
     opacity: 0.7;
+    text-decoration: none;
+}
+
+.strikethrough::after {
+    content: '';
+    position: absolute;
+    left: -20%;
+    top: 50%;
+    width: 140%;
+    height: 7px;
+    background: white;
+    transform: translateY(-50%);
 }
 
 /* Основной контент */
 .main-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     min-height: 100vh;
 }
 
