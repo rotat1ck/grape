@@ -19,6 +19,8 @@ body {
     color:rgb(255, 255, 255);
     background-color: #1d1a1a;
 }
+
+                        /* шапка навигации */
 header {
     background-color: transparent;
     padding: 10px 0;
@@ -56,7 +58,9 @@ nav a:active{
     background-color: antiquewhite;
     color:#060606;
 }
+                        /* конец шапки навигации */
 
+                        /* заглавная страница */
 .hero-section {
     position: relative;
     width: 100%;
@@ -107,7 +111,9 @@ nav a:active{
     transform: translateY(-50%);
 }
 
-/* Основной контент */
+                            /* конец заглавной страницы */
+
+/* основной контент */
 .main-content {
     position: relative;
     z-index: 2;
@@ -120,8 +126,116 @@ nav a:active{
     margin: 0 auto;
 }
 
+                                /* о нас */
 .about-content{
     font-family: 'Comfortaa';
     font-size: 19px;
     color: aliceblue;
 }
+
+                                /* download button */
+.button {
+    background-color: #cfb2b2;
+    border: none;
+    border-radius: 8px;
+    color: rgb(59, 28, 28);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 19px;
+    font-family: 'July';
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+.button:hover {
+    background-color: #57252e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.download-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.download-text p {
+    margin: 10px 0;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: 'Comfortaa';
+}
+
+.section-divider {
+    width: 80%;
+    height: 2px;
+    margin: 80px auto;
+    background: linear-gradient(to right, 
+        transparent, 
+        #ffffff, 
+        transparent);
+    opacity: 0.7;
+}
+
+                                /* контакты */
+.contact-content{
+    font-family: 'Comfortaa';
+    font-size: 19px;
+    color: aliceblue;
+}
+
+
+/* почта */
+.email {
+    margin-top: 20px;
+}
+.email a {
+    color: #68d091;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.email a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.email a:active {
+    color: #1b6435;
+}
+
+/* гитхаб */
+.github {
+    margin-top: 20px;
+}
+.github a {
+    color: #68d091;
+    text-decoration: none;
+    font-size: 19px;
+    transition: color 0.3s ease;
+    display: inline-block;
+    margin: 5px 0;
+}
+
+.github a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.github a:active {
+    color: #1b6435;
+}
+
+                        /* конец контактов */
