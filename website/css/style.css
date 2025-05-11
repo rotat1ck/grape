@@ -1,0 +1,69 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa', sans-serif;
+    color:antiquewhite;
+    background-color: #382E2E;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('../img_site/back_site.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+    
+    transition: 
+        opacity 0.8s cubic-bezier(0.33, 1, 0.68, 1),
+        transform 1s cubic-bezier(0.32, 0, 0.67, 0);
+    will-change: opacity, transform;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 30%;
+    background: linear-gradient(
+        to bottom, 
+        transparent 0%, 
+        #060606 100%, 
+        #382E2E 100%
+    );
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+    transition: transform 0.5s ease;
+}
+
+.strikethrough {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+/* Основной контент */
+.main-content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+.content-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
