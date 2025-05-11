@@ -28,8 +28,10 @@ void MainWindow::changeForm(int formId) {
             break;
         } case 3:{ // окно профиля
             layout->setCurrentWidget(profile);
-            setFixedSize(640, 720);
-            setWindowFlags(Qt::Window);
+            profile->initProfile();
+            setWindowFlags(Qt::FramelessWindowHint);
+            setMaximumSize(QWIDGETSIZE_MAX,QWIDGETSIZE_MAX);
+            setMinimumSize(0,0);
             close();
             show();
             break;
@@ -44,16 +46,17 @@ void MainWindow::setupViews() {
     setCentralWidget(centralWidget);
     layout = new QStackedLayout(centralWidget); // <- описание объекта в src/mainwindow/mainwindow.h
 
-
     login = new Login(this, netHandler);
     registration = new Registration(this, netHandler);
     dashboard = new Dashboard(this, netHandler);
+    profile = new Profile(this, netHandler);
 
     layout->addWidget(login); /* <- таким образом добавляется объект класса с интерфейсом
         в layout, это необходимо для того чтобы layout при вызове метода setCurrentWidget
         мог отрисовать объект на экране */
     layout->addWidget(registration);
     layout->addWidget(dashboard);
+    layout->addWidget(profile);
 }
 
 // функция будет настраивать коннекты, для общения между разными частями программы
@@ -67,6 +70,9 @@ void MainWindow::setupConnects() {
 
     // - - Dashboard - -
     connect(dashboard, &Dashboard::S_ChangeForm, this, &MainWindow::changeForm);
+
+    // - - Profile - -
+    connect(profile, &Profile::S_ChangeForm, this, &MainWindow::changeForm);
 }
 
 // функция будет определять стартовое окно после запуска приложения

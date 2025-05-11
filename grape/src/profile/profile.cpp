@@ -12,12 +12,16 @@ Profile::Profile(QWidget *parent, Net* netHandler)
 {
     ui->setupUi(this);
     setupUI();
-    loadUserData();
 }
 
 Profile::~Profile()
 {
     delete ui;
+}
+
+void Profile::initProfile() {
+    loadUserData();
+    updateDeadlinesDisplay();
 }
 
 void Profile::loadUserData()
@@ -42,33 +46,36 @@ void Profile::setupUI()
 
 void Profile::loadCurrentDeadlines()
 {
+    currentDeadlines.clear();
     // инит загрузки текущих дедлайнов
     for (Deadline deadline : allDeadlines) {
-
+        QDate currentDate = QDate::currentDate();
+        if (deadline.date >= currentDate) {
+            currentDeadlines.push_back(deadline);
+        }
     }
 }
 
 void Profile::loadCompletedDeadlines()
 {
+    completedDeadlines.clear();
     // инит загрузки завершенных дедлайнов
     for (Deadline deadline : allDeadlines) {
-
+        QDate currentDate = QDate::currentDate();
+        if (deadline.date < currentDate) {
+            completedDeadlines.push_back(deadline);
+        }
     }
 }
 
 void Profile::updateDeadlinesDisplay()
 {
-    QLayoutItem* item;
-    while ((item = currentLayout->takeAt(0))) {
-        if (item->widget()) {
-            delete item->widget();
-        }
+    while (QLayoutItem* item = currentLayout->takeAt(0)) {
+        delete item->widget();
         delete item;
     }
-    while ((item = completedLayout->takeAt(0))) {
-        if (item->widget()) {
-            delete item->widget();
-        }
+    while (QLayoutItem* item = completedLayout->takeAt(0)) {
+        delete item->widget();
         delete item;
     }
 
@@ -104,5 +111,4 @@ void Profile::updateDeadlinesDisplay()
 void Profile::on_LeftSwipeButton_clicked()
 {
     emit S_ChangeForm(2);
-    close();
 }

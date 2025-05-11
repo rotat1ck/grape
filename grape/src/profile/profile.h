@@ -23,6 +23,7 @@ class Profile : public QWidget
 
 public:
     explicit Profile(QWidget *parent = nullptr, Net* netHandler = nullptr);
+    void initProfile();
     ~Profile();
 
 signals:
