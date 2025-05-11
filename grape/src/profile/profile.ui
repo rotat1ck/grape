@@ -16,42 +16,56 @@
   <property name="styleSheet">
    <string notr="true">background-color: #A89797;</string>
   </property>
-  <widget class="QLineEdit" name="username">
-   <property name="geometry">
-    <rect>
-     <x>153</x>
-     <y>25</y>
-     <width>450</width>
-     <height>74</height>
-    </rect>
+  <layout class="QGridLayout" name="gridLayout">
+   <property name="leftMargin">
+    <number>0</number>
    </property>
-   <property name="styleSheet">
-    <string notr="true">QLineEdit {
-    background-color: #D9D9D9;
-    border: 2px solid #8B7E7E;
-    border-radius: 15px;
-    padding: 5px; 
-
-	font-size: 20px;
-	font-family: 'Comfortaa';
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>0</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="spacing">
+    <number>0</number>
+   </property>
+   <item row="0" column="0">
+    <widget class="QWidget" name="centralwidget" native="true">
+     <widget class="QLabel" name="kitty">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>32</y>
+        <width>61</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+QLabel {
+    image: url(:/img/userProfile.svg);
+	background-color: rgba(255, 255, 255, 10);
 }
 </string>
-   </property>
-   <property name="readOnly">
-    <bool>true</bool>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="LeftSwipeButton">
-   <property name="geometry">
-    <rect>
-     <x>39</x>
-     <y>25</y>
-     <width>74</width>
-     <height>74</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton {
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="LeftSwipeButton">
+      <property name="geometry">
+       <rect>
+        <x>39</x>
+        <y>25</y>
+        <width>74</width>
+        <height>74</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
     background-color: #D9D9D9;
     border: 2px solid #8B7E7E;
     border-radius: 30px;
@@ -65,157 +79,174 @@ QPushButton {
 	
 }
 </string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="CurrDL_text">
-   <property name="geometry">
-    <rect>
-     <x>53</x>
-     <y>134</y>
-     <width>534</width>
-     <height>88</height>
-    </rect>
-   </property>
-   <property name="layoutDirection">
-    <enum>Qt::LayoutDirection::LeftToRight</enum>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-	font-size: 40px;
-	font-family: 'Julius Sans One';
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Current Deadlines</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="ComDL_text">
-   <property name="geometry">
-    <rect>
-     <x>39</x>
-     <y>412</y>
-     <width>547</width>
-     <height>80</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <family>Julius Sans One</family>
-     <pointsize>-1</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QLabel {
-	font-size: 40px;
-	font-family: 'Julius Sans One';
-}
-</string>
-   </property>
-   <property name="text">
-    <string>Completed Deadlines</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignmentFlag::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="kitty">
-   <property name="geometry">
-    <rect>
-     <x>530</x>
-     <y>33</y>
-     <width>61</width>
-     <height>61</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QLabel {
-    image: url(:/img/userProfile.svg);
-	background-color: rgba(255, 255, 255, 10);
-}
-</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QScrollArea" name="currentDeadlinesScrollArea">
-   <property name="geometry">
-    <rect>
-     <x>27</x>
-     <y>237</y>
-     <width>576</width>
-     <height>160</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QScrollArea
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QScrollArea" name="completedDeadlinesScrollArea">
+      <property name="geometry">
+       <rect>
+        <x>26</x>
+        <y>507</y>
+        <width>576</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QScrollArea
  {
     background-color: #D9D9D9;
-    border: 2px solid #8B7E7E;
     border-radius: 15px;
 
 	font-size: 20px;
 	font-family: 'Comfortaa';
 }
 </string>
-   </property>
-   <property name="widgetResizable">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="currentDeadlinesScrollAreaContents">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>572</width>
-      <height>156</height>
-     </rect>
-    </property>
-   </widget>
-  </widget>
-  <widget class="QScrollArea" name="completedDeadlinesScrollArea">
-   <property name="geometry">
-    <rect>
-     <x>20</x>
-     <y>520</y>
-     <width>576</width>
-     <height>160</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QScrollArea
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="completedDeadlinesScrollAreaContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>576</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #D9D9D9;
+border-radius: 15px;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QScrollArea" name="currentDeadlinesScrollArea">
+      <property name="geometry">
+       <rect>
+        <x>26</x>
+        <y>237</y>
+        <width>576</width>
+        <height>160</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QScrollArea
  {
-    background-color: #D9D9D9;
-    border: 2px solid #8B7E7E;
+background-color: #D9D9D9;
     border-radius: 15px;
 
 	font-size: 20px;
 	font-family: 'Comfortaa';
 }
 </string>
-   </property>
-   <property name="widgetResizable">
-    <bool>true</bool>
-   </property>
-   <widget class="QWidget" name="completedDeadlinesScrollAreaContents">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>572</width>
-      <height>156</height>
-     </rect>
-    </property>
-   </widget>
-  </widget>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="currentDeadlinesScrollAreaContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>576</width>
+         <height>160</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: #D9D9D9;
+border-radius: 15px;</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLineEdit" name="username">
+      <property name="geometry">
+       <rect>
+        <x>153</x>
+        <y>25</y>
+        <width>450</width>
+        <height>74</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+    background-color: #D9D9D9;
+    border: 2px solid #8B7E7E;
+    border-radius: 15px;
+    padding: 5px; 
+
+	font-size: 20px;
+	font-family: 'Comfortaa';
+}
+</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ComDL_text">
+      <property name="geometry">
+       <rect>
+        <x>39</x>
+        <y>412</y>
+        <width>547</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Julius Sans One</family>
+        <pointsize>-1</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	font-size: 40px;
+	font-family: 'Julius Sans One';
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Completed Deadlines</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="CurrDL_text">
+      <property name="geometry">
+       <rect>
+        <x>53</x>
+        <y>134</y>
+        <width>534</width>
+        <height>88</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LayoutDirection::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel {
+	font-size: 40px;
+	font-family: 'Julius Sans One';
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Current Deadlines</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+     </widget>
+     <zorder>LeftSwipeButton</zorder>
+     <zorder>completedDeadlinesScrollArea</zorder>
+     <zorder>currentDeadlinesScrollArea</zorder>
+     <zorder>username</zorder>
+     <zorder>ComDL_text</zorder>
+     <zorder>CurrDL_text</zorder>
+     <zorder>kitty</zorder>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
