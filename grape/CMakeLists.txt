@@ -79,8 +79,6 @@ qt_add_executable(grape
     net/include/hasher/hasher.cpp
     src/addtasks/addtask.h
     src/addtasks/addtask.cpp
-    src/profile/profile.h
-    src/profile/profile.cpp
 )
 
 qt_add_ui(grape SOURCES
@@ -90,7 +88,6 @@ qt_add_ui(grape SOURCES
     src/settingsmenu/settingsmenu.ui
     src/adddeadlinedialog/adddeadlinedialog.ui
     src/addtasks/addtask.ui
-    src/profile/profile.ui
 )
 
 target_link_libraries(grape

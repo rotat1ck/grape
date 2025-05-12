@@ -1,12 +1,5 @@
 #include "dashboard.h"
 #include "ui_dashboard.h"
-#include <QScrollBar>
-#include <QVBoxLayout>
-#include <algorithm>
-
-#include "../adddeadlinedialog/adddeadlinedialog.h"
-#include "../addtasks/addtask.h"
-#include "../profile/profile.h"
 
 Dashboard::Dashboard(QWidget *parent, Net* netHandler)
     : QWidget(parent), netHandler(netHandler)

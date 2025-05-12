@@ -11,7 +11,6 @@
 #include "../login/login.h"
 #include "../dashboard/dashboard.h"
 #include "../registration/registration.h"
-#include "../profile/profile.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -53,7 +52,6 @@ private:
     Login* login; // <- описание объекта в src/login/login.h
     Registration* registration; // <- описание объекта в src/registration/registration.h
     Dashboard* dashboard; // <- описание объекта в src/dashboard/dashboard.h
-    Profile* profile; // <- описание объекта в src/profile/profile.h
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;

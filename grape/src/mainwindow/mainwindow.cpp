@@ -18,5 +18,4 @@ MainWindow::~MainWindow() {
     delete login;
     delete registration;
     delete dashboard;
-    delete profile;
 }
