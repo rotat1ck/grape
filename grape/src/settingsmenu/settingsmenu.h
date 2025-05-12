@@ -6,6 +6,9 @@
 #include <QPainterPath>
 #include <QRegion>
 #include <QShowEvent>
+#include <QMessageBox>
+#include <QScrollBar>
+#include <QVBoxLayout>
 
 namespace Ui {
 class SettingsMenu;
@@ -29,7 +32,6 @@ protected:
 
 private slots:
     void on_designButton_clicked();
-    void on_profileButton_clicked();
     void on_exitButton_clicked();
 
 private:

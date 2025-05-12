@@ -1,13 +1,9 @@
 #include "../settingsmenu/settingsmenu.h"
 #include "dashboard.h"
 #include "ui_dashboard.h"
-#include <QScrollBar>
-#include <QVBoxLayout>
+
 #include "ui_settingsmenu.h"
-#include <QMessageBox>
-#include <QPainterPath>
-#include <QRegion>
-#include <QPainter>
+
 
 
 SettingsMenu::SettingsMenu(QWidget *parent)
@@ -84,12 +80,6 @@ void Dashboard::on_menuSettings_clicked()
 
 void SettingsMenu::on_designButton_clicked()
 {
-    close();
-}
-
-void SettingsMenu::on_profileButton_clicked()
-{
-    emit S_ChangeForm(3);
     close();
 }
 
