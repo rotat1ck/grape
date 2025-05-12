@@ -14,8 +14,8 @@ MainWindow::~MainWindow() {
     // создание с помощью new требует ручной очистки памяти
     delete netHandler;
     delete layout;
+    delete centralWidget;
     delete login;
     delete registration;
     delete dashboard;
-    delete netHandler;
 }

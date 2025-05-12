@@ -5,6 +5,8 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QScrollBar>
+#include <algorithm>
 #include <QTimer>
 #include <QTime>
 #include <QDate>
@@ -13,6 +15,8 @@
 #include "../../net/base-net/net.h"
 #include "../settingsmenu/settingsmenu.h"
 #include "../types/structs.h"
+#include "../adddeadlinedialog/adddeadlinedialog.h"
+#include "../addtasks/addtask.h"
 
 namespace Ui {
 class Dashboard;
@@ -84,7 +88,6 @@ private:
     void updateTasksBox();  // Добавление задачи в интерфейс
     QVBoxLayout* tasksLayout;  // Layout для списка задач
     std::vector<Task> tasksList;
-    QList<QWidget*> taskWidgets;  // Список виджетов задач
 
     //notes
     void notesUI();

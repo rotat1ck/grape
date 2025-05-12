@@ -65,19 +65,6 @@ QPushButton:hover {
     </widget>
    </item>
    <item>
-    <widget class="QPushButton" name="profileButton">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>30</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Профиль</string>
-     </property>
-    </widget>
-   </item>
-   <item>
     <widget class="QPushButton" name="exitButton">
      <property name="minimumSize">
       <size>

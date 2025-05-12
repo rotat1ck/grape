@@ -37,7 +37,6 @@ void MainWindow::setupViews() {
     setCentralWidget(centralWidget);
     layout = new QStackedLayout(centralWidget); // <- описание объекта в src/mainwindow/mainwindow.h
 
-
     login = new Login(this, netHandler);
     registration = new Registration(this, netHandler);
     dashboard = new Dashboard(this, netHandler);

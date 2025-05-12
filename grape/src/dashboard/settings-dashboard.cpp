@@ -1,13 +1,9 @@
 #include "../settingsmenu/settingsmenu.h"
 #include "dashboard.h"
 #include "ui_dashboard.h"
-#include <QScrollBar>
-#include <QVBoxLayout>
+
 #include "ui_settingsmenu.h"
-#include <QMessageBox>
-#include <QPainterPath>
-#include <QRegion>
-#include <QPainter>
+
 
 
 SettingsMenu::SettingsMenu(QWidget *parent)
@@ -76,10 +72,6 @@ SettingsMenu::~SettingsMenu()
 
 void Dashboard::on_menuSettings_clicked()
 {
-    if (!settingsMenu) {
-        settingsMenu = new SettingsMenu(this);
-    }
-
     // Получаем позицию кнопки относительно окна Dashboard
     QPoint buttonPos = ui->menuSettings->mapToGlobal(QPoint(-74, 84));
     settingsMenu->move(buttonPos.x() + ui->menuSettings->width() + 5, buttonPos.y());
@@ -87,11 +79,6 @@ void Dashboard::on_menuSettings_clicked()
 }
 
 void SettingsMenu::on_designButton_clicked()
-{
-    close();
-}
-
-void SettingsMenu::on_profileButton_clicked()
 {
     close();
 }
