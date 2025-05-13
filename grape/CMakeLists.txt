@@ -39,7 +39,6 @@ qt_add_executable(grape
 
     # Settings menu files
     src/settingsmenu/settingsmenu.h
-    src/settingsmenu/settingsmenu.cpp
 
     # AddDeadlineDialog menu files
     src/adddeadlinedialog/adddeadlinedialog.h
@@ -77,8 +76,6 @@ qt_add_executable(grape
     net/include/json/json.hpp # <- библиотека для парса json объектов
     net/include/hasher/hasher.h # <- мои старейшие файлы, хэширование пароля
     net/include/hasher/hasher.cpp
-    src/addtasks/addtask.h
-    src/addtasks/addtask.cpp
 )
 
 qt_add_ui(grape SOURCES
