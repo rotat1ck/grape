@@ -79,12 +79,12 @@ border-radius: 20px;
        <string notr="true">QPushButton {
     background-color: #D9D9D9;
     border: 2px solid #8B7E7E;
-    border-radius: 30px;
+    border-radius: 37px;
     font-family: 'Comfortaa';
     font-size: 5px;
     color: #8B2222;
 	icon-size: 16px;  
-    padding: 5px; 
+    padding: 7px; 
 }
 QPushButton:hover {
     background-color: #E5E5E5;
@@ -95,7 +95,6 @@ QPushButton:pressed {
 }
 QPushButton {
     image: url(:/img/settings.svg);
-	
 }
 </string>
       </property>
