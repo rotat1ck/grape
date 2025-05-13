@@ -136,7 +136,7 @@ void Dashboard::addNewDeadline(Deadline& deadline) {
     QHBoxLayout* layout = new QHBoxLayout(deadlineItem); // Create a layout for the deadlineItem
     deadlineItem->setStyleSheet(deadlineItemStyleSheet);
 
-    QLabel* deadlineItemText = new QLabel(insertLineBreaks(deadline.name, 250), deadlineItem);
+    QLabel* deadlineItemText = new QLabel(insertLineBreaks(deadline.name, 200), deadlineItem);
     deadlineItemText->setStyleSheet(R"(
         font-family: 'Comfortaa';
         font-size: 18px;
