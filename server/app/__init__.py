@@ -7,12 +7,14 @@ from .routes.users import users_bp # <= подключение путей, пе�
 from .routes.aue import aue_bp
 from .routes.tasks import tasks_bp
 from .routes.deadlines import deadlines_bp
+from .routes import default_bp
 
 
 def startApp():
     app = Flask(__name__) # создание переменной приложения
     initConfig(app) # запуск файла конфигурации config.py
 
+    app.register_blueprint(default_bp, url_prexif='/')
     app.register_blueprint(users_bp, url_prefix='/api/users') # <= обозначение префикса /api/users
     app.register_blueprint(aue_bp, url_prefix='/api/aue')
     app.register_blueprint(tasks_bp, url_prefix='/api/tasks')
