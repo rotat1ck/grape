@@ -11,6 +11,7 @@
 #include <QTime>
 #include <QDate>
 #include <vector>
+#include <QThread>
 
 #include "../../net/base-net/net.h"
 #include "../settingsmenu/settingsmenu.h"
@@ -34,6 +35,7 @@ public:
 
 signals:
     void S_ChangeForm(int formId);
+    void S_AueSetText(QString text);
 
 private slots:
     void updateTextPosition();
@@ -44,7 +46,6 @@ private slots:
     void on_timerMinusButton_clicked();
     void on_addDeadlineButton_clicked();
 
-    void auewordsInit();
     //tasks
     void on_addTaskButton_clicked();
 
@@ -62,6 +63,9 @@ private:
     QTimer *timer;
     int position;
     int step;
+    void auewordsInit();
+    void autoUpdateText();
+    void setText(QString text);
 
     // Settings
     SettingsMenu *settingsMenu;

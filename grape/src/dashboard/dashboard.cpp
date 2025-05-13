@@ -9,6 +9,7 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
 
     // Ауе цитаты
     auewordsInit();
+    connect(this, &Dashboard::S_AueSetText, this, &Dashboard::setText);
 
     // Заметки
     notesUI();
