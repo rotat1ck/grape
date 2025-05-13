@@ -12,6 +12,7 @@
 #include <QDate>
 #include <vector>
 #include <QThread>
+#include <QFontMetrics>
 
 #include "../../net/base-net/net.h"
 #include "../settingsmenu/settingsmenu.h"
@@ -84,6 +85,7 @@ private:
     bool isDialogOpen;
     void updateDeadlinesList();
     void setupDeadlinesBox();
+    QString insertLineBreaks(QString text, int maxWidth);
     void addNewDeadline(Deadline& deadline);
 
     //tasks
