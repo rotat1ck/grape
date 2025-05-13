@@ -53,11 +53,20 @@ QPushButton:hover {
    </property>
    <item>
     <widget class="QPushButton" name="designButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
      <property name="minimumSize">
       <size>
        <width>0</width>
        <height>30</height>
       </size>
+     </property>
+     <property name="toolTip">
+      <string>This feature isn't available yet</string>
+     </property>
+     <property name="statusTip">
+      <string/>
      </property>
      <property name="text">
       <string>Настройки дизайна</string>
