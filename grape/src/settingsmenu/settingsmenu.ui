@@ -13,27 +13,28 @@
   <property name="windowTitle">
    <string>Settings</string>
   </property>
+  <property name="toolTip">
+   <string>This feature isn't available yet</string>
+  </property>
   <property name="styleSheet">
    <string notr="true">QDialog {
-    background-color: #D9D9D9;
-    border: 1px solid #A0A0A0;
-    border-radius: 35px;
-}
-/* Чтобы кнопки не вылезали за скругленные углы */
-QDialog &gt; QWidget {
-    border-radius: 35px;
-}
-QPushButton {
-    background-color: #F2F2F2;
-    border-radius: 15px;
-    font-family: 'Comfortaa';
-    font-size: 16px;
-    color: #000000;
-    padding: 5px;
-}
-QPushButton:hover {
-    background-color: #E5E5E5;
-}</string>
+            background-color: #D9D9D9;
+            border-radius: 25px;
+            border: 0px solid transparent; /* Явное отключение границы */
+        }
+        QPushButton {
+            background-color: #F2F2F2;
+            border-radius: 15px;
+            padding: 8px;
+            margin: 4px 8px;
+            font-family: 'Comfortaa';
+            font-size: 16px;
+            color: black;
+            border: none;
+        }
+        QPushButton:hover {
+            background-color: #E5E5E5;
+        }</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -67,6 +68,18 @@ QPushButton:hover {
      </property>
      <property name="statusTip">
       <string/>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+background-color: rgba(242, 242, 242, 76);
+border-radius: 15px;
+padding: 8px;
+margin: 4px 8px;
+font-family: 'Comfortaa';
+font-size: 16px;
+color: black;
+border: none;
+}</string>
      </property>
      <property name="text">
       <string>Настройки дизайна</string>

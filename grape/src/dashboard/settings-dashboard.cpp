@@ -57,18 +57,10 @@ void SettingsMenu::paintEvent(QPaintEvent *event)
     painter.drawRoundedRect(rect(), 25, 25);
 }
 
-
-
-
-
 SettingsMenu::~SettingsMenu()
 {
     delete ui;
 }
-
-
-
-
 
 void Dashboard::on_menuSettings_clicked()
 {
