@@ -27,6 +27,10 @@ private slots:
 
     void on_LoginButton_clicked();
 
+    void on_PasswordInput_returnPressed();
+
+    void tryLogin();
+
 private:
     Ui::Login *ui;
     Net* netHandler;
