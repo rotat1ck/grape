@@ -47,7 +47,8 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #490206;</string>
+      <string notr="true">background-color: #547D6D;
+</string>
      </property>
      <widget class="QTextBrowser" name="AueWordsBox">
       <property name="geometry">
