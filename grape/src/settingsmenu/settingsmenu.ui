@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>200</width>
+    <width>232</width>
     <height>180</height>
    </rect>
   </property>
@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QDialog {
-            background-color: #D9D9D9;
+            background-color: #706B68;
             border-radius: 25px;
             border: 0px solid transparent; /* Явное отключение границы */
         }

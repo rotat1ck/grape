@@ -15,33 +15,6 @@ SettingsMenu::SettingsMenu(QWidget *parent)
     setWindowFlags(Qt::Popup | Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground);
     setAttribute(Qt::WA_NoSystemBackground, true);
-
-    // Полное отключение всех эффектов
-    setGraphicsEffect(nullptr);
-
-    // Чистые стили с явным указанием всех параметров
-    setStyleSheet(R"(
-        #SettingsMenu {
-            background-color: #D9D9D9;
-            border-radius: 25px;
-            border: 0px solid transparent; /* Явное отключение границы */
-        }
-        QPushButton {
-            background-color: #F2F2F2;
-            border-radius: 15px;
-            padding: 8px;
-            margin: 4px 8px;
-            font-family: 'Comfortaa';
-            font-size: 16px;
-            color: black;
-            border: none;
-        }
-        QPushButton:hover {
-            background-color: #E5E5E5;
-        }
-    )");
-
-    this->setObjectName("SettingsMenu"); // Для точного применения стилей
 }
 
 void SettingsMenu::paintEvent(QPaintEvent *event)
@@ -52,7 +25,7 @@ void SettingsMenu::paintEvent(QPaintEvent *event)
     painter.setRenderHint(QPainter::Antialiasing, true);
 
     // Только фон, без каких-либо границ
-    painter.setBrush(QColor("#D9D9D9"));
+    painter.setBrush(QColor("#706B68"));
     painter.setPen(Qt::NoPen); // Критически важно - никакой границы
     painter.drawRoundedRect(rect(), 25, 25);
 }
