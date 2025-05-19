@@ -128,6 +128,14 @@ nav a:active {
     min-height: 100vh;
 }
 
+.img{
+    width: 480px;
+    height: 550px;
+    float: right;
+    box-shadow: #111;
+    padding: 20px;
+    margin: 100px 50px 50px 50px;
+}
 .content-section {
     padding: 80px 20px;
     max-width: 1200px;
@@ -222,6 +230,8 @@ footer {
     align-items: center;
     gap: 10px;
     margin: 0;
+    margin-left: 100px;
+    
 }
 
 .img_footer {
