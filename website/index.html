@@ -5,26 +5,115 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRAPE – task management</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- навигация -->
+    <header>
+        <nav>
+            <div class="nav-container">
+                <div class="logo-container">
+                    <img src="../website/img_site/mount.png" class="icon"/>
+                    <p>G R A P E</p>
+                </div>
+                <div class="nav-links">
+                    <a class="active" href="#about">About</a>
+                    <a href="#download">Download</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- заголовочная страница -->
     <section class="hero-section">
         <div class="hero-content">
-            <p class="strikethrough">GRAPE</p>
-            <h1>Grape – твои мысли в порядке, а задачи под контролем</h1>
-            <p>Возможность открыть компьютер, а перед глазами – всё, что важно. 
-                Не нужно листать заметки в телефоне, искать список дел в блокноте или вспоминать, какой дедлайн горит прямо сейчас. 
-                Просто взгляд на рабочий стол – и ты уже в курсе всех задач.
-                Это Grape – умный виджет для твоего цифрового пространства.</p>
+            <p class="strikethrough">G R A P E</p>
+            <h1>Grape – твои мысли в порядке, а задачи под контролем.</h1>
+            <p>Возможность открыть компьютер, а перед глазами – всё, что важно.</p>
+            <p>Не нужно листать заметки в телефоне, искать список дел в блокноте или вспоминать, какой дедлайн горит прямо сейчас. </p>
+            <p>Просто взгляд на рабочий стол – и ты уже в курсе всех задач.</p>
+            <p>Это Grape – умный виджет для твоего цифрового пространства.</p>
         </div>
     </section>
     
+    <!-- разделы -->
     <main class="main-content">
-        <section class="content-section">
-            <h2>---------------</h2>
+        <h2 style="font-family: Geist Mono; font-size: 20px; color: #547D6D; 
+            border-image: linear-gradient(#547D6D, #68d091) 1;
+            border-image-width: 5px;
+            border-image-outset: 0;
+            border-image-repeat: stretch;
+            margin: 0%;
+            padding: 0%;"
             
+        >
+        <!-- о нас -->
+        <img src="../website/img_site/dash.png" class="img"/>
+        <section class="content-section" id="about">
+            <h2 style="text-shadow: 2px 2px 0px #08120b;">About</h2>
+            <p>ㅤㅤㅤ</p>
+            
+            <div class="about-content">
+                
+                <p>Отслеживайте рабочие задачи и их сроки на сдачу.</p>
+                <p>Мы превращаем рабочий стол в интеллектуальный командный центр, где все важное всегда перед глазами.
+                <br>Больше не нужно искать письма на почте, лазать по рабочим чатам и заметкам в поисках несданных задач.</br>
+                <br>Всё собрано в едином пространтсве.</br> </p>
+                <p>✅ Отслеживайте дедлайны</p>
+                <p>✅ Добавляйте задачи</p>
+                <p>✅ Добавляйте заметки</p>
+                <p>✅ Используйте таймер</p>
+                <p>Никаких лишних действий, только чистый фокус на задачах.</p>
+            </div>
         </section>
+
+        <div class="section-divider"></div>
+
+        <!-- загрузчик -->
+        <section class="content-section" id="download">
+            <h2 style="text-shadow: 2px 2px 0px #08120b;">Download</h2>
+            <p>ㅤㅤㅤ</p>
+            <!-- <img src="../website/img_site/picfox.jpg" align="right" width="470px" height="500px" style=" border: 30px solid #1d1a1a; margin-right: -100px; margin-top: -230px;"/> -->
+
+            <div class="download-text">
+                <p>Grape – твои мысли в порядке, а задачи под контролем.</p>
+                <p>Скачивайте наше приложение по клику и наведите порядок в своих задачах.</p>
+                <p>Доступно для Windows.</p>
+            </div>
+
+            <button onclick="window.location.href='https://grape.rotatick.ru/download'" class="button">
+                Download
+            </button>
+        </section>
+
+        <div class="section-divider"></div>
     </main>
 
+    <footer>
+        <div class="footer-container">
+            <div class="contact-content">
+                <div class="logo-footer">
+                    <img src="../website/img_site/mount.png" class="img_footer"/>
+                    <p>G R A P E</p>
+                </div>
+                
+                <div class="email">
+                    <img src="../website/img_site/icons8-email-50.png" class="img_footer"/>
+                    <a href="mailto:kocetovaanastasia19@gmail.com">kocetovaanastasia19@gmail.com</a>
+                </div>
+                
+                <div class="github">
+                    <img src="../website/img_site/icons8-github-50.png" class="img_footer"/>
+                    <div class="github-links">
+                        <a href="https://github.com/rotat1ck">rotat1ck</a>
+                        <a href="https://github.com/eulalourens00">eulalourens00</a>
+                        <a href="https://github.com/razvan2669">kroddist</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>

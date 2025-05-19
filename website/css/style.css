@@ -1,11 +1,74 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Comfortaa', sans-serif;
-    color:antiquewhite;
-    background-color: #382E2E;
+    font-family: 'Geist Mono', sans-serif;
+    color:rgb(255, 255, 255);
+    background-color: #1d1a1a;
+    
 }
 
+                        /* шапка навигации */
+header {
+    background-color: transparent;
+    padding: 10px 0;
+    font-family: 'Geist Mono';
+}
+
+.nav-container {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    /* padding: 10px 5%; */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.nav-links {
+    display:flex;
+    column-gap: 5px;
+    margin-left: auto;  
+}
+
+.icon {
+    width: 70px;
+    height: 60px;
+    margin-right: 25px;
+    object-fit: contain;
+    margin-top: -10px;
+}
+
+nav p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+nav a {
+    color: white;
+    text-align: center;
+    padding: 16px 30px;
+    margin-right: 85px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-size: 19px;
+}
+
+nav a:hover {
+    background-color: #111;
+}
+
+nav a:active {
+    background-color: antiquewhite;
+    color: #060606;
+}
+                        /* конец шапки навигации */
+
+                        /* заглавная страница */
 .hero-section {
     position: relative;
     width: 100%;
@@ -25,45 +88,171 @@ body {
     will-change: opacity, transform;
 }
 
-.hero-section::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 30%;
-    background: linear-gradient(
-        to bottom, 
-        transparent 0%, 
-        #060606 100%, 
-        #382E2E 100%
-    );
-    opacity: 0;
-    transition: opacity 0.6s ease-out;
-}
 
 .hero-content {
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     z-index: 2;
     transition: transform 0.5s ease;
 }
 
 .strikethrough {
-    text-decoration: line-through;
+    margin-top: -5%;
+    margin-bottom: 30px;
+    position: relative;
+    display: inline-block;
+    color: black;
+    font-family: 'Geist Mono';
+    font-size: 170px;
     opacity: 0.7;
+    text-decoration: none;
 }
 
-/* Основной контент */
+.strikethrough::after {
+    content: '';
+    position: absolute;
+    left: -20%;
+    top: 50%;
+    width: 140%;
+    height: 7px;
+    background: white;
+    transform: translateY(-50%);
+}
+
+                            /* конец заглавной страницы */
+
+/* основной контент */
 .main-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     min-height: 100vh;
 }
 
+.img{
+    width: 480px;
+    height: 550px;
+    float: right;
+    box-shadow: #111;
+    padding: 20px;
+    margin: 100px 50px 50px 50px;
+}
 .content-section {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
+
+                                /* о нас */
+.about-content{
+    font-family: 'Geist Mono';
+    font-size: 19px;
+    color: aliceblue;
+}
+
+                                /* download button */
+.button {
+    background-color: #cfb2b2;
+    border: none;
+    border-radius: 8px;
+    color: rgb(59, 28, 28);
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 19px;
+    font-family: 'Geist Mono';
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 40px;
+}
+
+.button:hover {
+    background-color: #57252e;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.button:active {
+    transform: translateY(1px);
+}
+
+.download-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.download-text p {
+    margin: 10px 0;
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    font-family: 'Geist Mono';
+}
+
+
+                                /* контакты */
+.contact-content{
+    font-family: 'Geist Mono';
+    font-size: 19px;
+    color: aliceblue;
+}
+
+/* Футер */
+footer {
+    background-color: #171515;
+    padding: 15px 30px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email, .github {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    margin-left: 100px;
+    
+}
+
+.img_footer {
+    width: 30px;
+    height: 30px;
+}
+
+.email a, .github a {
+    color: #68d091;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.email a:hover, .github a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.github-links {
+    display: flex;
+    gap: 15px;
+}                        

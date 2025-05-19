@@ -3,7 +3,7 @@ console.log("Эщкере");
 document.addEventListener('DOMContentLoaded', function() {
     const hero = document.querySelector('.hero-section');
     const heroContent = document.querySelector('.hero-content');
-    const heroMask = document.querySelector('.hero-section::after');
+    const heroImage = document.querySelector('.hero-section img'); // Добавляем выбор картинки
     
     if (!hero) return;
     
@@ -26,19 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const windowHeight = window.innerHeight;
         const scrollPercent = Math.min(scrollPos / windowHeight, 1);
         
-        // Плавное исчезновение героя
-        hero.style.opacity = 1 - scrollPercent * 1.2;
+        // Только текст двигается вверх с параллаксом
+        heroContent.style.transform = `translateY(${scrollPos * 0.5}px)`;
         
-        // Параллакс-эффект для контента
-        heroContent.style.transform = `translateY(${scrollPos * 0.3}px)`;
+        // Плавное исчезновение текста (опционально)
+        heroContent.style.opacity = 1 - scrollPercent * 1.2;
         
-        // Появление градиентной маски
-        if (heroMask) {
-            heroMask.style.opacity = scrollPercent * 1.5;
+        // Убираем все трансформации для hero и картинки
+        hero.style.transform = 'none';
+        if (heroImage) {
+            heroImage.style.transform = 'none';
         }
-        
-        // Легкое уменьшение масштаба
-        const scale = 1 - scrollPercent * 0.1;
-        hero.style.transform = `scale(${scale})`;
     }
 });
+
+{/* <content-section id="about"></content-section>
+document.getElementById('AboutScroll').addEventListener('click', scrollToElement);
+function scrollToElement(e) {
+element = document.getElementById("about")
+element.scrollIntoView(true);
+} */}
