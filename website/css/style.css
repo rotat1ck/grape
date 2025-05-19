@@ -39,6 +39,7 @@ header {
     height: 60px;
     margin-right: 25px;
     object-fit: contain;
+    margin-top: -10px;
 }
 
 nav p {
@@ -54,6 +55,7 @@ nav a {
     text-decoration: none;
     transition: all 0.3s ease;
     white-space: nowrap;
+    font-size: 19px;
 }
 
 nav a:hover {
@@ -189,53 +191,58 @@ nav a:active {
     color: aliceblue;
 }
 
-
-/* почта */
-
+/* Футер */
 footer {
-    background-color: #060606;
-    text-align: right;
-}
-.email {
-    margin-top: 20px;
-}
-.email a {
-    color: #68d091;
-    text-decoration: none;
-    font-size: 19px;
-    transition: color 0.3s ease;
-    display: inline-block;
+    background-color: #171515;
+    padding: 15px 30px;
 }
 
-.email a:hover {
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.email, .github {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.img_footer {
+    width: 30px;
+    height: 30px;
+}
+
+.email a, .github a {
+    color: #68d091;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.email a:hover, .github a:hover {
     color: #ffffff;
     text-decoration: underline;
 }
 
-.email a:active {
-    color: #1b6435;
-}
-
-/* гитхаб */
-.github {
-    margin-top: 20px;
-}
-.github a {
-    color: #68d091;
-    text-decoration: none;
-    font-size: 19px;
-    transition: color 0.3s ease;
-    display: inline-block;
-    margin: 5px 0;
-}
-
-.github a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-.github a:active {
-    color: #1b6435;
-}
-
-                        /* конец контактов */
+.github-links {
+    display: flex;
+    gap: 15px;
+}                        
