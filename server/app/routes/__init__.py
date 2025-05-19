@@ -1,7 +1,12 @@
-from flask import Blueprint, current_app, jsonify, send_file
+from flask import Blueprint, current_app, jsonify, send_file, render_template, url_for
 import os
 
 default_bp = Blueprint('/', __name__)
+
+@default_bp.route('/', methods=['GET'])
+def indexPage():
+    background_image_url = url_for('static', filename='img/back_site.jpeg')
+    return render_template('index.html', background_image_url=background_image_url)
 
 @default_bp.route('/download', methods=['GET'])
 def downloadFile():

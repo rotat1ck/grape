@@ -76,7 +76,6 @@ nav a:active {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url('../img_site/back_site.jpeg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;

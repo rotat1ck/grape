@@ -11,7 +11,7 @@ from .routes import default_bp
 
 
 def startApp():
-    app = Flask(__name__) # создание переменной приложения
+    app = Flask(__name__, template_folder='../../website/templates', static_folder='../../website/static') # создание переменной приложения
     initConfig(app) # запуск файла конфигурации config.py
 
     app.register_blueprint(default_bp, url_prexif='/')
