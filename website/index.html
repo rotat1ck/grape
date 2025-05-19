@@ -5,16 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GRAPE – task management</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- навигация -->
     <header>
         <nav>
-            <ul>
-                <li><a class="active" href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#download">Download</a></li>
-            </ul>
+            <div class="nav-container">
+                <div class="logo-container">
+                    <img src="../website/img_site/mount.png" class="icon"/>
+                    <p>G R A P E</p>
+                </div>
+                <div class="nav-links">
+                    <a class="active" href="#about">About</a>
+                    <a href="#download">Download</a>
+                </div>
+            </div>
         </nav>
     </header>
     <!-- заголовочная страница -->
@@ -31,21 +39,21 @@
     
     <!-- разделы -->
     <main class="main-content">
-        <h2 style="font-family: July; font-size: 20px;">
+        <h2 style="font-family: Geist Mono; font-size: 20px;">
         <!-- о нас -->
         <section class="content-section" id="about">
             <h2>About</h2>
             <p>ㅤㅤㅤ</p>
             <div class="about-content">
-                <img src="../website/img_site/dashExmp.jpg" align="right" width="400" height="460" style=" border: 30px solid #1d1a1a; margin-right: -100px; margin-top: -40px;"/>
-                <p>Основной идеей нашего приложения является облегчение отслеживания
-                рабочих задач и их сроков на сдачу.</p>
+                <img src="../website/img_site/dash.png" class="img"/>
+                <p>Отслеживайте рабочие задачи и их сроки на сдачу.</p>
                 <p>Мы превращаем рабочий стол в интеллектуальный командный центр, где все важное всегда перед глазами.
                 Больше не нужно искать письма на почте, лазать по рабочим чатам и заметкам в поисках несданных задач:
                 всё собрано в едином пространтсве. </p>
-                <p>Ставь сроки на дедлайн и отслеживай количество дней до его окончания, а цветная подсветка в последние дни подскажет тебе, что с этой работой нужно справиться как можно скорее.
-                Записывай задачи и веди свой ToDoList не заходя на сторонние сервисы.
-                Нужно что-то зафиксировать на скорую руку - под рукой всегда блок для заметок!</p>
+                <p>✓ Отслеживайте дедлайны</p>
+                <p>✓ Добавляйте задачи</p>
+                <p>✓ Добавляйте заметки</p>
+                <p>✓ Используйте таймер</p>
                 <p>Никаких лишних действий, только чистый фокус на задачах.</p>
             </div>
         </section>
@@ -56,44 +64,33 @@
         <section class="content-section" id="download">
             <h2>Download</h2>
             <p>ㅤㅤㅤ</p>
-            <img src="../website/img_site/picfox.jpg" align="right" width="470px" height="500px" style=" border: 30px solid #1d1a1a; margin-right: -100px; margin-top: -230px;"/>
+            <!-- <img src="../website/img_site/picfox.jpg" align="right" width="470px" height="500px" style=" border: 30px solid #1d1a1a; margin-right: -100px; margin-top: -230px;"/> -->
 
             <div class="download-text">
                 <p>Grape – твои мысли в порядке, а задачи под контролем.</p>
                 <p>Скачивайте наше приложение по клику и наведите порядок в своих задачах.</p>
-                <p>Доступно для Windows и macOS</p>
+                <p>Доступно для Windows.</p>
             </div>
 
-            <button onclick="window.location.href='тут будет загрузчик'" class="button">
+            <button onclick="window.location.href='https://grape.rotatick.ru/download'" class="button">
                 Download
             </button>
         </section>
 
         <div class="section-divider"></div>
-
-        <!-- контакты -->
-        <section class="content-section" id="contact">
-            <h2>Contact</h2>
-            <p>ㅤㅤㅤ</p>
-            <img src="../website/img_site/pic.jpg" align="right" width="500px" height="500px" style=" border: 30px solid #1d1a1a; margin-right: -100px; margin-top: -80px;"/>
-            <div class="contact-content">
-                <p>По вопросам и предложениям:</p>
-                <div class="email"><a href=mailto:tatakoekymi@gmail.com>tatakoekymi@gmail.com</a></div>
-
-                <p> ------ </p>
-                <p>Подписывайтесь на наш GitHub и ставьте звёздочки!</p>
-                <div class="github">
-                    <p><a href="https://github.com/rotat1ck">rotat1ck</a></p>
-                    <p><a href="https://github.com/eulalourens00">eulalourens00</a></p>
-                </div>
-                
-                <p> ------ </p>
-                <p>Всё что не делается... И я не делаю.</p>
-            </div>
-                
-        </section>
     </main>
-
+    <footer>
+            <div class="contact-content">
+                <div class="email">
+                    <img src="../website/img_site/icons8-email-50.png" class="img_footer"/>
+                    <a href=mailto:tatakoekymi@gmail.com>tatakoekymi@gmail.com</a></div>
+                
+                <div class="github">
+                <img src="../website/img_site/icons8-github-50.png" class="img_footer"/>
+                    <a href="https://github.com/rotat1ck">rotat1ck</a>
+                    <a href="https://github.com/eulalourens00">eulalourens00</a>
+                </div>
+    </footer>
     <script src="js/script.js"></script>
 </body>
 </html>

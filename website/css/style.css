@@ -1,62 +1,68 @@
-@font-face {
-    font-family: 'Comfortaa';
-    src: url('../fonts/Comfortaa-VariableFont_wght.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'July';
-    src: url('../fonts/JuliusSansOne-Regular.ttf') format('truetype');
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Comfortaa', sans-serif;
+    font-family: 'Geist Mono', sans-serif;
     color:rgb(255, 255, 255);
     background-color: #1d1a1a;
+    
 }
 
                         /* шапка навигации */
 header {
     background-color: transparent;
     padding: 10px 0;
-    font-family: 'July';
+    font-family: 'Geist Mono';
 }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 10;
-    overflow: hidden;
+.nav-container {
     display: flex;
-    background-color: transparent;
+    justify-content:space-between;
+    align-items: center;
+    width: 100%;
+    /* padding: 10px 5%; */
 }
 
-nav li {
-    float: left;
-    background-color: transparent;
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.nav-links {
+    display:flex;
+    column-gap: 5px;
+    margin-left: auto;  
+}
+
+.icon {
+    width: 70px;
+    height: 60px;
+    margin-right: 25px;
+    object-fit: contain;
+}
+
+nav p {
+    margin: 0;
+    font-size: 1.2rem;
 }
 
 nav a {
-    display: block;
     color: white;
     text-align: center;
-    padding: 15px 36px;
+    padding: 16px 30px;
+    margin-right: 85px;
     text-decoration: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 nav a:hover {
     background-color: #111;
-    transition: 0.8s;
 }
 
-nav a:active{
+nav a:active {
     background-color: antiquewhite;
-    color:#060606;
+    color: #060606;
 }
                         /* конец шапки навигации */
 
@@ -94,7 +100,7 @@ nav a:active{
     position: relative;
     display: inline-block;
     color: black;
-    font-family: 'July';
+    font-family: 'Geist Mono';
     font-size: 170px;
     opacity: 0.7;
     text-decoration: none;
@@ -128,7 +134,7 @@ nav a:active{
 
                                 /* о нас */
 .about-content{
-    font-family: 'Comfortaa';
+    font-family: 'Geist Mono';
     font-size: 19px;
     color: aliceblue;
 }
@@ -143,7 +149,7 @@ nav a:active{
     text-align: center;
     display: inline-block;
     font-size: 19px;
-    font-family: 'July';
+    font-family: 'Geist Mono';
     cursor: pointer;
     transition: all 0.3s ease;
     margin-top: 40px;
@@ -172,29 +178,24 @@ nav a:active{
     margin: 10px 0;
     color: rgb(255, 255, 255);
     font-size: 18px;
-    font-family: 'Comfortaa';
+    font-family: 'Geist Mono';
 }
 
-.section-divider {
-    width: 80%;
-    height: 2px;
-    margin: 80px auto;
-    background: linear-gradient(to right, 
-        transparent, 
-        #ffffff, 
-        transparent);
-    opacity: 0.7;
-}
 
                                 /* контакты */
 .contact-content{
-    font-family: 'Comfortaa';
+    font-family: 'Geist Mono';
     font-size: 19px;
     color: aliceblue;
 }
 
 
 /* почта */
+
+footer {
+    background-color: #060606;
+    text-align: right;
+}
 .email {
     margin-top: 20px;
 }
@@ -204,7 +205,6 @@ nav a:active{
     font-size: 19px;
     transition: color 0.3s ease;
     display: inline-block;
-    margin: 5px 0;
 }
 
 .email a:hover {
