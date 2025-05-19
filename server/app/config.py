@@ -15,4 +15,5 @@ def initConfig(app):
     # импортировав current_app из flask, т.е from flask import current_app
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}' # переменная пути базы данных
     app.config['SECRET_KEY'] = getenv("SECRET_KEY") # переменная для создания зашифрованных токенов
+    app.config['INSTALLER_PATH'] = getenv("INSTALLER_PATH")
     db.init_app(app) # функция инициализации базы данных, она использует переменную приложения SQLALCHEMY_DATABASE_URI
