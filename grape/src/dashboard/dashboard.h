@@ -5,14 +5,20 @@
 #include <QTextBrowser>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include <QScrollBar>
+#include <algorithm>
 #include <QTimer>
 #include <QTime>
 #include <QDate>
 #include <vector>
+#include <QThread>
+#include <QFontMetrics>
 
 #include "../../net/base-net/net.h"
 #include "../settingsmenu/settingsmenu.h"
 #include "../types/structs.h"
+#include "../adddeadlinedialog/adddeadlinedialog.h"
+#include "../addtasks/addtask.h"
 
 namespace Ui {
 class Dashboard;
@@ -30,6 +36,7 @@ public:
 
 signals:
     void S_ChangeForm(int formId);
+    void S_AueSetText(QString text);
 
 private slots:
     void updateTextPosition();
@@ -40,7 +47,6 @@ private slots:
     void on_timerMinusButton_clicked();
     void on_addDeadlineButton_clicked();
 
-    void auewordsInit();
     //tasks
     void on_addTaskButton_clicked();
 
@@ -58,6 +64,9 @@ private:
     QTimer *timer;
     int position;
     int step;
+    void auewordsInit();
+    void autoUpdateText();
+    void setText(QString text);
 
     // Settings
     SettingsMenu *settingsMenu;
@@ -76,6 +85,7 @@ private:
     bool isDialogOpen;
     void updateDeadlinesList();
     void setupDeadlinesBox();
+    QString insertLineBreaks(QString text, int maxWidth);
     void addNewDeadline(Deadline& deadline);
 
     //tasks
@@ -84,7 +94,6 @@ private:
     void updateTasksBox();  // Добавление задачи в интерфейс
     QVBoxLayout* tasksLayout;  // Layout для списка задач
     std::vector<Task> tasksList;
-    QList<QWidget*> taskWidgets;  // Список виджетов задач
 
     //notes
     void notesUI();

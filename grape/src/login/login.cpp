@@ -34,8 +34,7 @@ void Login::on_PasswordStateButton_clicked() {
     }
 }
 
-
-void Login::on_LoginButton_clicked() {
+void Login::tryLogin() {
     QString username = ui->UsernameInput->text();
     QString password = ui->PasswordInput->text();
 
@@ -56,5 +55,14 @@ void Login::on_LoginButton_clicked() {
 
         emit S_ChangeForm(2);
     }
+}
+
+void Login::on_LoginButton_clicked() {
+    tryLogin();
+}
+
+
+void Login::on_PasswordInput_returnPressed() {
+    tryLogin();
 }
 

@@ -3,9 +3,11 @@
         <file>fonts/JuliusSansOne-Regular.ttf</file>
         <file>img/password.svg</file>
         <file>img/login-background.png</file>
-        <file>img/settings.svg</file>
         <file>img/calendar.svg</file>
         <file>fonts/Comfortaa-VariableFont_wght.ttf</file>
         <file>img/plus.svg</file>
+        <file>img/left_swipe.svg</file>
+        <file>img/userProfile.svg</file>
+        <file>img/settings.svg</file>
     </qresource>
 </RCC>

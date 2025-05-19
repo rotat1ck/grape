@@ -56,6 +56,24 @@ void Dashboard::updateDeadlinesList() {
     }
 }
 
+QString Dashboard::insertLineBreaks(QString text, int maxWidth) {
+    QFontMetrics fm(ui->DeadlinesBoxContents->font());
+    QString result;
+    QString currentLine;
+    for (QChar& ch : text) {
+        currentLine += ch;
+        if (fm.horizontalAdvance(currentLine) > maxWidth) {
+            result += currentLine.left(currentLine.length() - 1) + "\n";
+            currentLine = ch;
+        }
+    }
+
+    if (!currentLine.isEmpty()) {
+        result += currentLine;
+    }
+
+    return result;
+}
 
 void Dashboard::addNewDeadline(Deadline& deadline) {
     QDate today = QDate::currentDate();
@@ -118,7 +136,7 @@ void Dashboard::addNewDeadline(Deadline& deadline) {
     QHBoxLayout* layout = new QHBoxLayout(deadlineItem); // Create a layout for the deadlineItem
     deadlineItem->setStyleSheet(deadlineItemStyleSheet);
 
-    QLabel* deadlineItemText = new QLabel(deadline.name, deadlineItem);
+    QLabel* deadlineItemText = new QLabel(insertLineBreaks(deadline.name, 200), deadlineItem);
     deadlineItemText->setStyleSheet(R"(
         font-family: 'Comfortaa';
         font-size: 18px;
@@ -126,7 +144,8 @@ void Dashboard::addNewDeadline(Deadline& deadline) {
         margin-left: 5px;
     )");
     deadlineItemText->setAlignment(Qt::AlignLeft);
-
+    deadlineItemText->setWordWrap(true); // перенос слов
+    deadlineItemText->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
 
     QLabel* deadlineItemDate = new QLabel(daysLeftText, deadlineItem);
     deadlineItemDate->setStyleSheet(R"(
@@ -135,13 +154,7 @@ void Dashboard::addNewDeadline(Deadline& deadline) {
         color: #333;
         margin-left: 5px;
     )");
-
-    deadlineItemText->setWordWrap(true); // перенос слов
     deadlineItemDate->setAlignment(Qt::AlignRight);
-    //deadlineItemText->setAlignment(Qt::AlignLeft | Qt::AlignTop);
-    deadlineItemText->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-
-
 
     QPushButton* deleteBtn = new QPushButton("×");
     deleteBtn->setStyleSheet(R"(

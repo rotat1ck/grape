@@ -1,11 +1,5 @@
 #include "dashboard.h"
 #include "ui_dashboard.h"
-#include <QScrollBar>
-#include <QVBoxLayout>
-#include <algorithm>
-
-#include "../adddeadlinedialog/adddeadlinedialog.h"
-#include "../addtasks/addtask.h"
 
 Dashboard::Dashboard(QWidget *parent, Net* netHandler)
     : QWidget(parent), netHandler(netHandler)
@@ -15,11 +9,12 @@ Dashboard::Dashboard(QWidget *parent, Net* netHandler)
 
     // Ауе цитаты
     auewordsInit();
+    connect(this, &Dashboard::S_AueSetText, this, &Dashboard::setText);
 
     // Заметки
     notesUI();
 }
-// функция для инициализации
+
 void Dashboard::initDashboard() {
     if (isInitialized) {
         return; // инициализировано - выходим
@@ -45,8 +40,31 @@ void Dashboard::initDashboard() {
 
 Dashboard::~Dashboard()
 {
+    // Base
     delete ui;
+
+    // AUE
+    delete timer;
+    delete movingTextBrowser;
+
+    // Settings
     delete settingsMenu;
+
+    // Timer
     delete countdownTimer;
+
+    // Deadlines
+    while (QLayoutItem* item = deadlineLayout->takeAt(0)) {
+        delete item->widget();
+        delete item;
+    }
+    delete deadlineLayout;
+
+    // Tasks
+    while (QLayoutItem* item = tasksLayout->takeAt(0)) {
+        delete item->widget();
+        delete item;
+    }
+    delete tasksLayout;
 }
 

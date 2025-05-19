@@ -1,3 +1,5 @@
+console.log("Эщкере");
+
 document.addEventListener('DOMContentLoaded', function() {
     const hero = document.querySelector('.hero-section');
     const heroContent = document.querySelector('.hero-content');

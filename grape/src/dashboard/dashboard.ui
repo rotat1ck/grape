@@ -10,6 +10,12 @@
     <height>720</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
@@ -41,7 +47,8 @@
       </sizepolicy>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #A89797;</string>
+      <string notr="true">background-color: #547D6D;
+</string>
      </property>
      <widget class="QTextBrowser" name="AueWordsBox">
       <property name="geometry">
@@ -73,12 +80,12 @@ border-radius: 20px;
        <string notr="true">QPushButton {
     background-color: #D9D9D9;
     border: 2px solid #8B7E7E;
-    border-radius: 30px;
+    border-radius: 37px;
     font-family: 'Comfortaa';
     font-size: 5px;
     color: #8B2222;
 	icon-size: 16px;  
-    padding: 5px; 
+    padding: 7px; 
 }
 QPushButton:hover {
     background-color: #E5E5E5;
@@ -89,7 +96,6 @@ QPushButton:pressed {
 }
 QPushButton {
     image: url(:/img/settings.svg);
-	
 }
 </string>
       </property>
@@ -429,6 +435,12 @@ color: #FFFFFF;
         <height>160</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
        <string notr="true">QScrollArea { border: none; }
 
@@ -461,6 +473,12 @@ QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
          <width>350</width>
          <height>160</height>
         </rect>
+       </property>
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Ignored" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
        </property>
        <property name="styleSheet">
         <string notr="true">QWidget {
